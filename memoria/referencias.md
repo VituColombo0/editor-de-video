@@ -10,3 +10,9 @@ _Para cada referência: link/arquivo, formato, duração, ritmo de cortes, estil
 - Na tela: começa escuro (números grandes, frases curtas), revela o logo, depois muda para fundo branco (mockups 3D de celular, cards flutuando), termina no logo.
 - Áudio: narração curta (frases de 2–4 s) + trilha. Problema → pergunta → "Conheça X" → como funciona → logo.
 - Usado em: Scanner LAOB (v1, 11/11/2026).
+
+## Vídeo oficial de lançamento do HyperFrames (feito 100% com Claude Code)
+- Fonte aberta: https://github.com/heygen-com/hyperframes-launch-video (STORYBOARD.md, compositions/*.html).
+- Princípios do storyboard: câmera já em movimento no frame 0; "erre para MAIS movimento"; cada bloco com tipografia própria (serif editorial + sans pesada); fundo claro/quente como base, momentos escuros curtos; cor forte em todo bloco; cards morfam em tela cheia; shaders/grain; parede 3D de cards em cascata; trilha eletrônica mínima contínua.
+- Blocos úteis do registry (`hyperframes catalog`): transições shader (cross-warp-morph, glitch, light-leak), carrosséis 3D, extruded-logo, liquid-glass, mk-progress-stat, gallery-tunnel.
+- Usado em: Scanner LAOB v3.

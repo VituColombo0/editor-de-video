@@ -1,0 +1,37 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #o3-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 800px 900px at 540px 860px, #10205a 0%, #070b22 55%, #03040c 100%); }
+    #o3-rays { position: absolute; left: -460px; top: -100px; width: 2000px; height: 2000px; opacity: 0.22;
+      background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(110,170,255,0.55) 0deg 3deg, rgba(0,0,0,0) 3deg 18deg);
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, rgba(0,0,0,0) 60%); mask-image: radial-gradient(circle at 50% 50%, #000 0%, rgba(0,0,0,0) 60%); }
+    #o3-grp { position: absolute; left: 0; top: 560px; width: 1080px; height: 640px; perspective: 1200px; }
+    #o3-top { position: absolute; left: 0; top: 0; width: 1080px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 400; font-size: 120px; letter-spacing: 0.08em; color: #e8eeff; }
+    #o3-big { position: absolute; left: 0; top: 140px; width: 1080px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 270px; letter-spacing: -0.03em; line-height: 1;
+      background: linear-gradient(100deg, #2f6bff 0%, #2f6bff 38%, #e9fbff 50%, #36e0ff 58%, #2f6bff 72%, #2f6bff 100%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .o3-l { display: inline-block; transform-origin: 50% 100%; }
+    #o3-sub { position: absolute; left: 0; top: 470px; width: 1080px; text-align: center; font-family: "Inter", sans-serif; font-weight: 700; font-size: 34px; color: #9fb4ea; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="o3" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="o3-bg"></div>
+    <div id="o3-rays" data-layout-ignore></div>
+    <div id="o3-grp">
+      <div id="o3-top"><span class="o3-l">S</span><span class="o3-l">C</span><span class="o3-l">A</span><span class="o3-l">N</span><span class="o3-l">N</span><span class="o3-l">E</span><span class="o3-l">R</span></div>
+      <div id="o3-big"><span class="o3-b">LAOB</span></div>
+      <div id="o3-sub">SCANNER ANTROPOMÉTRICO 3D</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 8.1s
+    tl.fromTo("#o3-rays", { rotation: 0 }, { rotation: 14, duration: 2.3, ease: "none" }, 0);
+    tl.fromTo("#o3-top .o3-l", { opacity: 0, rotationX: -95 }, { opacity: 1, rotationX: 0, duration: 0.5, stagger: 0.045, ease: "expo.out" }, 0.05);
+    tl.fromTo("#o3-big", { opacity: 0, scale: 0.7, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 0.62);
+    tl.fromTo("#o3-big", { backgroundPosition: "100% 0%" }, { backgroundPosition: "0% 0%", duration: 1.1, ease: "power2.inOut" }, 0.7);
+    tl.fromTo("#o3-sub", { opacity: 0, scale: 1.18, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.7, ease: "expo.out" }, 0.95);
+    // mergulho para o 3D
+    tl.to("#o3-grp", { scale: 2.6, opacity: 0, filter: "blur(16px)", duration: 0.32, ease: "power3.in" }, 1.92);
+    tl.to(["#o3-bg", "#o3-rays"], { opacity: 0, duration: 0.3, ease: "power2.in" }, 1.95);
+    window.__timelines["o3"] = tl;
+  </script>
+</template>

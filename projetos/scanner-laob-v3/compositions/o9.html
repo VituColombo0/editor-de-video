@@ -1,0 +1,29 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #o9-mk { position: absolute; left: 0; top: 230px; width: 1080px; text-align: center; line-height: 1; white-space: nowrap; }
+    #o9-a { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 400; font-size: 96px; color: #fff; letter-spacing: 0.02em; }
+    #o9-b { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 128px; letter-spacing: -0.03em;
+      background: linear-gradient(100deg, #2f6bff 0%, #2f6bff 38%, #e9fbff 50%, #36e0ff 58%, #2f6bff 72%, #2f6bff 100%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #o9-tag { position: absolute; left: 0; top: 430px; width: 1080px; text-align: center; font-family: "Playfair Display", serif; font-style: italic; font-size: 72px; color: #fff; }
+    .o9-w { display: inline-block; }
+    #o9-tag b { font-family: "Montserrat", sans-serif; font-style: normal; font-weight: 900; color: #36e0ff; }
+    #o9-lab { position: absolute; left: 0; top: 540px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 30px; letter-spacing: 0.3em; color: #9fb4ea; }
+  </style>
+  <div id="root" data-composition-id="o9" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="o9-mk"><span id="o9-a">Scanner</span> <span id="o9-b">LAOB</span></div>
+    <div id="o9-tag"><span class="o9-w">Seu</span> <span class="o9-w">corpo,</span> <span class="o9-w">medido</span> <span class="o9-w">em</span> <span class="o9-w"><b>3D</b>.</span></div>
+    <div id="o9-lab">LABORATÓRIO LAOB</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 29.6s
+    tl.fromTo("#o9-a", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out" }, 0.34);
+    tl.fromTo("#o9-b", { opacity: 0, scale: 0.6, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 0.62);
+    tl.fromTo("#o9-b", { backgroundPosition: "100% 0%" }, { backgroundPosition: "0% 0%", duration: 1.2, ease: "power2.inOut" }, 0.7);
+    const w = document.querySelectorAll("#o9-tag .o9-w");
+    [1.1, 1.28, 1.6, 2.16, 2.28].forEach((t, i) => tl.fromTo(w[i], { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, t));
+    tl.fromTo("#o9-lab", { opacity: 0, scale: 1.18, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.9, ease: "expo.out" }, 2.8);
+    window.__timelines["o9"] = tl;
+  </script>
+</template>
