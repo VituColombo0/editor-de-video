@@ -20,3 +20,8 @@ _Para cada referência: link/arquivo, formato, duração, ritmo de cortes, estil
 ## Fatos confirmados pelo usuário sobre o Scanner LAOB
 - Um scan completo leva poucos segundos (pode ser dito no vídeo).
 - Público dos vídeos comerciais: parceiros/investidores.
+
+## Arquivos do scanner (Google Drive, pasta "Scanner", dono mariogazziro)
+- Link da pasta: https://drive.google.com/drive/folders/1SjxjABZqderPDkNKGKKbT5Dka8GRXSrE (o conector do Drive acha pelo `parentId`; não baixa arquivos > 10 MB — pedir para o usuário baixar).
+- `00.100-Mont. carenagem scanner.STEP` (13 MB, SolidWorks 2020, mm): arco 2,55 m × 2,25 m, profundidade 0,84 m; 52 peças (carenagem do arco, 4 pilares/carenagem dos pés, 2 suportes tubulares, parafusos).
+- Também lá: `Brenda2.ply` (scan real de corpo, 8,8 MB), `coca_UP/LOW.ply`, `posicoes_3_femto_mega.csv`, `simulacao_3_femto_mega_arco.pdf/png`, relatórios RTX.

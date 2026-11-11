@@ -1,0 +1,56 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #o2-wrap { position: absolute; inset: 0; }
+    #o2-bg { position: absolute; inset: 0; background: #f2eee6; overflow: hidden; }
+    .o2-blob { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(90px); opacity: 0.55; }
+    #o2-b1 { left: -300px; top: 100px; background: #ffd9b8; } #o2-b2 { left: 500px; top: 1100px; background: #c9d6ff; }
+    .o2-serif { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "Playfair Display", serif; font-style: italic; font-weight: 400; font-size: 64px; color: #1d1b18; }
+    #o2-l1 { top: 330px; } #o2-l2 { top: 1040px; }
+    .o2-w { display: inline-block; }
+    #o2-num { position: absolute; left: 0; top: 470px; width: 1080px; display: flex; justify-content: center; align-items: baseline; font-family: "Montserrat", sans-serif; font-weight: 900; color: #111; letter-spacing: -0.05em; }
+    .o2-dig { display: inline-block; height: 300px; overflow: hidden; font-size: 300px; line-height: 300px; vertical-align: top; }
+    .o2-col { display: block; } .o2-col span { display: block; height: 300px; }
+    #o2-kg { font-size: 96px; margin-left: 18px; color: #6b655b; letter-spacing: 0; }
+    #o2-strike { position: absolute; left: 160px; top: 640px; width: 760px; height: 14px; background: #ff5a3c; border-radius: 7px; }
+    #o2-gord { position: absolute; left: 0; top: 1140px; width: 1080px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 150px; letter-spacing: -0.04em; color: #ff5a3c; }
+    #o2-q { display: inline-block; }
+    #o2-iris { position: absolute; left: 950px; top: 1225px; width: 100px; height: 100px; margin: -50px 0 0 -50px; border-radius: 50%; background: #05060f; }
+  </style>
+  <div id="root" data-composition-id="o2" data-width="1080" data-height="1920" data-layout-allow-overlap>
+   <div id="o2-wrap">
+    <div id="o2-bg"><div id="o2-b1" class="o2-blob"></div><div id="o2-b2" class="o2-blob"></div></div>
+    <div id="o2-l1" class="o2-serif"><span class="o2-w" id="o2-w1">Ela</span> <span class="o2-w" id="o2-w2">mostra</span> <span class="o2-w" id="o2-w3">o</span> <span class="o2-w" id="o2-w4">peso.</span></div>
+    <div id="o2-num">
+      <span class="o2-dig"><span class="o2-col" id="o2-d1"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></span></span>
+      <span class="o2-dig"><span class="o2-col" id="o2-d2"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></span></span>
+      <span class="o2-dig"><span class="o2-col"><span>,</span></span></span>
+      <span class="o2-dig"><span class="o2-col" id="o2-d3"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></span></span>
+      <span id="o2-kg">kg</span>
+    </div>
+    <div id="o2-strike"></div>
+    <div id="o2-l2" class="o2-serif"><span class="o2-w" id="o2-v1">Mas</span> <span class="o2-w" id="o2-v2">quanto</span> <span class="o2-w" id="o2-v3">disso</span> <span class="o2-w" id="o2-v4">é…</span></div>
+    <div id="o2-gord">GORDURA<span id="o2-q">?</span></div>
+    <div id="o2-iris"></div>
+   </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 2.35s
+    tl.fromTo("#o2-wrap", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(75% at 50% 50%)", duration: 0.4, ease: "power3.inOut" }, 0.0);
+    tl.fromTo("#o2-b1", { x: 0, y: 0 }, { x: 260, y: 160, duration: 4, ease: "none" }, 0);
+    tl.fromTo("#o2-b2", { x: 0, y: 0 }, { x: -240, y: -200, duration: 4, ease: "none" }, 0);
+    [["#o2-w1", 0.05], ["#o2-w2", 0.29], ["#o2-w3", 0.69], ["#o2-w4", 0.89]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13 }, t));
+    tl.fromTo("#o2-num", { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 0.2);
+    tl.fromTo("#o2-d1", { y: 0 }, { y: -2100, duration: 0.85, ease: "power4.out" }, 0.25);
+    tl.fromTo("#o2-d2", { y: 0 }, { y: -2400, duration: 1.0, ease: "power4.out" }, 0.25);
+    tl.fromTo("#o2-d3", { y: 0 }, { y: -1800, duration: 1.15, ease: "power4.out" }, 0.25);
+    tl.fromTo("#o2-strike", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.3, ease: "power3.inOut" }, 1.69);
+    tl.to("#o2-num", { opacity: 0.25, scale: 0.86, duration: 0.45, ease: "power2.inOut" }, 1.69);
+    [["#o2-v1", 1.69], ["#o2-v2", 1.93], ["#o2-v3", 2.19], ["#o2-v4", 2.65]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13 }, t));
+    tl.fromTo("#o2-gord", { opacity: 0, scale: 1.5, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 2.85);
+    tl.fromTo("#o2-q", { rotation: -25 }, { rotation: 0, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 2.95);
+    tl.fromTo("#o2-iris", { scale: 0 }, { scale: 50, duration: 0.4, ease: "power3.in" }, 3.5);
+    window.__timelines["o2"] = tl;
+  </script>
+</template>

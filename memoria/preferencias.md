@@ -20,3 +20,5 @@ _Atualizar sempre que o usuário aprovar ou corrigir algo._
 - **Trilha (atualizado)**: a "minimal quente" com plucks soou infantil. Preferir ambiente elegante/maduro (pads profundos, pulso sutil). Escolhida: "ambiente elegante" do catálogo HeyGen.
 - **Quer mostrar o app no celular**: pessoa entrando no scanner → scan → modelo 3D voando para o celular → app com modelo girando por gesto, medidor de % de gordura e detalhes. Como o app não existe no repositório, marcar a tela com "CONCEITO".
 - Antes de escolhas subjetivas (voz, trilha), mandar amostras curtas e perguntar — o usuário responde rápido e gosta disso.
+
+- **Usar o scanner real** (11/11/2026): o usuário quer o modelo 3D do arco do CAD (`assets/3d/carenagem-scanner.step`, já convertido em `arco-scanner-lite.glb`) em vez de arcos inventados — "é ele que vamos usar". Animações em volta são livres.
