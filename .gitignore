@@ -1,0 +1,17 @@
+# Mídia pesada fica fora do Git (sincronizar por outro meio, ex.: Google Drive)
+Vídeos Brutos/*
+Referencias/*
+Videos Prontos/*
+!**/.gitkeep
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.m4a
+*.wav
+*.part
+node_modules/
+renders/
+.cache/
+.claude/settings.local.json
