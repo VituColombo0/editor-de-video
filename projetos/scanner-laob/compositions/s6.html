@@ -1,0 +1,54 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s6-scr { position: absolute; left: 60px; top: 640px; width: 960px; height: 600px; overflow: hidden; border-radius: 6px; background: #f4f6fb; }
+    #s6-mv { position: absolute; left: 0; top: 0; width: 960px; height: 600px; }
+    #s6-card { position: absolute; left: 470px; top: 150px; width: 450px; height: 270px; border-radius: 26px; background: #fff; box-shadow: 0 20px 60px rgba(20,40,120,0.15); padding: 30px 36px; }
+    #s6-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: #7a83a6; }
+    #s6-v { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 74px; color: #0b1020; margin-top: 10px; white-space: nowrap; }
+    #s6-v small { font-size: 38px; color: #2f6bff; }
+    #s6-n { font-family: "Inter", sans-serif; font-weight: 400; font-size: 28px; color: #5a6385; margin-top: 16px; }
+    #s6-chip { position: absolute; left: 30px; top: 26px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; padding: 10px 22px; border-radius: 999px; background: #0b1020; color: #fff; }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1080" data-height="1920">
+    <div id="s6-scr">
+      <svg id="s6-mv" viewBox="0 0 960 600">
+        <defs>
+          <pattern id="s6-tri" width="18" height="15.6" patternUnits="userSpaceOnUse">
+            <path d="M0,15.6 L9,0 L18,15.6 Z M0,0 L18,0" fill="none" stroke="#2f6bff" stroke-width="0.9" stroke-opacity="0.75"/>
+          </pattern>
+          <clipPath id="s6-reveal"><rect id="s6-rect" x="0" y="0" width="960" height="0"/></clipPath>
+        </defs>
+        <g transform="translate(110,95) scale(1.12)">
+          <path d="M128,38 A28,28 0 1,0 72,38 A28,28 0 1,0 128,38 Z M92,64 L108,64 L110,78 C130,80 148,86 156,100 L172,190 L180,252 C181,262 170,264 168,254 L156,196 L146,140 L144,200 C146,232 146,250 142,262 L140,330 L136,420 C136,430 116,430 116,420 L108,290 L100,262 L92,290 L84,420 C84,430 64,430 64,420 L60,330 L58,262 C54,250 54,232 56,200 L54,140 L44,196 L32,254 C30,264 19,262 20,252 L28,190 L44,100 C52,86 70,80 90,78 Z" fill="#dfe5f5"/>
+          <g clip-path="url(#s6-reveal)">
+            <path d="M128,38 A28,28 0 1,0 72,38 A28,28 0 1,0 128,38 Z M92,64 L108,64 L110,78 C130,80 148,86 156,100 L172,190 L180,252 C181,262 170,264 168,254 L156,196 L146,140 L144,200 C146,232 146,250 142,262 L140,330 L136,420 C136,430 116,430 116,420 L108,290 L100,262 L92,290 L84,420 C84,430 64,430 64,420 L60,330 L58,262 C54,250 54,232 56,200 L54,140 L44,196 L32,254 C30,264 19,262 20,252 L28,190 L44,100 C52,86 70,80 90,78 Z" fill="#e9efff"/>
+            <path d="M128,38 A28,28 0 1,0 72,38 A28,28 0 1,0 128,38 Z M92,64 L108,64 L110,78 C130,80 148,86 156,100 L172,190 L180,252 C181,262 170,264 168,254 L156,196 L146,140 L144,200 C146,232 146,250 142,262 L140,330 L136,420 C136,430 116,430 116,420 L108,290 L100,262 L92,290 L84,420 C84,430 64,430 64,420 L60,330 L58,262 C54,250 54,232 56,200 L54,140 L44,196 L32,254 C30,264 19,262 20,252 L28,190 L44,100 C52,86 70,80 90,78 Z" fill="url(#s6-tri)" stroke="#2f6bff" stroke-width="1.6"/>
+          </g>
+        </g>
+        <g id="s6-line"><rect x="60" y="0" width="340" height="3" fill="#36e0ff"/><rect x="60" y="-14" width="340" height="30" fill="#36e0ff" opacity="0.18"/></g>
+      </svg>
+      <div id="s6-chip">Malha 3D</div>
+      <div id="s6-card">
+        <div id="s6-k">VOLUME DO CORPO</div>
+        <div id="s6-v"><span id="s6-num">0</span> <small>cm³</small></div>
+        <div id="s6-n">malha científica, sem simplificação</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const vol = { v: 0 };
+    const out = document.querySelector("#s6-num");
+    const fmt = () => { out.textContent = Math.round(vol.v).toLocaleString("pt-BR"); };
+    tl.fromTo("#s6-rect", { attr: { height: 0 } }, { attr: { height: 600 }, duration: 1.6, ease: "power1.inOut" }, 0.1);
+    tl.fromTo("#s6-line", { y: 95 }, { y: 585, duration: 1.6, ease: "power1.inOut" }, 0.1);
+    tl.to("#s6-line", { opacity: 0, duration: 0.2 }, 1.7);
+    tl.fromTo("#s6-chip", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0);
+    tl.fromTo("#s6-card", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 0.5);
+    tl.fromTo(vol, { v: 0 }, { v: 75729, duration: 1.4, ease: "power3.out", onUpdate: fmt }, 0.75);
+    tl.to(["#s6-card", "#s6-mv", "#s6-chip"], { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power3.in" }, 3.0);
+    fmt();
+    window.__timelines["s6"] = tl;
+  </script>
+</template>

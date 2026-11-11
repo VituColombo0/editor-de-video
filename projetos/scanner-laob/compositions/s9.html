@@ -1,0 +1,30 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s9-scr { position: absolute; left: 60px; top: 640px; width: 960px; height: 600px; overflow: hidden; border-radius: 6px; background: #f4f6fb; }
+    #s9-mark { position: absolute; left: 0; top: 170px; width: 960px; text-align: center; font-family: "Montserrat", sans-serif; font-size: 106px; letter-spacing: -0.03em; color: #0b1020; }
+    #s9-mark .a { font-weight: 400; } #s9-mark .b { font-weight: 900; color: #2f6bff; }
+    #s9-scanline { position: absolute; left: 0; top: 150px; width: 960px; height: 190px; }
+    #s9-bar { position: absolute; left: 0; top: 0; width: 4px; height: 190px; background: #36e0ff; box-shadow: 0 0 24px 8px rgba(54,224,255,0.6); }
+    #s9-tag { position: absolute; left: 0; top: 340px; width: 960px; text-align: center; font-family: "Inter", sans-serif; font-weight: 700; font-size: 46px; color: #0b1020; }
+    #s9-tag b { color: #2f6bff; }
+    #s9-lab { position: absolute; left: 0; top: 440px; width: 960px; text-align: center; font-family: "Inter", sans-serif; font-weight: 400; font-size: 28px; letter-spacing: 0.12em; color: #7a83a6; }
+  </style>
+  <div id="root" data-composition-id="s9" data-width="1080" data-height="1920">
+    <div id="s9-scr">
+      <div id="s9-mark"><span class="a">Scanner</span> <span class="b">LAOB</span></div>
+      <div id="s9-scanline"><div id="s9-bar"></div></div>
+      <div id="s9-tag">Seu corpo, medido em <b>3D</b>.</div>
+      <div id="s9-lab">LABORATÓRIO LAOB</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s9-mark", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: "power2.inOut" }, 0.15);
+    tl.fromTo("#s9-bar", { x: 0, opacity: 1 }, { x: 956, duration: 0.9, ease: "power2.inOut" }, 0.15);
+    tl.to("#s9-bar", { opacity: 0, duration: 0.15 }, 1.05);
+    tl.fromTo("#s9-tag", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power2.out" }, 1.15);
+    tl.fromTo("#s9-lab", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 1.6);
+    window.__timelines["s9"] = tl;
+  </script>
+</template>

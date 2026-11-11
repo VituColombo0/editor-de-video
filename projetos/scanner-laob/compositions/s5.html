@@ -1,0 +1,67 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s5-scr { position: absolute; left: 60px; top: 640px; width: 960px; height: 600px; overflow: hidden; border-radius: 6px; background: #f4f6fb; }
+    #s5-arc { position: absolute; left: 0; top: 0; width: 960px; height: 600px; }
+    #s5-cv { position: absolute; left: 0; top: 0; width: 960px; height: 600px; }
+    #s5-chip { position: absolute; left: 30px; top: 26px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; padding: 10px 22px; border-radius: 999px; background: #0b1020; color: #fff; }
+    #s5-chip b { color: #36e0ff; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <div id="s5-scr">
+      <svg id="s5-arc" viewBox="0 0 960 600">
+        <path d="M170,590 L170,150 Q170,70 250,70 L710,70 Q790,70 790,150 L790,590" fill="none" stroke="#c9d2ee" stroke-width="14" stroke-linecap="round"/>
+        <g><rect x="176" y="300" width="44" height="60" rx="10" fill="#0b1020"/><circle cx="208" cy="330" r="9" fill="#36e0ff"/></g>
+        <g><rect x="740" y="300" width="44" height="60" rx="10" fill="#0b1020"/><circle cx="752" cy="330" r="9" fill="#36e0ff"/></g>
+        <g><rect x="450" y="58" width="60" height="44" rx="10" fill="#0b1020"/><circle cx="480" cy="92" r="9" fill="#36e0ff"/></g>
+      </svg>
+      <canvas id="s5-cv" width="960" height="600"></canvas>
+      <div id="s5-chip">Reconstrução <b>3D</b></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const cv = document.querySelector("#s5-cv");
+      const ctx = cv.getContext("2d");
+      const body = new Path2D("M128,38 A28,28 0 1,0 72,38 A28,28 0 1,0 128,38 Z M92,64 L108,64 L110,78 C130,80 148,86 156,100 L172,190 L180,252 C181,262 170,264 168,254 L156,196 L146,140 L144,200 C146,232 146,250 142,262 L140,330 L136,420 C136,430 116,430 116,420 L108,290 L100,262 L92,290 L84,420 C84,430 64,430 64,420 L60,330 L58,262 C54,250 54,232 56,200 L54,140 L44,196 L32,254 C30,264 19,262 20,252 L28,190 L44,100 C52,86 70,80 90,78 Z");
+      // corpo: translate(375,120) scale(1.05) — mesma posição da cena anterior
+      const OX = 375, OY = 120, SC = 1.05;
+      let seed = 7;
+      const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+      const probe = document.createElement("canvas").getContext("2d");
+      const sensors = [[208, 330], [752, 330], [480, 92]];
+      const pts = [];
+      while (pts.length < 1500) {
+        const x = rnd() * 200, y = rnd() * 440;
+        if (probe.isPointInPath(body, x, y)) {
+          const s = sensors[pts.length % 3];
+          pts.push({ tx: OX + x * SC, ty: OY + y * SC, sx: s[0], sy: s[1], d: rnd() * 0.45, r: 1.8 + rnd() * 1.6 });
+        }
+      }
+      const st = { p: 0, fill: 0 };
+      function draw() {
+        ctx.clearRect(0, 0, 960, 600);
+        if (st.fill > 0) {
+          ctx.save(); ctx.translate(OX, OY); ctx.scale(SC, SC);
+          ctx.globalAlpha = 0.18 * st.fill; ctx.fillStyle = "#2f6bff"; ctx.fill(body); ctx.restore();
+        }
+        ctx.fillStyle = "#2f6bff";
+        for (const q of pts) {
+          let k = (st.p - q.d) / 0.55; k = Math.max(0, Math.min(1, k));
+          if (k <= 0) continue;
+          const e = 1 - Math.pow(1 - k, 3);
+          const x = q.sx + (q.tx - q.sx) * e, y = q.sy + (q.ty - q.sy) * e;
+          ctx.globalAlpha = 0.35 + 0.6 * e;
+          ctx.beginPath(); ctx.arc(x, y, q.r, 0, 6.2832); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(st, { p: 0 }, { p: 1, duration: 1.7, ease: "none", onUpdate: draw }, 0);
+      tl.fromTo(st, { fill: 0 }, { fill: 1, duration: 0.5, ease: "power2.out", onUpdate: draw }, 1.6);
+      tl.fromTo("#s5-chip", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0.05);
+      draw();
+      window.__timelines["s5"] = tl;
+    })();
+  </script>
+</template>

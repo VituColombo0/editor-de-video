@@ -1,0 +1,35 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s7-scr { position: absolute; left: 60px; top: 640px; width: 960px; height: 600px; overflow: hidden; border-radius: 6px; background: #f4f6fb; }
+    .s7-l { position: absolute; left: 70px; font-family: "JetBrains Mono", monospace; white-space: nowrap; }
+    #s7-tag { left: 70px; top: 40px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: #7a83a6; }
+    #s7-a { top: 96px; font-weight: 700; font-size: 62px; color: #0b1020; }
+    #s7-b { top: 196px; font-weight: 400; font-size: 36px; color: #5a6385; }
+    #s7-c { top: 262px; font-weight: 700; font-size: 52px; color: #2f6bff; }
+    #s7-rule { position: absolute; left: 70px; top: 360px; width: 820px; height: 2px; background: #d5dbef; }
+    #s7-d { top: 420px; font-weight: 700; font-size: 62px; color: #0b1020; }
+    #s7-e { top: 494px; font-family: "Inter", sans-serif; font-weight: 400; font-size: 28px; color: #5a6385; }
+    .s7-l b { color: #2f6bff; }
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1080" data-height="1920">
+    <div id="s7-scr">
+      <div id="s7-tag" class="s7-l">DENSIDADE</div>
+      <div id="s7-a" class="s7-l">D = M ÷ (V − V<sub>p</sub>)</div>
+      <div id="s7-b" class="s7-l">78.600 g ÷ (75.729 − 2.717) cm³</div>
+      <div id="s7-c" class="s7-l">D = 1,0765 g/cm³</div>
+      <div id="s7-rule"></div>
+      <div id="s7-d" class="s7-l">% gordura = <b>A</b> ÷ D − <b>B</b></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const IN = (sel, t) => tl.fromTo(sel, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, t);
+    IN("#s7-tag", 0.1); IN("#s7-a", 0.35); IN("#s7-b", 1.45);
+    tl.fromTo("#s7-c", { opacity: 0, x: -24, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 2.65);
+    tl.fromTo("#s7-rule", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 2.95);
+    IN("#s7-d", 3.15);
+    tl.to("#s7-scr > *", { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power3.in" }, 4.7);
+    window.__timelines["s7"] = tl;
+  </script>
+</template>
