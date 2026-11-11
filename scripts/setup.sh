@@ -19,6 +19,7 @@ uv tool install --force "yt-dlp[default]"
 uv tool install --force whisper-ctranslate2
 uv tool install --force auto-editor
 uv tool install --force "scenedetect[opencv-headless]"
+uv tool install --force edge-tts
 
 echo "==> Node 22 (nvm)"
 export NVM_DIR="$HOME/.nvm"

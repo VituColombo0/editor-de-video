@@ -16,3 +16,7 @@ _Para cada referência: link/arquivo, formato, duração, ritmo de cortes, estil
 - Princípios do storyboard: câmera já em movimento no frame 0; "erre para MAIS movimento"; cada bloco com tipografia própria (serif editorial + sans pesada); fundo claro/quente como base, momentos escuros curtos; cor forte em todo bloco; cards morfam em tela cheia; shaders/grain; parede 3D de cards em cascata; trilha eletrônica mínima contínua.
 - Blocos úteis do registry (`hyperframes catalog`): transições shader (cross-warp-morph, glitch, light-leak), carrosséis 3D, extruded-logo, liquid-glass, mk-progress-stat, gallery-tunnel.
 - Usado em: Scanner LAOB v3.
+
+## Fatos confirmados pelo usuário sobre o Scanner LAOB
+- Um scan completo leva poucos segundos (pode ser dito no vídeo).
+- Público dos vídeos comerciais: parceiros/investidores.

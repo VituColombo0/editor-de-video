@@ -1,0 +1,61 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #o8-wrap { position: absolute; inset: 0; }
+    #o8-bg { position: absolute; inset: 0; background: #f2eee6; overflow: hidden; }
+    .o8-blob { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(100px); opacity: 0.5; }
+    #o8-b1 { left: 400px; top: -200px; background: #c9d6ff; } #o8-b2 { left: -300px; top: 1200px; background: #ffe0c2; }
+    #o8-tag { position: absolute; left: 0; top: 220px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 30px; letter-spacing: 0.2em; color: #6b655b; }
+    .o8-card { position: absolute; border-radius: 30px; padding: 28px 30px; box-shadow: 0 24px 60px rgba(30,30,60,0.18); }
+    .o8-k { font-family: "JetBrains Mono", monospace; font-size: 28px; letter-spacing: 0.16em; }
+    .o8-v { font-family: "Montserrat", sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; white-space: nowrap; }
+    #o8-vol { left: 60px; top: 300px; width: 450px; height: 210px; background: #0b1020; color: #fff; }
+    #o8-vol .o8-k { color: #8fb4ff; } #o8-vol .o8-v { font-size: 78px; } #o8-vol small, #o8-pes small { font-size: 36px; color: #36e0ff; }
+    #o8-pes { left: 570px; top: 300px; width: 450px; height: 210px; background: #fff; color: #14130f; }
+    #o8-pes .o8-k { color: #6b655b; } #o8-pes .o8-v { font-size: 78px; } #o8-pes small { color: #2f6bff; }
+    #o8-plus { position: absolute; left: 490px; top: 350px; width: 100px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 90px; color: #2f6bff; }
+    #o8-den { left: 140px; top: 300px; width: 800px; height: 230px; background: #14130f; color: #fff; text-align: center; }
+    #o8-den .o8-k { color: #9fe9ff; } #o8-den .o8-v { font-size: 104px; } #o8-den small { font-size: 46px; color: #9fe9ff; }
+    #o8-form { position: absolute; left: 0; top: 560px; width: 1080px; text-align: center; font-family: "Playfair Display", serif; font-style: italic; font-size: 48px; color: #4a463e; }
+    #o8-arrow { position: absolute; left: 520px; top: 650px; width: 40px; height: 190px; }
+    #o8-gc { left: 140px; top: 860px; width: 800px; height: 250px; background: #2f6bff; color: #fff; text-align: center; }
+    #o8-gc .o8-k { color: #dbe6ff; } #o8-gc .o8-v { font-size: 104px; }
+    #o8-gc2 { position: absolute; left: 0; top: 1140px; width: 1080px; text-align: center; font-family: "Playfair Display", serif; font-style: italic; font-size: 44px; color: #4a463e; }
+  </style>
+  <div id="root" data-composition-id="o8" data-width="1080" data-height="1920" data-layout-allow-overlap>
+   <div id="o8-wrap">
+    <div id="o8-bg"><div id="o8-b1" class="o8-blob"></div><div id="o8-b2" class="o8-blob"></div></div>
+    <div id="o8-tag">COMO A CONTA FECHA</div>
+    <div id="o8-vol" class="o8-card"><div class="o8-k">VOLUME · SCAN 3D</div><div class="o8-v">75.729 <small>cm³</small></div></div>
+    <div id="o8-plus">+</div>
+    <div id="o8-pes" class="o8-card"><div class="o8-k">PESO · BALANÇA</div><div class="o8-v">78,6 <small>kg</small></div></div>
+    <div id="o8-den" class="o8-card"><div class="o8-k">DENSIDADE CORPORAL</div><div class="o8-v">1,0765 <small>g/cm³</small></div></div>
+    <div id="o8-form">D = M ÷ (V − V<sub>p</sub>)</div>
+    <svg id="o8-arrow" viewBox="0 0 40 190"><path id="o8-ap" d="M20,0 L20,170 M4,152 L20,172 L36,152" fill="none" stroke="#2f6bff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>
+    <div id="o8-gc" class="o8-card"><div class="o8-k">REVELA</div><div class="o8-v">% GORDURA</div></div>
+    <div id="o8-gc2">%GC = A ÷ D − B (equação de Siri)</div>
+   </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 25.9s — cortina diagonal
+    tl.fromTo("#o8-wrap", { clipPath: "polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%)" }, { clipPath: "polygon(-110% 100%, 100% -110%, 100% 100%, 100% 100%)", duration: 0.42, ease: "power3.inOut" }, 0.0);
+    tl.fromTo("#o8-b1", { x: 0 }, { x: -300, duration: 6.2, ease: "none" }, 0);
+    tl.fromTo("#o8-b2", { y: 0 }, { y: -260, duration: 6.2, ease: "none" }, 0);
+    tl.fromTo("#o8-tag", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, 0.25);
+    tl.fromTo("#o8-vol", { opacity: 0, x: -500, rotation: -8 }, { opacity: 1, x: 0, rotation: -2, duration: 0.5, ease: "expo.out" }, 0.29);
+    tl.fromTo("#o8-plus", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 1.15);
+    tl.fromTo("#o8-pes", { opacity: 0, x: 500, rotation: 8 }, { opacity: 1, x: 0, rotation: 2, duration: 0.5, ease: "expo.out" }, 1.42);
+    // fusão → densidade
+    tl.to("#o8-vol", { x: 230, scale: 0.5, opacity: 0, rotation: 0, duration: 0.35, ease: "power3.in" }, 2.2);
+    tl.to("#o8-pes", { x: -230, scale: 0.5, opacity: 0, rotation: 0, duration: 0.35, ease: "power3.in" }, 2.2);
+    tl.to("#o8-plus", { scale: 0, opacity: 0, duration: 0.25, ease: "power3.in" }, 2.2);
+    tl.fromTo("#o8-den", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" }, 2.5);
+    tl.fromTo("#o8-form", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 2.75);
+    tl.fromTo("#o8-ap", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, 3.65);
+    tl.fromTo("#o8-gc", { opacity: 0, y: 60, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, 4.4);
+    tl.to("#o8-gc", { keyframes: [{ scale: 1.06, duration: 0.07 }, { scale: 1, duration: 0.3, ease: "power3.out" }] }, 5.12);
+    tl.fromTo("#o8-gc2", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 4.6);
+    window.__timelines["o8"] = tl;
+  </script>
+</template>

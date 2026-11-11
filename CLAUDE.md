@@ -36,6 +36,7 @@ Ao começar uma sessão: leia os três arquivos. Ao terminar um vídeo ou mudar 
 - **yt-dlp** — baixar referências: `yt-dlp -o "Referencias/%(title)s.%(ext)s" URL`.
 - **auto-editor** — remover silêncios automaticamente: `auto-editor bruto.mp4 --margin 0.2s`.
 - **HeyGen** (CLI `heygen` + login `hyperframes auth login`): catálogo de músicas gratuito via `hyperframes media-use resolve --type bgm --intent "..." --provider heygen`. Narração local: `hyperframes tts "texto" -v pm_alex -l pt-br` com `HYPERFRAMES_PYTHON=~/.local/share/hf-tts-venv/bin/python`.
+- **edge-tts** — narração gratuita e natural: `edge-tts --voice en-US-BrianMultilingualNeural --rate=+6% --text "..." --write-media fala.mp3` (fala pt-BR perfeito).
 - **scenedetect** — detectar cortes de cena em referências: `scenedetect -i ref.mp4 detect-adaptive list-scenes`.
 
 Em uma máquina nova: rode `bash scripts/setup.sh`.
