@@ -13,3 +13,6 @@ _Atualizar sempre que o usuário aprovar ou corrigir algo._
 - **Voz**: masculina, enérgica. Kokoro soa robótico — não usar. Vozes do HeyGen exigem plano Pro (pago). Padrão atual: Edge TTS `en-US-BrianMultilingualNeural` falando pt-BR (`edge-tts --voice en-US-BrianMultilingualNeural --rate=+6%`), gratuita; a pt-BR-AntonioNeural pronuncia mal palavras em inglês ("scan"). Upgrade possível: ElevenLabs (precisa de chave do usuário).
 - **Pronúncia**: LAOB = "Laobe" (escrever "Laobe" no texto da narração).
 - **Roteiro**: ganchos fortes no 1º segundo ("Sua balança não te conta tudo."), frases curtas, pergunta → solução → como funciona → prova com número real → autoridade (20 anos de pesquisa) → CTA.
+- **v4 aprovada visualmente** (11/11/2026): manter este padrão — modelos 3D (Three.js), muitas animações, vídeo mais longo e explicativo (~50 s).
+- **Voz definitiva**: estilo da referência (calma, pausada, ~140 palavras/min, tom médio ~200 Hz). Escolhida: `pt-BR-ThalitaMultilingualNeural` (edge-tts, rate -2%). Brian (grave, corrida) foi rejeitada.
+- **Trilha**: NÃO usar pegada de ação/trailer. Preferir eletrônica minimal quente/suave (tipo Tycho). Evitar riser e impactos graves fortes; efeitos discretos (pops, cliques, whoosh suave).

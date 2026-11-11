@@ -1,0 +1,11 @@
+Sua balança não te conta tudo.
+Ela mostra o peso. Mas quanto disso é gordura?
+Agora imagine descobrir isso em poucos segundos, com um scan 3D.
+Este é o Scanner Laobe.
+Câmeras de profundidade cercam o corpo, e capturam cada ângulo.
+Cada ponto vira parte de um modelo 3D completo.
+Dele sai o seu volume, medido na malha científica, sem atalhos.
+Volume, mais peso, dá a densidade. E a densidade revela a gordura.
+Num voluntário real: doze vírgula nove por cento. O método tradicional? Doze e meio.
+Vinte anos de pesquisa, agora acelerada por GPU.
+Scanner Laobe. Seu corpo, medido em 3D. Vamos construir o próximo passo, juntos.

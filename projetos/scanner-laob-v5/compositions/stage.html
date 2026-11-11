@@ -1,0 +1,285 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #st-bg { position: absolute; inset: 0;
+      background: radial-gradient(ellipse 900px 1100px at 540px 860px, #13235e 0%, #0a1236 38%, #050818 70%, #020309 100%); }
+    #st-glow { position: absolute; left: 140px; top: 1380px; width: 800px; height: 300px;
+      background: radial-gradient(ellipse 400px 110px at 400px 150px, rgba(54,140,255,0.35), rgba(54,140,255,0) 100%); }
+    #st-canvas { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  </style>
+  <div id="root" data-composition-id="stage" data-width="1080" data-height="1920" data-layout-ignore>
+    <div id="st-bg"></div>
+    <div id="st-glow"></div>
+    <canvas id="st-canvas" width="1080" height="1920"></canvas>
+  </div>
+  <script src="assets/lib/three.min.js"></script>
+  <script>
+    (function () {
+      const T = THREE;
+      const W = 1080, H = 1920;
+      const canvas = document.querySelector("#st-canvas");
+      const renderer = new T.WebGLRenderer({ canvas, alpha: true, antialias: false, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.localClippingEnabled = true;
+      const scene = new T.Scene();
+      const camera = new T.PerspectiveCamera(34, W / H, 0.05, 60);
+
+      // ---------- utilidades determinísticas ----------
+      let seed = 1234567;
+      const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+      const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+      const smooth = (x) => { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); };
+      const easeOut3 = (x) => 1 - Math.pow(1 - clamp(x, 0, 1), 3);
+      const win = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+
+      // ---------- corpo humano estilizado (paramétrico) ----------
+      const parts = [];
+      function part(geo, x, y, z, sx, sy, sz, rz) {
+        const m = new T.Matrix4();
+        const q = new T.Quaternion().setFromEuler(new T.Euler(0, 0, rz || 0));
+        m.compose(new T.Vector3(x, y, z), q, new T.Vector3(sx, sy, sz));
+        const g = geo.clone(); g.applyMatrix4(m); parts.push(g);
+      }
+      const cap = (r, l) => new T.CapsuleGeometry(r, l, 8, 18);
+      const sph = (r) => new T.SphereGeometry(r, 24, 18);
+      part(sph(0.105), 0, 1.63, 0, 1, 1.18, 1.05);           // cabeça
+      part(cap(0.05, 0.06), 0, 1.47, 0, 1, 1, 1);            // pescoço
+      part(cap(0.165, 0.36), 0, 1.17, 0, 1.18, 1, 0.68);     // tronco
+      part(sph(0.17), 0, 0.9, 0, 1.08, 0.72, 0.72);          // quadril
+      [-1, 1].forEach((s) => {
+        part(sph(0.075), s * 0.205, 1.38, 0, 1, 0.85, 0.9);       // ombro
+        part(cap(0.052, 0.25), s * 0.245, 1.19, 0, 1, 1, 1, s * 0.1);  // braço
+        part(cap(0.044, 0.23), s * 0.275, 0.91, 0.01, 1, 1, 1, s * 0.05); // antebraço
+        part(sph(0.048), s * 0.288, 0.74, 0.015, 0.8, 1.25, 0.6);     // mão
+        part(cap(0.082, 0.34), s * 0.095, 0.6, 0, 1, 1, 1, -s * 0.03); // coxa
+        part(cap(0.058, 0.34), s * 0.105, 0.2, 0, 1, 1, 1);          // perna
+        part(sph(0.05), s * 0.105, 0.03, 0.06, 0.9, 0.5, 2.0);       // pé
+      });
+
+      // amostragem de pontos na superfície (proporcional à área)
+      const tris = [];
+      let totalA = 0;
+      const va = new T.Vector3(), vb = new T.Vector3(), vc = new T.Vector3(), tmp = new T.Vector3();
+      parts.forEach((g) => {
+        const ng = g.index ? g.toNonIndexed() : g;
+        const p = ng.attributes.position;
+        for (let i = 0; i < p.count; i += 3) {
+          va.fromBufferAttribute(p, i); vb.fromBufferAttribute(p, i + 1); vc.fromBufferAttribute(p, i + 2);
+          const a = tmp.subVectors(vb, va).cross(new T.Vector3().subVectors(vc, va)).length() / 2;
+          if (a <= 0) continue;
+          totalA += a; tris.push([va.clone(), vb.clone(), vc.clone(), totalA]);
+        }
+      });
+      const N = 9000;
+      const target = new Float32Array(N * 3), origin = new Float32Array(N * 3), delay = new Float32Array(N);
+      const sensors = [new T.Vector3(-1.11, 1.10, -0.31), new T.Vector3(1.11, 1.10, 0.31), new T.Vector3(0, 2.13, -0.28)];
+      for (let i = 0; i < N; i++) {
+        const r = rnd() * totalA;
+        let lo = 0, hi = tris.length - 1;
+        while (lo < hi) { const mid = (lo + hi) >> 1; if (tris[mid][3] < r) lo = mid + 1; else hi = mid; }
+        const [A, B, C] = tris[lo];
+        let u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
+        const x = A.x + (B.x - A.x) * u + (C.x - A.x) * v;
+        const y = A.y + (B.y - A.y) * u + (C.y - A.y) * v;
+        const z = A.z + (B.z - A.z) * u + (C.z - A.z) * v;
+        target.set([x, y, z], i * 3);
+        const s = sensors[i % 3];
+        origin.set([s.x, s.y, s.z], i * 3);
+        delay[i] = (1 - (y / 1.8)) * 0.55 + rnd() * 0.35; // de baixo... para cima, com variação
+      }
+      const pGeo = new T.BufferGeometry();
+      const pos = new Float32Array(N * 3); pos.set(target);
+      const col = new Float32Array(N * 3);
+      pGeo.setAttribute("position", new T.BufferAttribute(pos, 3));
+      pGeo.setAttribute("color", new T.BufferAttribute(col, 3));
+      const pMat = new T.PointsMaterial({ size: 0.0135, vertexColors: true, transparent: true, opacity: 1, blending: T.AdditiveBlending, depthWrite: false, sizeAttenuation: true });
+      const points = new T.Points(pGeo, pMat);
+      const bodyGroup = new T.Group();
+      bodyGroup.add(points);
+      scene.add(bodyGroup);
+
+      // malhas: fantasma, wireframe e volume preenchido
+      const merged = parts.map((g) => g);
+      const ghostMat = new T.MeshStandardMaterial({ color: 0x9fb2e8, roughness: 0.6, metalness: 0.1, transparent: true, opacity: 0.0, depthWrite: false });
+      const wireMat = new T.MeshBasicMaterial({ color: 0x5b8cff, wireframe: true, transparent: true, opacity: 0.0, depthWrite: false });
+      const clipPlane = new T.Plane(new T.Vector3(0, -1, 0), 0);
+      const fillMat = new T.MeshStandardMaterial({ color: 0x2f6bff, emissive: 0x1a3fb0, emissiveIntensity: 0.9, roughness: 0.35, transparent: true, opacity: 0.0, clippingPlanes: [clipPlane], depthWrite: false });
+      merged.forEach((g) => {
+        bodyGroup.add(new T.Mesh(g, ghostMat));
+        bodyGroup.add(new T.Mesh(g, wireMat));
+        bodyGroup.add(new T.Mesh(g, fillMat));
+      });
+
+      // luzes
+      scene.add(new T.HemisphereLight(0xbfd4ff, 0x0a0f2a, 1.1));
+      const key = new T.DirectionalLight(0xffe2c4, 1.4); key.position.set(2, 3, 2.5); scene.add(key);
+      const rim = new T.DirectionalLight(0x36e0ff, 1.6); rim.position.set(-2.5, 1.5, -2); scene.add(rim);
+
+      // anel de scan
+      const ringGroup = new T.Group();
+      const ring = new T.Mesh(new T.TorusGeometry(0.42, 0.0045, 8, 96), new T.MeshBasicMaterial({ color: 0x7ff0ff, transparent: true, opacity: 0.0 }));
+      ring.rotation.x = Math.PI / 2;
+      const disc = new T.Mesh(new T.RingGeometry(0.05, 0.42, 64), new T.MeshBasicMaterial({ color: 0x36e0ff, transparent: true, opacity: 0.0, side: T.DoubleSide, blending: T.AdditiveBlending, depthWrite: false }));
+      disc.rotation.x = -Math.PI / 2;
+      ringGroup.add(ring, disc);
+      scene.add(ringGroup);
+
+      // piso: grade polar
+      const floor = new T.PolarGridHelper(1.5, 16, 6, 64, 0x2a4cff, 0x1a2a70);
+      floor.material.transparent = true; floor.material.opacity = 0.35;
+      scene.add(floor);
+
+      // arco do scanner (proporções do CAD: 2554 × 2246 mm)
+      const arcPath = new T.CurvePath();
+      arcPath.add(new T.LineCurve3(new T.Vector3(-1.2, 0, -0.1), new T.Vector3(-1.2, 1.95, -0.1)));
+      arcPath.add(new T.QuadraticBezierCurve3(new T.Vector3(-1.2, 1.95, -0.1), new T.Vector3(-1.2, 2.25, -0.1), new T.Vector3(-0.9, 2.25, -0.1)));
+      arcPath.add(new T.LineCurve3(new T.Vector3(-0.9, 2.25, -0.1), new T.Vector3(0.9, 2.25, -0.1)));
+      arcPath.add(new T.QuadraticBezierCurve3(new T.Vector3(0.9, 2.25, -0.1), new T.Vector3(1.2, 2.25, -0.1), new T.Vector3(1.2, 1.95, -0.1)));
+      arcPath.add(new T.LineCurve3(new T.Vector3(1.2, 1.95, -0.1), new T.Vector3(1.2, 0, -0.1)));
+      const arcGeo = new T.TubeGeometry(arcPath, 240, 0.028, 10, false);
+      const arcMat = new T.MeshStandardMaterial({ color: 0xd8deef, roughness: 0.35, metalness: 0.6, transparent: true, opacity: 0 });
+      const arc = new T.Mesh(arcGeo, arcMat);
+      scene.add(arc);
+      const arcIndexCount = arcGeo.index.count;
+
+      // sensores + cones de visão
+      const sensorObjs = sensors.map((s) => {
+        const g = new T.Group();
+        const box = new T.Mesh(new T.BoxGeometry(0.13, 0.17, 0.09), new T.MeshStandardMaterial({ color: 0x0b1020, roughness: 0.4, metalness: 0.3, transparent: true, opacity: 0 }));
+        const lens = new T.Mesh(new T.SphereGeometry(0.03, 16, 12), new T.MeshBasicMaterial({ color: 0x7ff0ff, transparent: true, opacity: 0 }));
+        lens.position.z = 0.05;
+        const coneLen = s.distanceTo(new T.Vector3(0, 1.0, 0)) * 1.05;
+        const cone = new T.Mesh(new T.ConeGeometry(0.42, coneLen, 4, 1, true), new T.MeshBasicMaterial({ color: 0x36a0ff, transparent: true, opacity: 0, side: T.DoubleSide, blending: T.AdditiveBlending, depthWrite: false }));
+        cone.rotation.x = -Math.PI / 2; cone.position.z = coneLen / 2 + 0.05; cone.rotation.y = Math.PI / 4;
+        const coneWire = new T.LineSegments(new T.EdgesGeometry(new T.ConeGeometry(0.42, coneLen, 4, 1, true)), new T.LineBasicMaterial({ color: 0x7ff0ff, transparent: true, opacity: 0 }));
+        coneWire.rotation.copy(cone.rotation); coneWire.position.copy(cone.position);
+        const coneHolder = new T.Group(); coneHolder.add(cone, coneWire);
+        g.add(box, lens, coneHolder);
+        g.position.copy(s);
+        g.lookAt(0, 1.0, 0);
+        g.rotateY(Math.PI); // lookAt aponta -z; giramos para +z olhar o corpo
+        g.rotateY(Math.PI);
+        scene.add(g);
+        return { g, box, lens, cone, coneWire, coneHolder };
+      });
+      // corrige orientação: queremos +z local apontando para o corpo
+      sensorObjs.forEach((o, i) => {
+        const m = new T.Matrix4().lookAt(sensors[i], new T.Vector3(0, 1.0, 0), new T.Vector3(0, 1, 0));
+        o.g.quaternion.setFromRotationMatrix(m);
+        o.g.rotateY(Math.PI);
+      });
+
+      // ---------- coreografia da câmera (sempre em movimento) ----------
+      // [t, distância, yaw(graus), alturaCam, alturaAlvo]
+      const K = [
+        [0, 4.7, -24, 1.75, 1.42], [4.4, 3.9, 12, 1.5, 1.36],
+        [10.0, 8.5, 40, 3.2, 1.1], [11.3, 5.6, 28, 2.3, 1.15], [14.0, 5.0, -6, 1.9, 1.12],
+        [16.4, 4.6, -38, 1.6, 1.3], [19.9, 3.9, -72, 1.4, 1.28],
+        [29.6, 5.0, 150, 3.8, 1.2], [31.6, 3.9, 196, 1.6, 1.3], [34.5, 3.7, 212, 1.5, 1.3],
+      ];
+      function camAt(t) {
+        let i = 0; while (i < K.length - 2 && t > K[i + 1][0]) i++;
+        const a = K[i], b = K[i + 1];
+        const k = smooth((t - a[0]) / (b[0] - a[0]));
+        const L = (j) => a[j] + (b[j] - a[j]) * k;
+        return { d: L(1), yaw: (L(2) * Math.PI) / 180, cy: L(3), ly: L(4) };
+      }
+
+      const base = new T.Color(0x2f6bff), hot = new T.Color(0xbff8ff), cyan = new T.Color(0x36e0ff);
+      const cTmp = new T.Color();
+      const covered = (t) => (t > 4.4 && t < 10.0) || (t > 20.0 && t < 29.6);
+
+      function render(t) {
+        if (covered(t)) return;
+        // câmera
+        const c = camAt(t);
+        camera.position.set(Math.sin(c.yaw) * c.d, c.cy, Math.cos(c.yaw) * c.d);
+        camera.lookAt(0, c.ly, 0);
+
+        // fases
+        const inIntro = t < 4.4, inEnd = t >= 29.6;
+        const inScan = t >= 10.0 && t < 20.0;
+        // rotação do corpo (intro/fim giram; no scanner fica parado)
+        bodyGroup.rotation.y = inIntro ? t * 0.32 : inEnd ? (t - 29.6) * 0.3 : 0;
+
+        // anel de scan
+        let ringY = 0, ringA = 0;
+        if (inIntro) { ringY = 0.05 + 1.75 * (0.5 - 0.5 * Math.cos(t * 1.6)); ringA = 1; }
+        else if (inEnd) { ringY = 0.05 + 1.75 * (0.5 - 0.5 * Math.cos((t - 29.6) * 1.4)); ringA = 0.8; }
+        else if (t >= 16.6 && t < 20.0) { ringY = 1.8 * easeOut3(win(t, 16.8, 19.0)); ringA = win(t, 16.6, 16.9) * (1 - win(t, 19.2, 19.6)); }
+        ringGroup.position.y = ringY;
+        const rs = 0.85 + 0.25 * Math.sin(clamp(ringY / 1.8, 0, 1) * Math.PI);
+        ringGroup.scale.set(rs, 1, rs);
+        ring.material.opacity = ringA; disc.material.opacity = 0.1 * ringA;
+
+        // pontos
+        let pA = 0;
+        if (inIntro || inEnd) pA = 1;
+        if (t >= 14.0 && t < 20.0) pA = 1 - win(t, 16.9, 17.8) * 0.85;
+        pMat.opacity = pA;
+        const gather = t >= 14.0 && t < 16.4;
+        for (let i = 0; i < N; i++) {
+          const j = i * 3;
+          if (gather) {
+            const e = easeOut3((t - 14.0 - delay[i] * 1.3) / 0.75);
+            pos[j] = origin[j] + (target[j] - origin[j]) * e;
+            pos[j + 1] = origin[j + 1] + (target[j + 1] - origin[j + 1]) * e;
+            pos[j + 2] = origin[j + 2] + (target[j + 2] - origin[j + 2]) * e;
+          } else { pos[j] = target[j]; pos[j + 1] = target[j + 1]; pos[j + 2] = target[j + 2]; }
+          const dy = (pos[j + 1] - ringY) / 0.05;
+          const glow = ringA * Math.exp(-dy * dy);
+          cTmp.copy(base).lerp(cyan, 0.25 + 0.2 * Math.sin(i * 12.9898));
+          cTmp.lerp(hot, clamp(glow, 0, 1));
+          if (gather) { const e = easeOut3((t - 14.0 - delay[i] * 1.3) / 0.75); cTmp.lerp(hot, (1 - e) * 0.8); if (e <= 0) { cTmp.setRGB(0, 0, 0); } }
+          col[j] = cTmp.r; col[j + 1] = cTmp.g; col[j + 2] = cTmp.b;
+        }
+        pGeo.attributes.position.needsUpdate = true; pGeo.attributes.color.needsUpdate = true;
+
+        // malhas
+        ghostMat.opacity = t >= 10.0 && t < 14.6 ? 0.16 * win(t, 10.3, 11.0) * (1 - win(t, 14.0, 14.6)) : 0;
+        wireMat.opacity = t >= 16.4 && t < 20.0 ? 0.32 * win(t, 16.6, 17.4) : 0;
+        clipPlane.constant = 1.85 * easeOut3(win(t, 16.8, 19.0));
+        fillMat.opacity = t >= 16.6 && t < 20.0 ? 0.42 : 0;
+
+        // arco + sensores
+        const arcP = inScan ? easeOut3(win(t, 10.2, 11.4)) : 0;
+        arcMat.opacity = inScan ? 1 : 0;
+        arcGeo.setDrawRange(0, Math.floor(arcIndexCount * arcP / 3) * 3);
+        sensorObjs.forEach((o, i) => {
+          const ts = 10.75 + i * 0.32;
+          const sp = inScan ? win(t, ts, ts + 0.3) : 0;
+          const s = 0.001 + easeOut3(sp) * (1 + 0.25 * Math.sin(Math.PI * sp));
+          o.g.scale.setScalar(s);
+          const sf = 1 - win(t, 16.0, 16.6); o.box.material.opacity = sp * sf; o.lens.material.opacity = sp * sf;
+          const cp = inScan ? easeOut3(win(t, ts + 0.15, ts + 0.75)) : 0;
+          const fade = 1 - win(t, 16.0, 16.6);
+          o.coneHolder.scale.set(1, 1, Math.max(0.001, cp));
+          o.cone.material.opacity = 0.09 * cp * fade;
+          o.coneWire.material.opacity = 0.4 * cp * fade;
+        });
+        floor.material.opacity = 0.35;
+        renderer.render(scene, camera);
+      }
+
+      // mapeia o tempo do filme v4 para as fases da coreografia
+      const MAP = [[6.0, 0.0], [11.1, 4.4], [13.2, 10.0], [17.7, 14.0], [21.1, 16.4], [26.0, 20.0], [43.0, 29.6], [51.9, 34.5]];
+      function mapT(t) {
+        if (t < MAP[0][0]) return 5.0;
+        for (let i = 0; i < MAP.length - 1; i++) {
+          const [a0, b0] = MAP[i], [a1, b1] = MAP[i + 1];
+          if (t <= a1) {
+            if (i === 1 || i === 5) return 5.0; // trechos cobertos pelas cenas 2D
+            return b0 + (b1 - b0) * (t - a0) / (a1 - a0);
+          }
+        }
+        return 34.5;
+      }
+      const st = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(st, { t: 0 }, { t: 51.9, duration: 51.9, ease: "none", onUpdate: () => render(mapT(st.t)) }, 0);
+      render(mapT(0));
+      window.__timelines["stage"] = tl;
+    })();
+  </script>
+</template>
