@@ -1,0 +1,21 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #fx-grain { position: absolute; left: -128px; top: -128px; width: 1336px; height: 2176px; opacity: 0.085; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 0'/></filter><rect width='256' height='256' filter='url(%23n)'/></svg>"); }
+    #fx-vig { position: absolute; inset: 0; background: radial-gradient(ellipse 760px 1150px at 540px 960px, rgba(0,0,0,0) 60%, rgba(0,0,0,0.38) 100%); }
+  </style>
+  <div id="root" data-composition-id="fx" data-width="1080" data-height="1920" data-layout-ignore>
+    <div id="fx-grain"></div>
+    <div id="fx-vig"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const g = document.querySelector("#fx-grain");
+    const st = { t: 0 };
+    const upd = () => { const f = Math.floor(st.t * 15); const h = (f * 2654435761) >>> 0; g.style.transform = "translate(" + ((h % 128) - 64) + "px," + (((h >>> 8) % 128) - 64) + "px)"; };
+    tl.fromTo(st, { t: 0 }, { t: 61.62, duration: 61.62, ease: "none", onUpdate: upd }, 0);
+    upd();
+    window.__timelines["fx"] = tl;
+  </script>
+</template>

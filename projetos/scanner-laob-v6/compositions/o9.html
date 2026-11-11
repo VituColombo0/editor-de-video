@@ -1,0 +1,55 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #o9-close { position: absolute; inset: 0; }
+    #o9-bg { position: absolute; inset: 0; background: #2f6bff; overflow: hidden; }
+    .o9-blob { position: absolute; width: 1000px; height: 1000px; border-radius: 50%; filter: blur(110px); opacity: 0.6; }
+    #o9-b1 { left: -400px; top: -200px; background: #1238c9; } #o9-b2 { left: 400px; top: 1100px; background: #36c8ff; }
+    #o9-tag { position: absolute; left: 0; top: 250px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 32px; letter-spacing: 0.2em; color: #dbe6ff; }
+    #o9-big { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 270px; letter-spacing: -0.05em; color: #fff; line-height: 1; }
+    #o9-lab { position: absolute; left: 0; top: 620px; width: 1080px; text-align: center; font-family: "Playfair Display", serif; font-style: italic; font-size: 64px; color: #fff; }
+    .o9-row { position: absolute; left: 110px; width: 860px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 40px; color: #fff; }
+    .o9-row .lab { display: flex; justify-content: space-between; margin-bottom: 14px; }
+    .o9-track { width: 860px; height: 30px; border-radius: 15px; background: rgba(255,255,255,0.18); overflow: hidden; }
+    .o9-fill { height: 30px; border-radius: 15px; }
+    #o9-r1 { top: 820px; } #o9-r2 { top: 960px; }
+    #o9-f1 { width: 740px; background: #fff; } #o9-f2 { width: 717px; background: #a9c2ff; }
+    #o9-chip { position: absolute; left: 0; top: 1130px; width: 1080px; text-align: center; }
+    #o9-chip span { display: inline-block; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; color: #0b1a5c; background: #9fe9ff; padding: 14px 28px; border-radius: 999px; }
+    #o9-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="o9" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="o9-close">
+      <div id="o9-bg"><div id="o9-b1" class="o9-blob"></div><div id="o9-b2" class="o9-blob"></div></div>
+      <div id="o9-tag">VOLUNTÁRIO REAL · 57 ANOS</div>
+      <div id="o9-big"><span id="o9-num">0,0</span>%</div>
+      <div id="o9-lab">de gordura corporal</div>
+      <div id="o9-r1" class="o9-row"><div class="lab"><span>Scanner LAOB</span><span>12,9%</span></div><div class="o9-track"><div id="o9-f1" class="o9-fill"></div></div></div>
+      <div id="o9-r2" class="o9-row"><div class="lab"><span>Método tradicional</span><span>12,5%</span></div><div class="o9-track"><div id="o9-f2" class="o9-fill"></div></div></div>
+      <div id="o9-chip"><span>diferença de 0,4 ponto</span></div>
+      <div id="o9-flash"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 31.9s
+    tl.fromTo("#o9-bg", { clipPath: "circle(0% at 50% 75%)" }, { clipPath: "circle(120% at 50% 75%)", duration: 0.5, ease: "power2.inOut" }, 0.0);
+    tl.fromTo("#o9-b1", { x: 0 }, { x: 350, duration: 7.3, ease: "none" }, 0);
+    tl.fromTo("#o9-b2", { x: 0 }, { x: -350, duration: 7.3, ease: "none" }, 0);
+    tl.fromTo("#o9-tag", { opacity: 0, scale: 1.18, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 0.36);
+    const g = { v: 0 }; const out = document.querySelector("#o9-num");
+    const fmt = () => { out.textContent = g.v.toFixed(1).replace(".", ","); };
+    tl.fromTo("#o9-big", { opacity: 0, scale: 0.6, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 0.95);
+    tl.fromTo(g, { v: 0 }, { v: 12.9, duration: 1.0, ease: "power3.out", onUpdate: fmt }, 0.95);
+    tl.to("#o9-big", { keyframes: [{ scale: 1.12, duration: 0.07, ease: "power2.out" }, { scale: 1, duration: 0.45, ease: "power3.out" }] }, 1.95);
+    tl.fromTo("#o9-flash", { opacity: 0 }, { keyframes: [{ opacity: 0.5, duration: 0.05 }, { opacity: 0, duration: 0.3 }] }, 1.95);
+    tl.fromTo("#o9-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 2.15);
+    tl.fromTo("#o9-r1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 2.5);
+    tl.fromTo("#o9-f1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, 2.55);
+    tl.fromTo("#o9-r2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 3.4);
+    tl.fromTo("#o9-f2", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 2.4, ease: "power3.out" }, 3.6);
+    tl.fromTo("#o9-chip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 6.3);
+    fmt();
+    window.__timelines["o9"] = tl;
+  </script>
+</template>

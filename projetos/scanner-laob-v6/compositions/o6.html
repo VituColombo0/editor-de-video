@@ -1,0 +1,33 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .o6-blk { position: absolute; left: 0; top: 230px; width: 1080px; text-align: center; color: #fff; white-space: nowrap; }
+    .o6-big { font-family: "Montserrat", sans-serif; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+    .o6-sm { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 70px; letter-spacing: -0.02em; line-height: 1.15; }
+    #o6-a1 { font-size: 120px; }
+    .o6-w { display: inline-block; }
+    #o6-3d { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 300px; letter-spacing: -0.05em; line-height: 1; color: rgba(54,224,255,0); -webkit-text-stroke: 4px #36e0ff; }
+    #o6-comp { position: absolute; left: 0; top: 640px; width: 1080px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 92px; letter-spacing: 0.06em; color: #fff; }
+  </style>
+  <div id="root" data-composition-id="o6" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="o6-a" class="o6-blk">
+      <div id="o6-a1" class="o6-big"><span class="o6-w" id="o6-w1">CADA</span> <span class="o6-w" id="o6-w2">PONTO</span></div>
+      <div class="o6-sm"><span class="o6-w" id="o6-w3">vira</span> <span class="o6-w" id="o6-w4">parte</span> <span class="o6-w" id="o6-w5">de um modelo</span></div>
+    </div>
+    <div id="o6-3d"><span class="o6-w" id="o6-n">3D</span></div>
+    <div id="o6-comp"><span class="o6-w" id="o6-c">COMPLETO</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 17.7s
+    const POP = (s, t, sc) => tl.fromTo(s, { opacity: 0, scale: sc || 1.5, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, t);
+    const IN = (s, t) => tl.fromTo(s, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14 }, t);
+    POP("#o6-w1", 0.06); POP("#o6-w2", 0.28, 1.8); IN("#o6-w3", 0.64); IN("#o6-w4", 0.94); IN("#o6-w5", 1.26);
+    tl.to("#o6-a", { opacity: 0, y: -50, filter: "blur(10px)", duration: 0.18, ease: "power3.in" }, 1.75);
+    POP("#o6-n", 1.92, 0.4);
+    tl.fromTo("#o6-3d", { color: "rgba(54,224,255,0)" }, { color: "rgba(54,224,255,1)", duration: 0.3 }, 2.45);
+    tl.fromTo("#o6-c", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 2.54);
+    tl.to(["#o6-3d", "#o6-comp"], { opacity: 0, y: -40, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 3.25);
+    window.__timelines["o6"] = tl;
+  </script>
+</template>

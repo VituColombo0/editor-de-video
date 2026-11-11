@@ -1,0 +1,35 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #o11-mk { position: absolute; left: 0; top: 230px; width: 1080px; text-align: center; line-height: 1; white-space: nowrap; }
+    #o11-a { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 400; font-size: 96px; color: #fff; letter-spacing: 0.02em; }
+    #o11-b { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 128px; letter-spacing: -0.03em;
+      background: linear-gradient(100deg, #2f6bff 0%, #2f6bff 38%, #e9fbff 50%, #36e0ff 58%, #2f6bff 72%, #2f6bff 100%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #o11-tag { position: absolute; left: 0; top: 410px; width: 1080px; text-align: center; font-family: "Playfair Display", serif; font-style: italic; font-size: 72px; color: #fff; }
+    .o11-w { display: inline-block; }
+    #o11-tag b { font-family: "Montserrat", sans-serif; font-style: normal; font-weight: 900; color: #36e0ff; }
+    #o11-cta { position: absolute; left: 90px; top: 1060px; width: 900px; padding: 30px 36px; border-radius: 34px; text-align: center; background: rgba(8,14,40,0.62); border: 2px solid rgba(120,170,255,0.35); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    #o11-ct { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 50px; color: #fff; line-height: 1.2; }
+    #o11-pill { display: inline-block; margin-top: 22px; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 40px; color: #05060f; background: linear-gradient(90deg, #36e0ff, #9fe9ff); padding: 18px 40px; border-radius: 999px; }
+    #o11-lab { position: absolute; left: 0; top: 530px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 30px; letter-spacing: 0.3em; color: #9fb4ea; }
+  </style>
+  <div id="root" data-composition-id="o11" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="o11-mk"><span id="o11-a">Scanner</span> <span id="o11-b">LAOB</span></div>
+    <div id="o11-tag"><span class="o11-w" id="o11-t1">Seu</span> <span class="o11-w" id="o11-t2">corpo,</span> <span class="o11-w" id="o11-t3">medido</span> <span class="o11-w" id="o11-t4">em</span> <span class="o11-w" id="o11-t5"><b>3D</b>.</span></div>
+    <div id="o11-lab">LABORATÓRIO LAOB</div>
+    <div id="o11-cta"><div id="o11-ct"><span class="o11-w" id="o11-c1">Vamos construir</span> <span class="o11-w" id="o11-c2">o próximo passo,</span> <span class="o11-w" id="o11-c3">juntos.</span></div><div id="o11-pill">SEJA PARCEIRO →</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 43.1s
+    tl.fromTo("#o11-a", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.45, ease: "power3.out" }, 0.2);
+    tl.fromTo("#o11-b", { opacity: 0, scale: 0.6, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 0.56);
+    tl.fromTo("#o11-b", { backgroundPosition: "100% 0%" }, { backgroundPosition: "0% 0%", duration: 1.2, ease: "power2.inOut" }, 0.6);
+    [["#o11-t1", 1.91], ["#o11-t2", 2.27], ["#o11-t3", 2.93], ["#o11-t4", 3.29], ["#o11-t5", 3.39]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, t));
+    tl.fromTo("#o11-lab", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, 3.7);
+    tl.fromTo("#o11-cta", { opacity: 0, y: 80, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 4.3);
+    [["#o11-c1", 4.55], ["#o11-c2", 5.65], ["#o11-c3", 6.7]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, t));
+    tl.fromTo("#o11-pill", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 6.0);
+    window.__timelines["o11"] = tl;
+  </script>
+</template>

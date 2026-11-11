@@ -16,3 +16,7 @@ _Atualizar sempre que o usuário aprovar ou corrigir algo._
 - **v4 aprovada visualmente** (11/11/2026): manter este padrão — modelos 3D (Three.js), muitas animações, vídeo mais longo e explicativo (~50 s).
 - **Voz definitiva**: estilo da referência (calma, pausada, ~140 palavras/min, tom médio ~200 Hz). Escolhida: `pt-BR-ThalitaMultilingualNeural` (edge-tts, rate -2%). Brian (grave, corrida) foi rejeitada.
 - **Trilha**: NÃO usar pegada de ação/trailer. Preferir eletrônica minimal quente/suave (tipo Tycho). Evitar riser e impactos graves fortes; efeitos discretos (pops, cliques, whoosh suave).
+- **Voz (atualizado)**: masculina. A Thalita (feminina) foi trocada. Padrão: `edge-tts --voice pt-BR-AntonioNeural --rate=-2% --pitch=+6Hz` (mais próxima da referência entre as disponíveis). Não clonar vozes de terceiros (ex.: a da referência do Instagram).
+- **Trilha (atualizado)**: a "minimal quente" com plucks soou infantil. Preferir ambiente elegante/maduro (pads profundos, pulso sutil). Escolhida: "ambiente elegante" do catálogo HeyGen.
+- **Quer mostrar o app no celular**: pessoa entrando no scanner → scan → modelo 3D voando para o celular → app com modelo girando por gesto, medidor de % de gordura e detalhes. Como o app não existe no repositório, marcar a tela com "CONCEITO".
+- Antes de escolhas subjetivas (voz, trilha), mandar amostras curtas e perguntar — o usuário responde rápido e gosta disso.
