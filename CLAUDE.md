@@ -35,6 +35,7 @@ Ao começar uma sessão: leia os três arquivos. Ao terminar um vídeo ou mudar 
 - **whisper-ctranslate2** — Whisper (faster-whisper) na CPU. Ex.: `whisper-ctranslate2 arquivo.mp4 --model small --language pt --output_format srt --output_dir transcricoes/ --word_timestamps True`. Esta máquina tem pouca RAM: prefira `small` ou `medium` com `--compute_type int8`.
 - **yt-dlp** — baixar referências: `yt-dlp -o "Referencias/%(title)s.%(ext)s" URL`.
 - **auto-editor** — remover silêncios automaticamente: `auto-editor bruto.mp4 --margin 0.2s`.
+- **HeyGen** (CLI `heygen` + login `hyperframes auth login`): catálogo de músicas gratuito via `hyperframes media-use resolve --type bgm --intent "..." --provider heygen`. Narração local: `hyperframes tts "texto" -v pm_alex -l pt-br` com `HYPERFRAMES_PYTHON=~/.local/share/hf-tts-venv/bin/python`.
 - **scenedetect** — detectar cortes de cena em referências: `scenedetect -i ref.mp4 detect-adaptive list-scenes`.
 
 Em uma máquina nova: rode `bash scripts/setup.sh`.
