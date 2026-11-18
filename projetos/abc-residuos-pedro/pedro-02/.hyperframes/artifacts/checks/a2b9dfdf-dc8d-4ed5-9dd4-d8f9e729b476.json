@@ -1,0 +1,1460 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 15,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"cc-v2\"> has data-start=\"4.4\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#cc-v2",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"4.4\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"cc-v3\"> has data-start=\"6.9\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#cc-v3",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"6.9\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"cc-gv1\"> has data-start=\"9.2\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#cc-gv1",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.2\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"cc-gv2\"> has data-start=\"9.2\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#cc-gv2",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.2\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"cc-gv3\"> has data-start=\"9.2\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#cc-gv3",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.2\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"cc-gv4\"> has data-start=\"9.2\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#cc-gv4",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.2\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "gsap_non_transform_motion",
+        "severity": "error",
+        "message": "GSAP tween on \"#cc-title .k\" uses motion that snaps to integer device pixels: letterSpacing. Layout and text-reflow properties snap during browser layout; roundProps rounds the tween value. Slow motion or an ease-out tail then stutters under the seek-by-frame capture engine. Animate transforms (x/y/scale/opacity) instead.",
+        "selector": "#cc-title .k",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/conceito.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "do not animate letterSpacing (they reflow text and snap glyph positions): for letterSpacing, split the text into per-character elements and animate each glyph's x (the spread), since uniform scale is NOT equivalent, or hold the final value statically. Transforms interpolate sub-pixel and stay smooth at any speed."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mt-v2\"> has data-start=\"2.7\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mt-v2",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/materiais.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"2.7\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mt-v3\"> has data-start=\"5.2\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mt-v3",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/materiais.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"5.2\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mt-v4\"> has data-start=\"7.4\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mt-v4",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/materiais.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"7.4\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mt-v5\"> has data-start=\"9.4\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mt-v5",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/materiais.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.4\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"pr-v2\"> has data-start=\"3.6\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#pr-v2",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/processo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"3.6\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"pr-v4\"> has data-start=\"9.0\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#pr-v4",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/processo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.0\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"pr-v5\"> has data-start=\"12.8\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#pr-v5",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/processo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"12.8\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"pr-v6\"> has data-start=\"14.4\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#pr-v6",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/processo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"14.4\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"pr-v7\"> has data-start=\"15.9\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#pr-v7",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-02/compositions/processo.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"15.9\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      }
+    ],
+    "filesScanned": 5
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 11,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 3.333,
+        "selector": "#mt-i1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -38.4,
+          "top": -21.6,
+          "right": 1958.4,
+          "bottom": 1101.6,
+          "width": 1996.8,
+          "height": 1123.2
+        },
+        "containerSelector": "#mt-s1",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 38.4,
+          "right": 38.4,
+          "top": 21.6,
+          "bottom": 21.6
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "mt-i1",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/materiais.html",
+        "bbox": {
+          "x": -38.4,
+          "y": -21.6,
+          "width": 1996.8,
+          "height": 1123.2
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 10,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          3.333,
+          10
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 30,
+        "selector": "#pr-s1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -76.8,
+          "top": -43.2,
+          "right": 1996.8,
+          "bottom": 1123.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "containerSelector": "#processo > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 76.8,
+          "right": 76.8,
+          "top": 43.2,
+          "bottom": 43.2
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": -76.8,
+          "y": -43.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "firstSeen": 30,
+        "lastSeen": 43.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          30,
+          43.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 3.333,
+        "selector": "#mt-s2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -73.82,
+          "top": -41.53,
+          "right": 1993.82,
+          "bottom": 1121.53,
+          "width": 2067.65,
+          "height": 1163.05
+        },
+        "containerSelector": "#materiais > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 73.82,
+          "right": 73.82,
+          "top": 41.53,
+          "bottom": 41.53
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/materiais.html",
+        "bbox": {
+          "x": -73.82,
+          "y": -41.53,
+          "width": 2067.65,
+          "height": 1163.05
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 3.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 10,
+        "selector": "#mt-s3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -96.8,
+          "top": -43.2,
+          "right": 1976.8,
+          "bottom": 1123.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "containerSelector": "#materiais > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 96.8,
+          "right": 56.8,
+          "top": 43.2,
+          "bottom": 43.2
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/materiais.html",
+        "bbox": {
+          "x": -96.8,
+          "y": -43.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "firstSeen": 10,
+        "lastSeen": 10,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 10,
+        "selector": "#mt-s4",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -19.2,
+          "top": -10.8,
+          "right": 1939.2,
+          "bottom": 1090.8,
+          "width": 1958.4,
+          "height": 1101.6
+        },
+        "containerSelector": "#materiais > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 19.2,
+          "right": 19.2,
+          "top": 10.8,
+          "bottom": 10.8
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/materiais.html",
+        "bbox": {
+          "x": -19.2,
+          "y": -10.8,
+          "width": 1958.4,
+          "height": 1101.6
+        },
+        "firstSeen": 10,
+        "lastSeen": 10,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 10,
+        "selector": "#mt-s5",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -28.8,
+          "top": -16.2,
+          "right": 1948.8,
+          "bottom": 1096.2,
+          "width": 1977.6,
+          "height": 1112.4
+        },
+        "containerSelector": "#materiais > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 28.8,
+          "right": 28.8,
+          "top": 16.2,
+          "bottom": 16.2
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/materiais.html",
+        "bbox": {
+          "x": -28.8,
+          "y": -16.2,
+          "width": 1977.6,
+          "height": 1112.4
+        },
+        "firstSeen": 10,
+        "lastSeen": 10,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 16.667,
+        "selector": "#cc-s2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -18.24,
+          "top": -10.26,
+          "right": 1938.24,
+          "bottom": 1090.26,
+          "width": 1956.48,
+          "height": 1100.52
+        },
+        "containerSelector": "#conceito > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 18.24,
+          "right": 18.24,
+          "top": 10.26,
+          "bottom": 10.26
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/conceito.html",
+        "bbox": {
+          "x": -18.24,
+          "y": -10.26,
+          "width": 1956.48,
+          "height": 1100.52
+        },
+        "firstSeen": 16.667,
+        "lastSeen": 23.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          16.667,
+          23.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 23.333,
+        "selector": "#cc-title > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 538.8,
+          "top": 400,
+          "right": 1381.2,
+          "bottom": 435,
+          "width": 842.41,
+          "height": 35
+        },
+        "containerSelector": "#cc-g1 > div:nth-of-type(1)",
+        "text": "QUANDO O RESÍDUO VOLTA A SER RECURSO",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/conceito.html",
+        "bbox": {
+          "x": 538.8,
+          "y": 400,
+          "width": 842.41,
+          "height": 35
+        },
+        "firstSeen": 23.333,
+        "lastSeen": 23.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 23.333,
+        "selector": "#cc-title > h1:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 397.83,
+          "top": 441,
+          "right": 1522.16,
+          "bottom": 583,
+          "width": 1124.33,
+          "height": 142
+        },
+        "containerSelector": "#cc-g1 > div:nth-of-type(1)",
+        "text": "MATÉRIAS-PRIMAS",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/conceito.html",
+        "bbox": {
+          "x": 397.83,
+          "y": 441,
+          "width": 1124.33,
+          "height": 142
+        },
+        "firstSeen": 23.333,
+        "lastSeen": 23.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 23.333,
+        "selector": "#cc-title > h1:nth-of-type(1) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 537.67,
+          "top": 559,
+          "right": 1382.31,
+          "bottom": 701,
+          "width": 844.64,
+          "height": 142
+        },
+        "containerSelector": "#cc-gv3",
+        "text": "SECUNDÁRIAS",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/conceito.html",
+        "bbox": {
+          "x": 537.67,
+          "y": 559,
+          "width": 844.64,
+          "height": 142
+        },
+        "firstSeen": 23.333,
+        "lastSeen": 23.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 36.667,
+        "selector": "#pr-gc1 > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 724.52,
+          "top": 860,
+          "right": 1195.47,
+          "bottom": 916,
+          "width": 470.95,
+          "height": 56
+        },
+        "containerSelector": "#pr-var",
+        "text": "Lavagem e trituração",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.37,
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": 724.52,
+          "y": 860,
+          "width": 470.95,
+          "height": 56
+        },
+        "firstSeen": 36.667,
+        "lastSeen": 36.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          36.667
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 36.667,
+        "selector": "#pr-gc1 > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 776.28,
+          "top": 924,
+          "right": 1143.7,
+          "bottom": 958,
+          "width": 367.42,
+          "height": 34
+        },
+        "containerSelector": "#pr-var",
+        "text": "a garrafa vira flocos de PET",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": 776.28,
+          "y": 924,
+          "width": 367.42,
+          "height": 34
+        },
+        "firstSeen": 36.667,
+        "lastSeen": 36.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          36.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 36.667,
+        "selector": "#pr-s2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -67.2,
+          "top": -37.8,
+          "right": 1987.2,
+          "bottom": 1117.8,
+          "width": 2054.4,
+          "height": 1155.6
+        },
+        "containerSelector": "#processo > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 67.2,
+          "right": 67.2,
+          "top": 37.8,
+          "bottom": 37.8
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": -67.2,
+          "y": -37.8,
+          "width": 2054.4,
+          "height": 1155.6
+        },
+        "firstSeen": 36.667,
+        "lastSeen": 36.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          36.667
+        ]
+      }
+    ],
+    "duration": 60,
+    "samples": [
+      3.333,
+      10,
+      16.667,
+      23.333,
+      30,
+      36.667,
+      43.333,
+      50,
+      56.667
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 13,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 2.78:1; WCAG AA requires 3:1.",
+        "text": "+",
+        "fg": "rgb(185,189,191)",
+        "bg": "rgb(106,108,111)",
+        "ratio": 2.78,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(193,196,198)",
+        "large": true,
+        "selector": "#cc-o1",
+        "dataAttributes": {},
+        "sourceFile": "compositions/conceito.html",
+        "bbox": {
+          "x": 361.875,
+          "y": 879,
+          "width": 26.46875,
+          "height": 49
+        },
+        "time": 16.667,
+        "times": [
+          16.667
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      3.333,
+      16.667,
+      30,
+      43.333,
+      56.667
+    ],
+    "checked": 8,
+    "passed": 7
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 6,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 5 text elements stay under it for 0.5 s or more, the smallest \"QUANDO O RESÍDUO VOLTA A SER RECURSO\" at 26 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "QUANDO O RESÍDUO VOLTA A SER RECURSO",
+        "selector": "#cc-title > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/conceito.html",
+        "bbox": {
+          "x": 527.75,
+          "y": 400,
+          "width": 864.5,
+          "height": 35
+        },
+        "time": 18.75,
+        "times": [
+          18.75,
+          24.375,
+          24.875,
+          25.375,
+          25.875
+        ],
+        "fontPx": 26,
+        "floorPx": 28,
+        "seconds": 11.25,
+        "elements": [
+          {
+            "selector": "#cc-title > div:nth-of-type(1)",
+            "text": "QUANDO O RESÍDUO VOLTA A SER RECURSO",
+            "fontPx": 26,
+            "time": 18.75,
+            "seconds": 11.25
+          },
+          {
+            "selector": "#cc-g1 > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "PET: polímero que amolece com o calor e pode ser remoldado",
+            "fontPx": 26,
+            "time": 24.375,
+            "seconds": 5.625
+          },
+          {
+            "selector": "#cc-g2 > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "alumínio e aço podem ser refundidos",
+            "fontPx": 26,
+            "time": 24.875,
+            "seconds": 5.125
+          },
+          {
+            "selector": "#cc-g3 > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "os cacos podem ser refundidos em novas embalagens",
+            "fontPx": 26,
+            "time": 25.375,
+            "seconds": 4.625
+          },
+          {
+            "selector": "#cc-g4 > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "fibras de celulose voltam a formar polpa",
+            "fontPx": 26,
+            "time": 25.875,
+            "seconds": 4.125
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 11 text elements stay under it for 0.5 s or more, the smallest \"PET · DO DESCARTE A UM NOVO PRODUTO\" at 24 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "PET · DO DESCARTE A UM NOVO PRODUTO",
+        "selector": "#pr-k1",
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": 150,
+          "y": 67.17,
+          "width": 672,
+          "height": 31
+        },
+        "time": 30.125,
+        "times": [
+          30.125,
+          30.125,
+          30.125,
+          30.125,
+          30.125,
+          30.125,
+          42.75,
+          42.875,
+          42.875,
+          42.875,
+          42.875
+        ],
+        "fontPx": 24,
+        "floorPx": 28,
+        "seconds": 12.5,
+        "elements": [
+          {
+            "selector": "#pr-k1",
+            "text": "PET · DO DESCARTE A UM NOVO PRODUTO",
+            "fontPx": 24,
+            "time": 30.125,
+            "seconds": 12.5
+          },
+          {
+            "selector": "#pr-k2",
+            "text": "ALUMÍNIO · OUTRO PROCESSO",
+            "fontPx": 24,
+            "time": 42.75,
+            "seconds": 4.875
+          },
+          {
+            "selector": "#pr-a1",
+            "text": "Separação",
+            "fontPx": 26,
+            "time": 30.125,
+            "seconds": 12.5
+          },
+          {
+            "selector": "#pr-a2",
+            "text": "Prensagem",
+            "fontPx": 26,
+            "time": 30.125,
+            "seconds": 12.5
+          },
+          {
+            "selector": "#pr-a3",
+            "text": "Lavagem e trituração",
+            "fontPx": 26,
+            "time": 30.125,
+            "seconds": 12.5
+          },
+          {
+            "selector": "#pr-a4",
+            "text": "Flocos e grânulos",
+            "fontPx": 26,
+            "time": 30.125,
+            "seconds": 12.5
+          },
+          {
+            "selector": "#pr-a5",
+            "text": "Novo produto",
+            "fontPx": 26,
+            "time": 30.125,
+            "seconds": 12.5
+          },
+          {
+            "selector": "#pr-b1",
+            "text": "Separação",
+            "fontPx": 26,
+            "time": 42.875,
+            "seconds": 4.75
+          },
+          {
+            "selector": "#pr-b2",
+            "text": "Fusão",
+            "fontPx": 26,
+            "time": 42.875,
+            "seconds": 4.75
+          },
+          {
+            "selector": "#pr-b3",
+            "text": "Lingotes",
+            "fontPx": 26,
+            "time": 42.875,
+            "seconds": 4.75
+          },
+          {
+            "selector": "#pr-b4",
+            "text": "Indústria",
+            "fontPx": 26,
+            "time": 42.875,
+            "seconds": 4.75
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"a garrafa vira flocos de PET\" (6 words) is on screen 1.56 s (±0.01 s), under its 1.72 s floor: hold it about 0.5 s + 0.3 s a word (2.30 s here) before it leaves or changes; see references/motion.md.",
+        "text": "a garrafa vira flocos de PET",
+        "selector": "#pr-gc1 > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": 776.28,
+          "y": 924,
+          "width": 367.4200000000001,
+          "height": 34
+        },
+        "time": 35.906,
+        "words": 6,
+        "seconds": 1.563,
+        "floorSeconds": 1.725,
+        "measured": [
+          {
+            "time": 35.625,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 35.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 35.875,
+            "opacity": 0.4,
+            "heightPx": 34
+          },
+          {
+            "time": 36,
+            "opacity": 0.89,
+            "heightPx": 34
+          },
+          {
+            "time": 36.125,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 36.25,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 36.375,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 37,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 37.125,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 37.25,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 37.375,
+            "opacity": 1,
+            "heightPx": 34
+          },
+          {
+            "time": 37.5,
+            "opacity": 0.25,
+            "heightPx": 34
+          },
+          {
+            "time": 37.625,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 37.75,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Papel: as fibras são desagregadas em água e voltam a form...\" (15 words) is on screen 3.13 s (±0.01 s), under its 3.75 s floor: hold it about 0.5 s + 0.3 s a word (5.00 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Papel: as fibras são desagregadas em água e voltam a formar polpa para novo papel.",
+        "selector": "#pr-nota",
+        "dataAttributes": {},
+        "sourceFile": "compositions/processo.html",
+        "bbox": {
+          "x": 179.17,
+          "y": 868,
+          "width": 878.7500000000001,
+          "height": 72
+        },
+        "time": 44.469,
+        "words": 15,
+        "seconds": 3.133,
+        "floorSeconds": 3.75,
+        "measured": [
+          {
+            "time": 44.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 44.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 44.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 44.5,
+            "opacity": 0.82,
+            "heightPx": 72
+          },
+          {
+            "time": 44.625,
+            "opacity": 0.98,
+            "heightPx": 72
+          },
+          {
+            "time": 44.75,
+            "opacity": 1,
+            "heightPx": 72
+          },
+          {
+            "time": 44.875,
+            "opacity": 1,
+            "heightPx": 72
+          },
+          {
+            "time": 47.125,
+            "opacity": 1,
+            "heightPx": 72
+          },
+          {
+            "time": 47.25,
+            "opacity": 1,
+            "heightPx": 72
+          },
+          {
+            "time": 47.375,
+            "opacity": 1,
+            "heightPx": 72
+          },
+          {
+            "time": 47.5,
+            "opacity": 1,
+            "heightPx": 72
+          },
+          {
+            "time": 47.625,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 47.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 47.875,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 8 text elements stay under it for 0.5 s or more, the smallest \"REJEITOS · DISPOSIÇÃO FINAL\" at 15 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "REJEITOS · DISPOSIÇÃO FINAL",
+        "selector": "#ci-l5",
+        "dataAttributes": {},
+        "sourceFile": "compositions/circular.html",
+        "bbox": {
+          "x": 1332.68,
+          "y": 800.51,
+          "width": 526.06,
+          "height": 94.92
+        },
+        "time": 48.5,
+        "times": [
+          47.875,
+          48,
+          48.125,
+          48.375,
+          48.5,
+          48.75,
+          49.25,
+          54.25
+        ],
+        "fontPx": 14.67,
+        "floorPx": 28,
+        "seconds": 7.75,
+        "elements": [
+          {
+            "selector": "#ci-l5",
+            "text": "REJEITOS · DISPOSIÇÃO FINAL",
+            "fontPx": 14.67,
+            "time": 48.5,
+            "seconds": 7.75
+          },
+          {
+            "selector": "#ci-l6",
+            "text": "RECUPERAÇÃO DE MATERIAIS",
+            "fontPx": 16.73,
+            "time": 49.25,
+            "seconds": 7
+          },
+          {
+            "selector": "#ci-l1",
+            "text": "EXTRAÇÃO",
+            "fontPx": 19.51,
+            "time": 47.875,
+            "seconds": 8.375
+          },
+          {
+            "selector": "#ci-l2",
+            "text": "PRODUÇÃO",
+            "fontPx": 19.52,
+            "time": 48,
+            "seconds": 8.25
+          },
+          {
+            "selector": "#ci-l3",
+            "text": "CONSUMO",
+            "fontPx": 19.53,
+            "time": 48.125,
+            "seconds": 8.125
+          },
+          {
+            "selector": "#ci-l4",
+            "text": "DESCARTE",
+            "fontPx": 19.55,
+            "time": 48.375,
+            "seconds": 7.875
+          },
+          {
+            "selector": "#ci-txt > div:nth-of-type(1)",
+            "text": "DA LINHA AO CICLO",
+            "fontPx": 24,
+            "time": 48.75,
+            "seconds": 7.5
+          },
+          {
+            "selector": "#ci-note",
+            "text": "Nem todo resíduo é reciclável: parte segue como rejeito para disposição final.",
+            "fontPx": 26,
+            "time": 54.25,
+            "seconds": 2
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Nem todo resíduo é reciclável: parte segue como rejeito p...\" (12 words) is on screen 2.03 s (±0.01 s), under its 3.07 s floor: hold it about 0.5 s + 0.3 s a word (4.10 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Nem todo resíduo é reciclável: parte segue como rejeito para disposição final.",
+        "selector": "#ci-note",
+        "dataAttributes": {},
+        "sourceFile": "compositions/circular.html",
+        "bbox": {
+          "x": 150,
+          "y": 979,
+          "width": 956.23,
+          "height": 31
+        },
+        "time": 54.172,
+        "words": 12,
+        "seconds": 2.031,
+        "floorSeconds": 3.075,
+        "measured": [
+          {
+            "time": 53.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 54,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 54.125,
+            "opacity": 0.36,
+            "heightPx": 31
+          },
+          {
+            "time": 54.25,
+            "opacity": 0.72,
+            "heightPx": 31
+          },
+          {
+            "time": 54.375,
+            "opacity": 0.93,
+            "heightPx": 31
+          },
+          {
+            "time": 54.5,
+            "opacity": 1,
+            "heightPx": 31
+          },
+          {
+            "time": 54.625,
+            "opacity": 1,
+            "heightPx": 31
+          },
+          {
+            "time": 55.75,
+            "opacity": 1,
+            "heightPx": 31
+          },
+          {
+            "time": 55.875,
+            "opacity": 1,
+            "heightPx": 31
+          },
+          {
+            "time": 56,
+            "opacity": 0.94,
+            "heightPx": 31
+          },
+          {
+            "time": 56.125,
+            "opacity": 0.78,
+            "heightPx": 31
+          },
+          {
+            "time": 56.25,
+            "opacity": 0.35,
+            "heightPx": 31
+          },
+          {
+            "time": 56.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 56.5,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 479
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

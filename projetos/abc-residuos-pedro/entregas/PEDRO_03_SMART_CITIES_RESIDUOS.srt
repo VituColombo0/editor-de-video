@@ -1,0 +1,122 @@
+1
+00:00:01,000 --> 00:00:02,511
+Os desafios são grandes.
+
+2
+00:00:03,000 --> 00:00:05,999
+Mas e se as cidades conseguissem entender
+melhor onde,
+
+3
+00:00:05,999 --> 00:00:07,998
+quando e quanto resíduo é produzido?
+
+4
+00:00:08,600 --> 00:00:12,890
+É aqui que entra o conceito de cidades
+inteligentes, ou Smart Cities.
+
+5
+00:00:16,000 --> 00:00:20,097
+Sensores podem acompanhar o nível de
+preenchimento dos contêineres e enviar
+
+6
+00:00:20,097 --> 00:00:22,446
+informações para sistemas de
+monitoramento.
+
+7
+00:00:23,200 --> 00:00:27,356
+Com isso, as equipes conseguem identificar
+onde a coleta é mais necessária.
+
+8
+00:00:30,000 --> 00:00:33,260
+Esses dados também podem melhorar o
+planejamento das rotas.
+
+9
+00:00:33,900 --> 00:00:36,617
+Em vez de depender apenas de trajetos
+fixos,
+
+10
+00:00:36,617 --> 00:00:41,063
+sistemas inteligentes ajudam a priorizar
+regiões e reduzir deslocamentos
+
+11
+00:00:41,063 --> 00:00:44,707
+desnecessários, respeitando as condições
+reais da operação.
+
+12
+00:00:49,000 --> 00:00:52,139
+Na reciclagem, tecnologias de visão
+computacional,
+
+13
+00:00:52,139 --> 00:00:56,973
+sensores e automação podem apoiar a
+identificação e a separação de materiais.
+
+14
+00:00:57,600 --> 00:01:02,015
+Isso ajuda a recuperar recursos e pode
+melhorar a eficiência das instalações de
+
+15
+00:01:02,015 --> 00:01:02,462
+triagem.
+
+16
+00:01:07,000 --> 00:01:11,596
+Com essas informações integradas, a gestão
+pública pode identificar padrões,
+
+17
+00:01:11,596 --> 00:01:15,284
+acompanhar problemas e tomar decisões mais
+bem fundamentadas.
+
+18
+00:01:15,900 --> 00:01:19,961
+Também é possível planejar investimentos e
+responder com mais precisão às
+
+19
+00:01:19,961 --> 00:01:21,519
+necessidades de cada região.
+
+20
+00:01:26,000 --> 00:01:30,685
+Para o ABC Paulista, essas soluções
+representam possibilidades de
+modernização.
+
+21
+00:01:31,200 --> 00:01:34,590
+Mas sua aplicação depende de investimento,
+planejamento,
+
+22
+00:01:34,590 --> 00:01:39,009
+integração entre os serviços e atenção às
+diferenças entre os municípios.
+
+23
+00:01:42,000 --> 00:01:44,952
+A tecnologia pode tornar a gestão mais
+eficiente.
+
+24
+00:01:45,600 --> 00:01:50,405
+Mas não substitui políticas públicas,
+infraestrutura e participação da
+população.
+
+25
+00:01:52,500 --> 00:01:56,070
+Uma cidade inteligente também depende de
+escolhas inteligentes.

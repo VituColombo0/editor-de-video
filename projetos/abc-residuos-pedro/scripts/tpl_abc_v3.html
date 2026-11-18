@@ -1,0 +1,79 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #05090d; font-family: "Inter", sans-serif; color: #eef3f5; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .shot { position: absolute; inset: 0; overflow: hidden; }
+    #ab-s2, #ab-s3, #ab-s4 { opacity: 0; }
+    #ab-head { position: absolute; left: 0; width: 1920px; top: 60px; text-align: center; }
+    #ab-head span { display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 26px; letter-spacing: 0.18em; color: #fff; padding: 12px 22px; background: rgba(4,10,16,0.72); border: 1px solid rgba(127,211,255,0.6); border-radius: 6px; }
+    .city { position: absolute; left: 150px; bottom: 150px; font-size: 64px; font-weight: 800; letter-spacing: -0.01em; text-shadow: 0 4px 24px rgba(0,0,0,0.8); opacity: 0; }
+    .city small { display: block; font-size: 26px; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: 0; margin-top: 4px; }
+    .ping { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: #7fd3ff; box-shadow: 0 0 18px #7fd3ff; opacity: 0; }
+    .ring { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; border: 3px solid #7fd3ff; opacity: 0; }
+    .route { position: absolute; left: 0; top: 0; }
+    .route path { stroke: #43e3b0; stroke-width: 6; fill: none; stroke-linecap: round; stroke-dasharray: 100 120; stroke-dashoffset: 110; filter: drop-shadow(0 0 8px rgba(67,227,176,0.8)); }
+    .cred { position: absolute; right: 96px; bottom: 44px; font-size: 17px; color: rgba(255,255,255,0.85); padding: 6px 12px; background: rgba(0,0,0,0.6); border-radius: 4px; opacity: 0; }
+    #ab-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 480px; background: linear-gradient(180deg, rgba(4,8,12,0) 0%, rgba(4,8,12,0.75) 100%); }
+    #ab-map svg { position: absolute; left: 0; top: 0; }
+    .mc { stroke: rgba(255,255,255,0.9); stroke-width: 2; fill-opacity: 0; }
+    .ml { position: absolute; transform: translate(-50%, -50%); font-size: 22px; font-weight: 700; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.95); white-space: nowrap; opacity: 0; }
+    #ab-chips { position: absolute; left: 150px; top: 170px; display: flex; flex-direction: column; gap: 14px; }
+    .chip { align-self: flex-start; padding: 12px 22px; border-radius: 999px; font-size: 32px; font-weight: 700; background: rgba(5,10,16,0.82); border: 2px solid #43e3b0; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="abc" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="ab-s1" class="shot"><img id="ab-i1" class="full" src="assets/img/sa-centro.jpg" alt="Centro de Santo André" />
+      <div class="ring" id="ab-r1" style="left:1010px;top:640px"></div><div class="ping" id="ab-p1" style="left:1010px;top:640px"></div>
+      <div class="ring" id="ab-r2" style="left:1460px;top:560px"></div><div class="ping" id="ab-p2" style="left:1460px;top:560px"></div>
+      <div class="ring" id="ab-r3" style="left:560px;top:720px"></div><div class="ping" id="ab-p3" style="left:560px;top:720px"></div>
+    </div>
+    <div id="ab-s2" class="shot"><img id="ab-i2" class="full" src="assets/img/maua-1.jpg" alt="Avenida em Mauá" />
+      <svg class="route" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="ab-rt2" pathLength="100" d="M820 1080 C900 900 1020 760 1160 640 S1420 520 1560 500"/></svg>
+    </div>
+    <div id="ab-s3" class="shot"><img id="ab-i3" class="full" src="assets/img/sbc-2.jpg" alt="Avenida São Paulo, em São Bernardo do Campo" />
+      <div class="ring" id="ab-r4" style="left:1180px;top:700px"></div><div class="ping" id="ab-p4" style="left:1180px;top:700px"></div>
+      <div class="ring" id="ab-r5" style="left:700px;top:760px"></div><div class="ping" id="ab-p5" style="left:700px;top:760px"></div>
+    </div>
+    <div id="ab-s4" class="shot"><div id="ab-map" class="shot">
+      <img id="ab-i4" class="full" src="assets/img/abc-regiao.jpg" alt="Imagem de satélite do ABC Paulista" />
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080">__PATHS__</svg>
+      __LABELS__
+    </div></div>
+    <div id="ab-shade"></div>
+    <div class="city" id="ab-n1">Santo André<small>sensores de nível · cenário potencial</small></div>
+    <div class="city" id="ab-n2">Mauá<small>rotas apoiadas por dados · cenário potencial</small></div>
+    <div class="city" id="ab-n3">São Bernardo do Campo<small>monitoramento integrado · cenário potencial</small></div>
+    <div id="ab-chips"><div class="chip" id="ab-c1">Investimento</div><div class="chip" id="ab-c2">Planejamento</div><div class="chip" id="ab-c3">Integração entre os serviços</div><div class="chip" id="ab-c4">Diferenças entre os municípios</div></div>
+    <div id="ab-head"><span>CENÁRIO DE APLICAÇÃO POTENCIAL AO ABC PAULISTA</span></div>
+    <div class="cred" id="ab-cr1" data-layout-ignore>Foto: Igor Eliezer Borges (CC BY-SA 4.0) · elementos gráficos ilustrativos</div>
+    <div class="cred" id="ab-cr2" data-layout-ignore>Foto: Lisboallan (CC BY-SA 4.0) · elementos gráficos ilustrativos</div>
+    <div class="cred" id="ab-cr3" data-layout-ignore>Foto: LuanCampSouza93 (CC0) · elementos gráficos ilustrativos</div>
+    <div class="cred" id="ab-cr4" data-layout-ignore>Satélite: Esri, Maxar, Earthstar Geographics · Limites: © colaboradores do OpenStreetMap</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 84.6 s
+    tl.fromTo("#ab-head span", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 0.3);
+    const SHOT = (s, img, n, cr, t0, t1) => {
+      tl.set(s, { opacity: 1 }, t0);
+      tl.fromTo(img, { scale: 1.0 }, { scale: 1.08, duration: t1 - t0, ease: "none" }, t0);
+      tl.fromTo(n, { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, t0 + 0.3);
+      tl.to(n, { opacity: 0, duration: 0.15 }, t1 - 0.15);
+      tl.set(cr, { opacity: 1 }, t0 + 0.1); tl.set(cr, { opacity: 0 }, t1);
+    };
+    SHOT("#ab-s1", "#ab-i1", "#ab-n1", "#ab-cr1", 0, 3.6);
+    SHOT("#ab-s2", "#ab-i2", "#ab-n2", "#ab-cr2", 3.6, 6.7);
+    SHOT("#ab-s3", "#ab-i3", "#ab-n3", "#ab-cr3", 6.7, 9.8);
+    const PING = (p, r, t) => { tl.fromTo(p, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, t); tl.fromTo(r, { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 3.4, duration: 1.0, ease: "power2.out", repeat: 1 }, t + 0.1); };
+    PING("#ab-p1", "#ab-r1", 1.0); PING("#ab-p2", "#ab-r2", 1.4); PING("#ab-p3", "#ab-r3", 1.8);
+    tl.to("#ab-rt2", { strokeDashoffset: 0, duration: 1.8, ease: "power2.inOut" }, 4.2);
+    PING("#ab-p4", "#ab-r4", 7.2); PING("#ab-p5", "#ab-r5", 7.6);
+    // condições ("investimento" 92.9 · "planejamento" 93.6 · "integração" 94.94 · "diferenças" 97.28)
+    [["#ab-c1", 8.25], ["#ab-c2", 8.95], ["#ab-c3", 10.3], ["#ab-c4", 12.65]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, t));
+    // mapa regional: cada município com sua realidade
+    tl.set("#ab-s4", { opacity: 1 }, 9.8); tl.set("#ab-cr4", { opacity: 1 }, 9.9);
+    tl.fromTo("#ab-map", { scale: 1.12 }, { scale: 1.0, duration: 6.8, ease: "power1.out" }, 9.8);
+    tl.to(".mc", { fillOpacity: 0.32, duration: 0.5, stagger: 0.12 }, 12.7);
+    tl.to(".ml", { opacity: 1, duration: 0.3, stagger: 0.12 }, 10.2);
+    window.__timelines["abc"] = tl;
+  </script>
+</template>

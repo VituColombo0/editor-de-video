@@ -1,0 +1,2693 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"tg-v2\"> has data-start=\"3.3\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#tg-v2",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-03/compositions/triagem.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"3.3\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"tg-v4\"> has data-start=\"13.8\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#tg-v4",
+        "dataAttributes": {},
+        "sourceFile": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-03/compositions/triagem.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"13.8\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      }
+    ],
+    "filesScanned": 8
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 42,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 6.667,
+        "selector": "#cd-i1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -96,
+          "top": -54,
+          "right": 2016,
+          "bottom": 1134,
+          "width": 2112,
+          "height": 1188
+        },
+        "containerSelector": "#cd-s1",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 96,
+          "right": 96,
+          "top": 54,
+          "bottom": 54
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "cd-i1",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/cidade.html",
+        "bbox": {
+          "x": -96,
+          "y": -54,
+          "width": 2112,
+          "height": 1188
+        },
+        "firstSeen": 6.667,
+        "lastSeen": 6.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          6.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n0 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 371.16,
+          "top": 375.81,
+          "right": 417.07,
+          "bottom": 392.01,
+          "width": 45.91,
+          "height": 16.2
+        },
+        "containerSelector": "#rt-n0",
+        "text": "30%",
+        "fixHint": "Text is 46px x 16px inside 43px x 28px and overflows by up to 20px; resize the container to at least ~50px x 48px or shrink font-size from 30px to ~28px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 366.76,
+          "top": 395.45,
+          "right": 409.66,
+          "bottom": 423.53,
+          "width": 42.9,
+          "height": 28.08
+        },
+        "overflow": {
+          "right": 7.41,
+          "top": 19.64
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 371.16,
+          "y": 375.81,
+          "width": 45.91,
+          "height": 16.2
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n1 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 608.84,
+          "top": 365.94,
+          "right": 652.81,
+          "bottom": 382.06,
+          "width": 43.97,
+          "height": 16.12
+        },
+        "containerSelector": "#rt-n1",
+        "text": "82%",
+        "fixHint": "Text is 44px x 16px inside 39px x 28px and overflows by up to 20px; resize the container to at least ~44px x 47px or shrink font-size from 30px to ~27px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 608.69,
+          "top": 385.47,
+          "right": 648.02,
+          "bottom": 413.4,
+          "width": 39.33,
+          "height": 27.94
+        },
+        "overflow": {
+          "right": 4.79,
+          "top": 19.53
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 608.84,
+          "y": 365.94,
+          "width": 43.97,
+          "height": 16.12
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n2 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 846.12,
+          "top": 356.07,
+          "right": 889.3,
+          "bottom": 372.1,
+          "width": 43.18,
+          "height": 16.03
+        },
+        "containerSelector": "#rt-n2",
+        "text": "45%",
+        "fixHint": "Text is 43px x 16px inside 38px x 28px and overflows by up to 19px; resize the container to at least ~42px x 47px or shrink font-size from 30px to ~26px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 849.84,
+          "top": 375.49,
+          "right": 887.72,
+          "bottom": 403.27,
+          "width": 37.88,
+          "height": 27.79
+        },
+        "overflow": {
+          "left": 3.72,
+          "top": 19.42
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 846.12,
+          "y": 356.07,
+          "width": 43.18,
+          "height": 16.03
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n3 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1081.86,
+          "top": 346.2,
+          "right": 1126.98,
+          "bottom": 362.15,
+          "width": 45.12,
+          "height": 15.95
+        },
+        "containerSelector": "#rt-n3",
+        "text": "90%",
+        "fixHint": "Text is 45px x 16px inside 41px x 28px and overflows by up to 19px; resize the container to at least ~48px x 47px or shrink font-size from 30px to ~28px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1088.21,
+          "top": 365.51,
+          "right": 1129.66,
+          "bottom": 393.14,
+          "width": 41.45,
+          "height": 27.64
+        },
+        "overflow": {
+          "left": 6.35,
+          "top": 19.31
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1081.86,
+          "y": 346.2,
+          "width": 45.12,
+          "height": 15.95
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n4 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1343.59,
+          "top": 421.89,
+          "right": 1393.24,
+          "bottom": 439.3,
+          "width": 49.65,
+          "height": 17.41
+        },
+        "containerSelector": "#rt-n4",
+        "text": "25%",
+        "fixHint": "Text is 50px x 17px inside 48px x 30px and overflows by up to 21px; resize the container to at least ~57px x 51px or shrink font-size from 30px to ~29px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1353.31,
+          "top": 443.06,
+          "right": 1401.06,
+          "bottom": 473.33,
+          "width": 47.75,
+          "height": 30.28
+        },
+        "overflow": {
+          "left": 9.72,
+          "top": 21.17
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1343.59,
+          "y": 421.89,
+          "width": 49.65,
+          "height": 17.41
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n5 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1111.78,
+          "top": 527.35,
+          "right": 1161.96,
+          "bottom": 546.64,
+          "width": 50.18,
+          "height": 19.29
+        },
+        "containerSelector": "#rt-n5",
+        "text": "70%",
+        "fixHint": "Text is 50px x 19px inside 46px x 34px and overflows by up to 24px; resize the container to at least ~54px x 57px or shrink font-size from 30px to ~28px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1119.16,
+          "top": 550.94,
+          "right": 1165.61,
+          "bottom": 584.65,
+          "width": 46.45,
+          "height": 33.7
+        },
+        "overflow": {
+          "left": 7.38,
+          "top": 23.59
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1111.78,
+          "y": 527.35,
+          "width": 50.18,
+          "height": 19.29
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n6 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 851.25,
+          "top": 538.26,
+          "right": 899.06,
+          "bottom": 557.65,
+          "width": 47.81,
+          "height": 19.39
+        },
+        "containerSelector": "#rt-n6",
+        "text": "20%",
+        "fixHint": "Text is 48px x 19px inside 42px x 34px and overflows by up to 24px; resize the container to at least ~46px x 58px or shrink font-size from 30px to ~26px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 855.43,
+          "top": 561.99,
+          "right": 897.5,
+          "bottom": 595.87,
+          "width": 42.07,
+          "height": 33.89
+        },
+        "overflow": {
+          "left": 4.18,
+          "top": 23.73
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 851.25,
+          "y": 538.26,
+          "width": 47.81,
+          "height": 19.39
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n7 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 588.84,
+          "top": 549.16,
+          "right": 637.62,
+          "bottom": 568.66,
+          "width": 48.78,
+          "height": 19.5
+        },
+        "containerSelector": "#rt-n7",
+        "text": "88%",
+        "fixHint": "Text is 49px x 20px inside 44px x 34px and overflows by up to 24px; resize the container to at least ~49px x 58px or shrink font-size from 30px to ~27px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 588.28,
+          "top": 573.03,
+          "right": 632.14,
+          "bottom": 607.1,
+          "width": 43.85,
+          "height": 34.07
+        },
+        "overflow": {
+          "right": 5.48,
+          "top": 23.87
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 588.84,
+          "y": 549.16,
+          "width": 48.78,
+          "height": 19.5
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n8 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 325.95,
+          "top": 560.07,
+          "right": 377.09,
+          "bottom": 579.67,
+          "width": 51.14,
+          "height": 19.6
+        },
+        "containerSelector": "#rt-n8",
+        "text": "35%",
+        "fixHint": "Text is 51px x 20px inside 48px x 34px and overflows by up to 24px; resize the container to at least ~57px x 58px or shrink font-size from 30px to ~28px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 320.18,
+          "top": 584.07,
+          "right": 368.4,
+          "bottom": 618.32,
+          "width": 48.23,
+          "height": 34.25
+        },
+        "overflow": {
+          "right": 8.69,
+          "top": 24
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 325.95,
+          "y": 560.07,
+          "width": 51.14,
+          "height": 19.6
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n9 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 270.01,
+          "top": 787.63,
+          "right": 327.72,
+          "bottom": 811.87,
+          "width": 57.71,
+          "height": 24.24
+        },
+        "containerSelector": "#rt-n9",
+        "text": "76%",
+        "fixHint": "Text is 58px x 24px inside 55px x 43px and overflows by up to 30px; resize the container to at least ~65px x 73px or shrink font-size from 30px to ~29px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 262.29,
+          "top": 817.63,
+          "right": 317.32,
+          "bottom": 860.38,
+          "width": 55.03,
+          "height": 42.75
+        },
+        "overflow": {
+          "right": 10.4,
+          "top": 30
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 270.01,
+          "y": 787.63,
+          "width": 57.71,
+          "height": 24.24
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n10 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 564.11,
+          "top": 775.44,
+          "right": 618.86,
+          "bottom": 799.55,
+          "width": 54.75,
+          "height": 24.11
+        },
+        "containerSelector": "#rt-n10",
+        "text": "40%",
+        "fixHint": "Text is 55px x 24px inside 50px x 43px and overflows by up to 30px; resize the container to at least ~56px x 72px or shrink font-size from 30px to ~27px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 562.93,
+          "top": 805.27,
+          "right": 612.46,
+          "bottom": 847.79,
+          "width": 49.54,
+          "height": 42.52
+        },
+        "overflow": {
+          "right": 6.4,
+          "top": 29.83
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 564.11,
+          "y": 775.44,
+          "width": 54.75,
+          "height": 24.11
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n11 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 857.59,
+          "top": 763.25,
+          "right": 911.14,
+          "bottom": 787.24,
+          "width": 53.55,
+          "height": 23.99
+        },
+        "containerSelector": "#rt-n11",
+        "text": "85%",
+        "fixHint": "Text is 54px x 24px inside 47px x 42px and overflows by up to 30px; resize the container to at least ~52px x 72px or shrink font-size from 30px to ~27px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 862.35,
+          "top": 792.91,
+          "right": 909.66,
+          "bottom": 835.2,
+          "width": 47.31,
+          "height": 42.29
+        },
+        "overflow": {
+          "left": 4.76,
+          "top": 29.66
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 857.59,
+          "y": 763.25,
+          "width": 53.55,
+          "height": 23.99
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n12 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1148.72,
+          "top": 751.06,
+          "right": 1205.23,
+          "bottom": 774.92,
+          "width": 56.51,
+          "height": 23.86
+        },
+        "containerSelector": "#rt-n12",
+        "text": "15%",
+        "fixHint": "Text is 57px x 24px inside 53px x 42px and overflows by up to 29px; resize the container to at least ~62px x 72px or shrink font-size from 30px to ~28px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1157.5,
+          "top": 780.55,
+          "right": 1210.3,
+          "bottom": 822.62,
+          "width": 52.8,
+          "height": 42.06
+        },
+        "overflow": {
+          "left": 8.78,
+          "top": 29.49
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1148.72,
+          "y": 751.06,
+          "width": 56.51,
+          "height": 23.86
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n13 > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1439.85,
+          "top": 738.87,
+          "right": 1499.33,
+          "bottom": 762.61,
+          "width": 59.48,
+          "height": 23.74
+        },
+        "containerSelector": "#rt-n13",
+        "text": "72%",
+        "fixHint": "Text is 59px x 24px inside 58px x 42px and overflows by up to 29px; resize the container to at least ~71px x 71px or shrink font-size from 30px to ~29px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1452.64,
+          "top": 768.19,
+          "right": 1510.93,
+          "bottom": 810.03,
+          "width": 58.29,
+          "height": 41.83
+        },
+        "overflow": {
+          "left": 12.79,
+          "top": 29.32
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1439.85,
+          "y": 738.87,
+          "width": 59.48,
+          "height": 23.74
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n0 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 371.16,
+          "top": 375.81,
+          "right": 417.07,
+          "bottom": 392.01,
+          "width": 45.91,
+          "height": 16.2
+        },
+        "containerSelector": "#rt-n0",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 366.76,
+          "top": 395.45,
+          "right": 409.66,
+          "bottom": 423.53,
+          "width": 42.9,
+          "height": 28.08
+        },
+        "overflow": {
+          "right": 7.41
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 371.16,
+          "y": 375.81,
+          "width": 45.91,
+          "height": 16.2
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 33.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          33.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n1 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 608.84,
+          "top": 365.94,
+          "right": 652.81,
+          "bottom": 382.06,
+          "width": 43.97,
+          "height": 16.12
+        },
+        "containerSelector": "#rt-n1",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 608.69,
+          "top": 385.47,
+          "right": 648.02,
+          "bottom": 413.4,
+          "width": 39.33,
+          "height": 27.94
+        },
+        "overflow": {
+          "right": 4.79
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 608.84,
+          "y": 365.94,
+          "width": 43.97,
+          "height": 16.12
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n2 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 846.12,
+          "top": 356.07,
+          "right": 889.3,
+          "bottom": 372.1,
+          "width": 43.18,
+          "height": 16.04
+        },
+        "containerSelector": "#rt-n2",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 849.84,
+          "top": 375.49,
+          "right": 887.72,
+          "bottom": 403.27,
+          "width": 37.88,
+          "height": 27.79
+        },
+        "overflow": {
+          "left": 3.72
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 846.12,
+          "y": 356.07,
+          "width": 43.18,
+          "height": 16.04
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n3 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 1081.86,
+          "top": 346.2,
+          "right": 1126.98,
+          "bottom": 362.15,
+          "width": 45.12,
+          "height": 15.96
+        },
+        "containerSelector": "#rt-n3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 1088.21,
+          "top": 365.51,
+          "right": 1129.66,
+          "bottom": 393.14,
+          "width": 41.45,
+          "height": 27.64
+        },
+        "overflow": {
+          "left": 6.35
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1081.86,
+          "y": 346.2,
+          "width": 45.12,
+          "height": 15.96
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n5 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 1111.78,
+          "top": 527.35,
+          "right": 1161.96,
+          "bottom": 546.64,
+          "width": 50.18,
+          "height": 19.3
+        },
+        "containerSelector": "#rt-n5",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 1119.16,
+          "top": 550.94,
+          "right": 1165.61,
+          "bottom": 584.65,
+          "width": 46.45,
+          "height": 33.7
+        },
+        "overflow": {
+          "left": 7.38
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1111.78,
+          "y": 527.35,
+          "width": 50.18,
+          "height": 19.3
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n6 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 851.25,
+          "top": 538.26,
+          "right": 899.06,
+          "bottom": 557.65,
+          "width": 47.81,
+          "height": 19.39
+        },
+        "containerSelector": "#rt-n6",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 855.43,
+          "top": 561.99,
+          "right": 897.5,
+          "bottom": 595.87,
+          "width": 42.07,
+          "height": 33.89
+        },
+        "overflow": {
+          "left": 4.18
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 851.25,
+          "y": 538.26,
+          "width": 47.81,
+          "height": 19.39
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n7 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 588.84,
+          "top": 549.16,
+          "right": 637.62,
+          "bottom": 568.66,
+          "width": 48.77,
+          "height": 19.49
+        },
+        "containerSelector": "#rt-n7",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 588.28,
+          "top": 573.03,
+          "right": 632.14,
+          "bottom": 607.1,
+          "width": 43.85,
+          "height": 34.07
+        },
+        "overflow": {
+          "right": 5.48
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 588.84,
+          "y": 549.16,
+          "width": 48.77,
+          "height": 19.49
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n8 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 325.95,
+          "top": 560.07,
+          "right": 377.09,
+          "bottom": 579.67,
+          "width": 51.14,
+          "height": 19.59
+        },
+        "containerSelector": "#rt-n8",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 320.18,
+          "top": 584.07,
+          "right": 368.4,
+          "bottom": 618.32,
+          "width": 48.23,
+          "height": 34.25
+        },
+        "overflow": {
+          "right": 8.69
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 325.95,
+          "y": 560.07,
+          "width": 51.14,
+          "height": 19.59
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 33.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          33.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n9 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 270.01,
+          "top": 787.63,
+          "right": 327.72,
+          "bottom": 811.87,
+          "width": 57.71,
+          "height": 24.23
+        },
+        "containerSelector": "#rt-n9",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 262.29,
+          "top": 817.63,
+          "right": 317.32,
+          "bottom": 860.38,
+          "width": 55.03,
+          "height": 42.75
+        },
+        "overflow": {
+          "right": 10.4
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 270.01,
+          "y": 787.63,
+          "width": 57.71,
+          "height": 24.23
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 33.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          33.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n10 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 564.11,
+          "top": 775.44,
+          "right": 618.86,
+          "bottom": 799.55,
+          "width": 54.75,
+          "height": 24.11
+        },
+        "containerSelector": "#rt-n10",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 562.93,
+          "top": 805.27,
+          "right": 612.46,
+          "bottom": 847.79,
+          "width": 49.54,
+          "height": 42.52
+        },
+        "overflow": {
+          "right": 6.4
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 564.11,
+          "y": 775.44,
+          "width": 54.75,
+          "height": 24.11
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n11 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 857.59,
+          "top": 763.25,
+          "right": 911.14,
+          "bottom": 787.24,
+          "width": 53.55,
+          "height": 23.98
+        },
+        "containerSelector": "#rt-n11",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 862.35,
+          "top": 792.91,
+          "right": 909.66,
+          "bottom": 835.2,
+          "width": 47.31,
+          "height": 42.29
+        },
+        "overflow": {
+          "left": 4.76
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 857.59,
+          "y": 763.25,
+          "width": 53.55,
+          "height": 23.98
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 33.333,
+        "selector": "#rt-n12 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 1148.72,
+          "top": 751.06,
+          "right": 1205.23,
+          "bottom": 774.92,
+          "width": 56.51,
+          "height": 23.86
+        },
+        "containerSelector": "#rt-n12",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 1157.5,
+          "top": 780.55,
+          "right": 1210.3,
+          "bottom": 822.62,
+          "width": 52.8,
+          "height": 42.06
+        },
+        "overflow": {
+          "left": 8.78
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1148.72,
+          "y": 751.06,
+          "width": 56.51,
+          "height": 23.86
+        },
+        "firstSeen": 33.333,
+        "lastSeen": 46.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          33.333,
+          46.667
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 46.667,
+        "selector": "#rt-n4 > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1360.81,
+          "top": 464.44,
+          "right": 1395.27,
+          "bottom": 476.07,
+          "width": 34.46,
+          "height": 11.63
+        },
+        "containerSelector": "#rt-i2",
+        "text": "25%",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1360.81,
+          "y": 464.44,
+          "width": 34.46,
+          "height": 11.63
+        },
+        "firstSeen": 46.667,
+        "lastSeen": 46.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 46.667,
+        "selector": "#rt-n13 > span:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 1433.24,
+          "top": 776.54,
+          "right": 1491.78,
+          "bottom": 799.22,
+          "width": 58.53,
+          "height": 22.68
+        },
+        "containerSelector": "#rt-n13",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 1444.71,
+          "top": 806.29,
+          "right": 1501.22,
+          "bottom": 847.59,
+          "width": 56.51,
+          "height": 41.3
+        },
+        "overflow": {
+          "left": 11.47
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1433.24,
+          "y": 776.54,
+          "width": 58.53,
+          "height": 22.68
+        },
+        "firstSeen": 46.667,
+        "lastSeen": 46.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          46.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 60,
+        "selector": "#tg-s2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -76.8,
+          "top": -43.2,
+          "right": 1996.8,
+          "bottom": 1123.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "containerSelector": "#triagem > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 76.8,
+          "right": 76.8,
+          "top": 43.2,
+          "bottom": 43.2
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/triagem.html",
+        "bbox": {
+          "x": -76.8,
+          "y": -43.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "firstSeen": 60,
+        "lastSeen": 60,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          60
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 73.333,
+        "selector": "#pn-k2 > div:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1364,
+          "top": 143,
+          "right": 1600.81,
+          "bottom": 169,
+          "width": 236.81,
+          "height": 26
+        },
+        "containerSelector": "#pn-k2",
+        "text": "TONELADAS/SEMANA",
+        "fixHint": "Text is 237px x 26px inside 234px x 150px and overflows by up to 30px; widen the container to at least ~264px or shrink font-size from 20px to ~20px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 1337,
+          "top": 120,
+          "right": 1571,
+          "bottom": 270,
+          "width": 234,
+          "height": 150
+        },
+        "overflow": {
+          "right": 29.81
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/painel.html",
+        "bbox": {
+          "x": 1364,
+          "y": 143,
+          "width": 236.81,
+          "height": 26
+        },
+        "firstSeen": 73.333,
+        "lastSeen": 73.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          73.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 73.333,
+        "selector": "#pn-k2 > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1364,
+          "top": 143,
+          "right": 1600.81,
+          "bottom": 169,
+          "width": 236.81,
+          "height": 26
+        },
+        "containerSelector": "#pn-k3",
+        "text": "TONELADAS/SEMANA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.11,
+        "dataAttributes": {},
+        "sourceFile": "compositions/painel.html",
+        "bbox": {
+          "x": 1364,
+          "y": 143,
+          "width": 236.81,
+          "height": 26
+        },
+        "firstSeen": 73.333,
+        "lastSeen": 73.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          73.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 73.333,
+        "selector": "#pn-lcd",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1795,
+          "top": 381,
+          "right": 1815,
+          "bottom": 401,
+          "width": 20,
+          "height": 20
+        },
+        "containerSelector": "#pn-lsvg",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 1111,
+          "top": 347,
+          "right": 1805,
+          "bottom": 577,
+          "width": 694,
+          "height": 230
+        },
+        "overflow": {
+          "right": 10
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/painel.html",
+        "bbox": {
+          "x": 1795,
+          "y": 381,
+          "width": 20,
+          "height": 20
+        },
+        "firstSeen": 73.333,
+        "lastSeen": 73.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          73.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 86.667,
+        "selector": "#ab-i1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -44.06,
+          "top": -24.79,
+          "right": 1964.06,
+          "bottom": 1104.79,
+          "width": 2008.13,
+          "height": 1129.57
+        },
+        "containerSelector": "#ab-s1",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 44.06,
+          "right": 44.06,
+          "top": 24.79,
+          "bottom": 24.79
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "ab-i1",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": -44.06,
+          "y": -24.79,
+          "width": 2008.13,
+          "height": 1129.57
+        },
+        "firstSeen": 86.667,
+        "lastSeen": 100,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          86.667,
+          100
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 100,
+        "selector": "#ab-map > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 504.19,
+          "top": 437.72,
+          "right": 598.99,
+          "bottom": 463.81,
+          "width": 94.8,
+          "height": 26.1
+        },
+        "containerSelector": "#ab-c4",
+        "text": "Diadema",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": 504.19,
+          "y": 437.72,
+          "width": 94.8,
+          "height": 26.1
+        },
+        "firstSeen": 100,
+        "lastSeen": 100,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          100
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 100,
+        "selector": "#ab-map > div:nth-of-type(7)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1045.48,
+          "top": 621.9,
+          "right": 1259.13,
+          "bottom": 647.99,
+          "width": 213.65,
+          "height": 26.1
+        },
+        "containerSelector": "#ab-shade",
+        "text": "Rio Grande da Serra",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": 1045.48,
+          "y": 621.9,
+          "width": 213.65,
+          "height": 26.1
+        },
+        "firstSeen": 100,
+        "lastSeen": 100,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          100
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 100,
+        "selector": "#ab-i2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -76.8,
+          "top": -43.2,
+          "right": 1996.8,
+          "bottom": 1123.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "containerSelector": "#ab-s2",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 76.8,
+          "right": 76.8,
+          "top": 43.2,
+          "bottom": 43.2
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "ab-i2",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": -76.8,
+          "y": -43.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "firstSeen": 100,
+        "lastSeen": 100,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          100
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 100,
+        "selector": "#ab-i3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -76.8,
+          "top": -43.2,
+          "right": 1996.8,
+          "bottom": 1123.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "containerSelector": "#ab-s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 76.8,
+          "right": 76.8,
+          "top": 43.2,
+          "bottom": 43.2
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "ab-i3",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": -76.8,
+          "y": -43.2,
+          "width": 2073.6,
+          "height": 1166.4
+        },
+        "firstSeen": 100,
+        "lastSeen": 100,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          100
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 100,
+        "selector": "#ab-map",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -3.55,
+          "top": -2,
+          "right": 1923.55,
+          "bottom": 1082,
+          "width": 1927.1,
+          "height": 1084
+        },
+        "containerSelector": "#ab-s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 3.55,
+          "right": 3.55
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": -3.55,
+          "y": -2,
+          "width": 1927.1,
+          "height": 1084
+        },
+        "firstSeen": 100,
+        "lastSeen": 100,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          100
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 100,
+        "selector": "#ab-map > svg:nth-of-type(1) > path:nth-of-type(3)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 480.23,
+          "top": 327.52,
+          "right": 1117.78,
+          "bottom": 1272.7,
+          "width": 637.55,
+          "height": 945.18
+        },
+        "containerSelector": "#ab-map > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -3.55,
+          "top": -2,
+          "right": 1923.55,
+          "bottom": 1082,
+          "width": 1927.1,
+          "height": 1084
+        },
+        "overflow": {
+          "bottom": 190.7
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": 480.23,
+          "y": 327.52,
+          "width": 637.55,
+          "height": 945.18
+        },
+        "firstSeen": 100,
+        "lastSeen": 100,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          100
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 113.333,
+        "selector": "#fc-iL",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -67.2,
+          "top": -37.8,
+          "right": 1987.2,
+          "bottom": 1117.8,
+          "width": 2054.4,
+          "height": 1155.6
+        },
+        "containerSelector": "#fc-L",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 67.2,
+          "right": 67.2,
+          "top": 37.8,
+          "bottom": 37.8
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "fc-iL",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/fecho.html",
+        "bbox": {
+          "x": -67.2,
+          "y": -37.8,
+          "width": 2054.4,
+          "height": 1155.6
+        },
+        "firstSeen": 113.333,
+        "lastSeen": 113.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          113.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 113.333,
+        "selector": "#fc-ia",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -152.74,
+          "top": -85.91,
+          "right": 2072.74,
+          "bottom": 1165.91,
+          "width": 2225.47,
+          "height": 1251.83
+        },
+        "containerSelector": "#fc-air",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 152.74,
+          "right": 152.74,
+          "top": 85.91,
+          "bottom": 85.91
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "fc-ia",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/fecho.html",
+        "bbox": {
+          "x": -152.74,
+          "y": -85.91,
+          "width": 2225.47,
+          "height": 1251.83
+        },
+        "firstSeen": 113.333,
+        "lastSeen": 113.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          113.333
+        ]
+      }
+    ],
+    "duration": 120,
+    "samples": [
+      6.667,
+      20,
+      33.333,
+      46.667,
+      60,
+      73.333,
+      86.667,
+      100,
+      113.333
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 42,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      6.667,
+      33.333,
+      60,
+      86.667,
+      113.333
+    ],
+    "checked": 29,
+    "passed": 29
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 6,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 3 text elements stay under it for 0.5 s or more, the smallest \"localização\" at 24 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "localização",
+        "selector": "#cd-t1 > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/cidade.html",
+        "bbox": {
+          "x": 348.28,
+          "y": 355.07,
+          "width": 129.24,
+          "height": 29.33
+        },
+        "time": 5.609,
+        "times": [
+          5.609,
+          6.411,
+          6.811
+        ],
+        "fontPx": 24,
+        "floorPx": 28,
+        "seconds": 3.806,
+        "elements": [
+          {
+            "selector": "#cd-t1 > div:nth-of-type(2)",
+            "text": "localização",
+            "fontPx": 24,
+            "time": 5.609,
+            "seconds": 3.806
+          },
+          {
+            "selector": "#cd-t2 > div:nth-of-type(2)",
+            "text": "dia e horário",
+            "fontPx": 24,
+            "time": 6.411,
+            "seconds": 3.004
+          },
+          {
+            "selector": "#cd-t3 > div:nth-of-type(2)",
+            "text": "volume gerado",
+            "fontPx": 24,
+            "time": 6.811,
+            "seconds": 2.604
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 12 text elements stay under it for 0.5 s or more, the smallest \"CONTÊINER C-014 · SETOR NORTE\" at 22 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "CONTÊINER C-014 · SETOR NORTE",
+        "selector": "div.uh > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/sensor.html",
+        "bbox": {
+          "x": 1052.82,
+          "y": 265,
+          "width": 459.37,
+          "height": 29
+        },
+        "time": 18.831,
+        "times": [
+          16.027,
+          16.427,
+          16.427,
+          18.23,
+          18.23,
+          18.831,
+          18.831,
+          20.434,
+          21.235,
+          22.037,
+          25.242,
+          25.242
+        ],
+        "fontPx": 22,
+        "floorPx": 28,
+        "seconds": 11.018,
+        "elements": [
+          {
+            "selector": "div.uh > span:nth-of-type(1)",
+            "text": "CONTÊINER C-014 · SETOR NORTE",
+            "fontPx": 22,
+            "time": 18.831,
+            "seconds": 11.018
+          },
+          {
+            "selector": "span.live",
+            "text": "AO VIVO",
+            "fontPx": 22,
+            "time": 18.831,
+            "seconds": 11.018
+          },
+          {
+            "selector": "#sn-k",
+            "text": "MONITORAMENTO",
+            "fontPx": 24,
+            "time": 16.027,
+            "seconds": 13.822
+          },
+          {
+            "selector": "#sn-r1 > div:nth-of-type(1)",
+            "text": "Nível de preenchimento",
+            "fontPx": 24,
+            "time": 20.434,
+            "seconds": 9.415
+          },
+          {
+            "selector": "#sn-r2 > div:nth-of-type(1)",
+            "text": "Localização",
+            "fontPx": 24,
+            "time": 21.235,
+            "seconds": 8.614
+          },
+          {
+            "selector": "#sn-r3 > div:nth-of-type(1)",
+            "text": "Histórico de uso · 7 dias",
+            "fontPx": 24,
+            "time": 22.037,
+            "seconds": 7.812
+          },
+          {
+            "selector": "#sn-r4 > div:nth-of-type(1)",
+            "text": "Necessidade de coleta",
+            "fontPx": 24,
+            "time": 25.242,
+            "seconds": 4.607
+          },
+          {
+            "selector": "#sn-st",
+            "text": "COLETA RECOMENDADA",
+            "fontPx": 24,
+            "time": 25.242,
+            "seconds": 1.402
+          },
+          {
+            "selector": "#sn-l1",
+            "text": "mede a distância até os resíduos",
+            "fontPx": 26,
+            "time": 16.427,
+            "seconds": 13.422
+          },
+          {
+            "selector": "#sn-l1 > b:nth-of-type(1)",
+            "text": "Sensor de nível",
+            "fontPx": 26,
+            "time": 16.427,
+            "seconds": 13.422
+          },
+          {
+            "selector": "#sn-l2",
+            "text": "calculado continuamente",
+            "fontPx": 26,
+            "time": 18.23,
+            "seconds": 11.619
+          },
+          {
+            "selector": "#sn-l2 > b:nth-of-type(1)",
+            "text": "Nível de preenchimento",
+            "fontPx": 26,
+            "time": 18.23,
+            "seconds": 11.619
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 17 text elements stay under it for 0.5 s or more, the smallest \"90%\" at 9 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "90%",
+        "selector": "#rt-n3 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/rotas.html",
+        "bbox": {
+          "x": 1092.27,
+          "y": 358.47,
+          "width": 24.11,
+          "height": 8.78
+        },
+        "time": 30.651,
+        "times": [
+          30.05,
+          30.651,
+          30.651,
+          30.651,
+          30.651,
+          30.851,
+          30.851,
+          30.851,
+          31.052,
+          31.052,
+          31.052,
+          31.252,
+          31.252,
+          31.252,
+          31.252,
+          37.262,
+          43.472
+        ],
+        "fontPx": 9.19,
+        "floorPx": 28,
+        "seconds": 17.228,
+        "elements": [
+          {
+            "selector": "#rt-n3 > span:nth-of-type(1)",
+            "text": "90%",
+            "fontPx": 9.19,
+            "time": 30.651,
+            "seconds": 17.228
+          },
+          {
+            "selector": "#rt-n13 > span:nth-of-type(1)",
+            "text": "72%",
+            "fontPx": 9.19,
+            "time": 31.252,
+            "seconds": 16.627
+          },
+          {
+            "selector": "#rt-n6 > span:nth-of-type(1)",
+            "text": "20%",
+            "fontPx": 11.72,
+            "time": 30.851,
+            "seconds": 6.611
+          },
+          {
+            "selector": "#rt-n9 > span:nth-of-type(1)",
+            "text": "76%",
+            "fontPx": 13.82,
+            "time": 31.052,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#rt-n0 > span:nth-of-type(1)",
+            "text": "30%",
+            "fontPx": 15.24,
+            "time": 30.651,
+            "seconds": 6.811
+          },
+          {
+            "selector": "#rt-n2 > span:nth-of-type(1)",
+            "text": "45%",
+            "fontPx": 15.24,
+            "time": 30.651,
+            "seconds": 6.811
+          },
+          {
+            "selector": "#rt-n4 > span:nth-of-type(1)",
+            "text": "25%",
+            "fontPx": 15.24,
+            "time": 30.851,
+            "seconds": 6.611
+          },
+          {
+            "selector": "#rt-n8 > span:nth-of-type(1)",
+            "text": "35%",
+            "fontPx": 15.24,
+            "time": 31.052,
+            "seconds": 6.41
+          },
+          {
+            "selector": "#rt-n10 > span:nth-of-type(1)",
+            "text": "40%",
+            "fontPx": 15.24,
+            "time": 31.252,
+            "seconds": 6.21
+          },
+          {
+            "selector": "#rt-n12 > span:nth-of-type(1)",
+            "text": "15%",
+            "fontPx": 15.24,
+            "time": 31.252,
+            "seconds": 6.21
+          },
+          {
+            "selector": "#rt-n5 > span:nth-of-type(1)",
+            "text": "70%",
+            "fontPx": 16.84,
+            "time": 30.851,
+            "seconds": 17.028
+          },
+          {
+            "selector": "#rt-n1 > span:nth-of-type(1)",
+            "text": "82%",
+            "fontPx": 17.36,
+            "time": 30.651,
+            "seconds": 17.228
+          },
+          {
+            "selector": "#rt-n7 > span:nth-of-type(1)",
+            "text": "88%",
+            "fontPx": 17.36,
+            "time": 31.052,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#rt-n11 > span:nth-of-type(1)",
+            "text": "85%",
+            "fontPx": 17.36,
+            "time": 31.252,
+            "seconds": 16.627
+          },
+          {
+            "selector": "#rt-int",
+            "text": "O SISTEMA CONSIDERA",
+            "fontPx": 22,
+            "time": 37.262,
+            "seconds": 10.617
+          },
+          {
+            "selector": "#rt-sim",
+            "text": "Cenário ilustrativo: não representa medição real de economia.",
+            "fontPx": 22,
+            "time": 43.472,
+            "seconds": 4.407
+          },
+          {
+            "selector": "#rt-k",
+            "text": "PLANEJAMENTO DE ROTAS",
+            "fontPx": 24,
+            "time": 30.05,
+            "seconds": 17.829
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 25 text elements stay under it for 0.5 s or more, the smallest \"ilustrativo\" at 18 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "ilustrativo",
+        "selector": "#pn-k1 > div:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/painel.html",
+        "bbox": {
+          "x": 1117.77,
+          "y": 241.53,
+          "width": 81.75,
+          "height": 20.82
+        },
+        "time": 67.312,
+        "times": [
+          66.11,
+          66.11,
+          66.11,
+          66.11,
+          66.11,
+          67.312,
+          67.312,
+          67.513,
+          67.513,
+          67.713,
+          67.713,
+          67.913,
+          67.913,
+          67.913,
+          68.114,
+          68.114,
+          68.114,
+          68.114,
+          68.114,
+          72.321,
+          72.321,
+          73.322,
+          74.524,
+          76.928,
+          76.928
+        ],
+        "fontPx": 17.85,
+        "floorPx": 28,
+        "seconds": 17.629,
+        "elements": [
+          {
+            "selector": "#pn-k1 > div:nth-of-type(3)",
+            "text": "ilustrativo",
+            "fontPx": 17.85,
+            "time": 67.312,
+            "seconds": 17.629
+          },
+          {
+            "selector": "#pn-lsvg > text:nth-of-type(1)",
+            "text": "média das regiões",
+            "fontPx": 17.85,
+            "time": 67.913,
+            "seconds": 17.028
+          },
+          {
+            "selector": "#pn-lsvg > text:nth-of-type(2)",
+            "text": "Região C",
+            "fontPx": 17.85,
+            "time": 67.913,
+            "seconds": 17.028
+          },
+          {
+            "selector": "#pn-k2 > div:nth-of-type(3)",
+            "text": "ilustrativo",
+            "fontPx": 17.92,
+            "time": 67.513,
+            "seconds": 17.428
+          },
+          {
+            "selector": "#pn-k3 > div:nth-of-type(3)",
+            "text": "ilustrativo",
+            "fontPx": 17.96,
+            "time": 67.713,
+            "seconds": 17.228
+          },
+          {
+            "selector": "#pn-k1 > div:nth-of-type(1)",
+            "text": "COLETAS HOJE",
+            "fontPx": 19.83,
+            "time": 67.312,
+            "seconds": 17.629
+          },
+          {
+            "selector": "#pn-line > div:nth-of-type(1)",
+            "text": "DEMANDA DE COLETA · 12 SEMANAS",
+            "fontPx": 19.83,
+            "time": 67.913,
+            "seconds": 17.028
+          },
+          {
+            "selector": "#pn-bars > div:nth-of-type(1)",
+            "text": "MATERIAIS RECUPERADOS · PARTICIPAÇÃO",
+            "fontPx": 19.83,
+            "time": 68.114,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#pn-k2 > div:nth-of-type(1)",
+            "text": "TONELADAS/SEMANA",
+            "fontPx": 19.91,
+            "time": 67.513,
+            "seconds": 17.428
+          },
+          {
+            "selector": "#pn-map > div:nth-of-type(1)",
+            "text": "MAPA DO MUNICÍPIO · REGIÕES FICTÍCIAS",
+            "fontPx": 19.95,
+            "time": 66.11,
+            "seconds": 18.831
+          },
+          {
+            "selector": "#pn-k3 > div:nth-of-type(1)",
+            "text": "RECUPERADOS",
+            "fontPx": 19.95,
+            "time": 67.713,
+            "seconds": 17.228
+          },
+          {
+            "selector": "#pn-bars > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "Papel",
+            "fontPx": 21.81,
+            "time": 68.114,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#pn-bars > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "Plástico",
+            "fontPx": 21.81,
+            "time": 68.114,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#pn-bars > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "Vidro",
+            "fontPx": 21.81,
+            "time": 68.114,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#pn-bars > div:nth-of-type(5) > span:nth-of-type(1)",
+            "text": "Metal",
+            "fontPx": 21.81,
+            "time": 68.114,
+            "seconds": 16.827
+          },
+          {
+            "selector": "#pn-leg > span:nth-of-type(1)",
+            "text": "demanda normal",
+            "fontPx": 21.95,
+            "time": 66.11,
+            "seconds": 18.831
+          },
+          {
+            "selector": "#pn-leg > span:nth-of-type(2)",
+            "text": "demanda elevada",
+            "fontPx": 21.95,
+            "time": 66.11,
+            "seconds": 18.831
+          },
+          {
+            "selector": "#pn-leg > span:nth-of-type(3)",
+            "text": "contêiner",
+            "fontPx": 21.95,
+            "time": 66.11,
+            "seconds": 18.831
+          },
+          {
+            "selector": "#pn-leg > span:nth-of-type(4)",
+            "text": "ponto de descarte",
+            "fontPx": 21.95,
+            "time": 66.11,
+            "seconds": 18.831
+          },
+          {
+            "selector": "#pn-ok",
+            "text": "APROVADO ✓",
+            "fontPx": 22,
+            "time": 74.524,
+            "seconds": 10.417
+          },
+          {
+            "selector": "div.a1",
+            "text": "ALERTA · REGIÃO C",
+            "fontPx": 26,
+            "time": 72.321,
+            "seconds": 12.62
+          },
+          {
+            "selector": "div.a2",
+            "text": "Demanda acima do padrão nas últimas três semanas",
+            "fontPx": 26,
+            "time": 72.321,
+            "seconds": 12.62
+          },
+          {
+            "selector": "#pn-dec > span:nth-of-type(1)",
+            "text": "Ajuste: +1 coleta semanal na Região C",
+            "fontPx": 26,
+            "time": 73.322,
+            "seconds": 11.619
+          },
+          {
+            "selector": "#pn-inv",
+            "text": "avaliar um novo ponto de descarte na Região C (cenário)",
+            "fontPx": 26,
+            "time": 76.928,
+            "seconds": 8.013
+          },
+          {
+            "selector": "#pn-inv > b:nth-of-type(1)",
+            "text": "Planejamento:",
+            "fontPx": 26,
+            "time": 76.928,
+            "seconds": 8.013
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 11 text elements stay under it for 0.5 s or more, the smallest \"São Caetano do Sul\" at 22 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "São Caetano do Sul",
+        "selector": "#ab-map > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/abc.html",
+        "bbox": {
+          "x": 550.29,
+          "y": 216.14,
+          "width": 229.21,
+          "height": 28.65
+        },
+        "time": 94.958,
+        "times": [
+          85.142,
+          85.142,
+          88.748,
+          91.753,
+          94.958,
+          95.159,
+          95.159,
+          95.359,
+          95.559,
+          95.559,
+          95.76
+        ],
+        "fontPx": 22,
+        "floorPx": 28,
+        "seconds": 6.611,
+        "elements": [
+          {
+            "selector": "#ab-map > div:nth-of-type(1)",
+            "text": "São Caetano do Sul",
+            "fontPx": 22,
+            "time": 94.958,
+            "seconds": 6.611
+          },
+          {
+            "selector": "#ab-map > div:nth-of-type(2)",
+            "text": "Diadema",
+            "fontPx": 22,
+            "time": 95.159,
+            "seconds": 6.41
+          },
+          {
+            "selector": "#ab-map > div:nth-of-type(3)",
+            "text": "São Bernardo do Campo",
+            "fontPx": 22,
+            "time": 95.159,
+            "seconds": 6.41
+          },
+          {
+            "selector": "#ab-map > div:nth-of-type(4)",
+            "text": "Santo André",
+            "fontPx": 22,
+            "time": 95.359,
+            "seconds": 6.21
+          },
+          {
+            "selector": "#ab-map > div:nth-of-type(5)",
+            "text": "Mauá",
+            "fontPx": 22,
+            "time": 95.559,
+            "seconds": 6.01
+          },
+          {
+            "selector": "#ab-map > div:nth-of-type(6)",
+            "text": "Ribeirão Pires",
+            "fontPx": 22,
+            "time": 95.559,
+            "seconds": 6.01
+          },
+          {
+            "selector": "#ab-map > div:nth-of-type(7)",
+            "text": "Rio Grande da Serra",
+            "fontPx": 22,
+            "time": 95.76,
+            "seconds": 5.809
+          },
+          {
+            "selector": "#ab-n1 > small:nth-of-type(1)",
+            "text": "sensores de nível · cenário potencial",
+            "fontPx": 26,
+            "time": 85.142,
+            "seconds": 3.005
+          },
+          {
+            "selector": "#ab-head > span:nth-of-type(1)",
+            "text": "CENÁRIO DE APLICAÇÃO POTENCIAL AO ABC PAULISTA",
+            "fontPx": 26,
+            "time": 85.142,
+            "seconds": 16.427
+          },
+          {
+            "selector": "#ab-n2 > small:nth-of-type(1)",
+            "text": "rotas apoiadas por dados · cenário potencial",
+            "fontPx": 26,
+            "time": 88.748,
+            "seconds": 2.604
+          },
+          {
+            "selector": "#ab-n3 > small:nth-of-type(1)",
+            "text": "monitoramento integrado · cenário potencial",
+            "fontPx": 26,
+            "time": 91.753,
+            "seconds": 2.604
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 2 text elements stay under it for 0.5 s or more, the smallest \"BRASÍLIA (DF)\" at 20 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "BRASÍLIA (DF)",
+        "selector": "#fc-t1 > small:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/fecho.html",
+        "bbox": {
+          "x": 145.22,
+          "y": 900,
+          "width": 192.4,
+          "height": 26
+        },
+        "time": 101.569,
+        "times": [
+          101.569,
+          103.372
+        ],
+        "fontPx": 20,
+        "floorPx": 28,
+        "seconds": 4.207,
+        "elements": [
+          {
+            "selector": "#fc-t1 > small:nth-of-type(1)",
+            "text": "BRASÍLIA (DF)",
+            "fontPx": 20,
+            "time": 101.569,
+            "seconds": 4.207
+          },
+          {
+            "selector": "#fc-t2 > small:nth-of-type(1)",
+            "text": "COLETA SELETIVA · DF",
+            "fontPx": 20,
+            "time": 103.372,
+            "seconds": 2.404
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.20000000000000284,
+    "samples": 584
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

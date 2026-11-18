@@ -1,0 +1,104 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #060d14; font-family: "Inter", sans-serif; color: #eef3f5; }
+    #pn-top { position: absolute; left: 96px; top: 50px; width: 1728px; display: flex; justify-content: space-between; align-items: center; }
+    #pn-top .l { font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: 0.16em; color: #ffb547; padding: 8px 14px; border: 1px solid rgba(255,181,71,0.6); border-radius: 4px; }
+    #pn-top .r { font-size: 30px; font-weight: 700; color: rgba(238,243,245,0.9); }
+    .card { position: absolute; border-radius: 18px; background: rgba(14,30,42,0.92); border: 1px solid rgba(127,211,255,0.2); padding: 22px 26px; }
+    .ct { font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: 0.14em; color: rgba(238,243,245,0.62); }
+    #pn-map { left: 96px; top: 120px; width: 960px; height: 900px; }
+    #pn-msvg { position: absolute; left: 15px; top: 60px; }
+    .rg { stroke: rgba(6,13,20,1); stroke-width: 6; }
+    .rl { font-size: 30px; font-weight: 800; fill: #05090d; }
+    .pt { fill: #ffffff; }
+    .eco { fill: none; stroke: #ffffff; stroke-width: 3; }
+    #pn-leg { position: absolute; left: 26px; bottom: 20px; display: flex; gap: 24px; font-size: 22px; color: rgba(238,243,245,0.75); }
+    #pn-leg i { display: inline-block; width: 16px; height: 16px; margin-right: 8px; vertical-align: -2px; }
+    .kpi { top: 120px; width: 234px; height: 150px; }
+    #pn-k1 { left: 1090px; } #pn-k2 { left: 1337px; } #pn-k3 { left: 1584px; width: 240px; }
+    .kv { font-size: 46px; font-weight: 900; margin-top: 10px; letter-spacing: -0.02em; }
+    .kn { font-size: 18px; color: rgba(238,243,245,0.5); }
+    #pn-line { left: 1090px; top: 290px; width: 734px; height: 300px; }
+    #pn-lsvg { position: absolute; left: 20px; top: 56px; }
+    #pn-bars { left: 1090px; top: 610px; width: 734px; height: 200px; }
+    .br { position: absolute; left: 26px; height: 26px; display: flex; align-items: center; gap: 12px; font-size: 22px; }
+    .br span { width: 110px; color: rgba(238,243,245,0.8); }
+    .br div { height: 20px; border-radius: 4px; background: #43e3b0; transform-origin: 0 50%; }
+    #pn-alert { left: 1090px; top: 830px; width: 734px; height: 190px; border-color: #ffb547; opacity: 0; }
+    #pn-alert .a1 { font-size: 26px; font-weight: 800; color: #ffb547; }
+    #pn-alert .a2 { font-size: 26px; margin-top: 8px; }
+    #pn-alert .a3 { font-size: 26px; margin-top: 14px; opacity: 0; display: flex; align-items: center; gap: 14px; }
+    #pn-ok { display: inline-block; padding: 6px 14px; border-radius: 999px; background: #43e3b0; color: #05090d; font-weight: 800; font-size: 22px; }
+    #pn-inv { position: absolute; left: 30px; top: 740px; width: 900px; padding: 16px 22px; border-radius: 14px; background: rgba(5,9,14,0.9); border: 1px solid #7fd3ff; font-size: 26px; opacity: 0; }
+    #pn-inv b { color: #7fd3ff; }
+  </style>
+  <div id="root" data-composition-id="painel" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="pn-top"><div class="l" data-layout-ignore>PAINEL CONCEITUAL — DADOS ILUSTRATIVOS</div><div class="r">Gestão de resíduos · visão integrada</div></div>
+    <div class="card" id="pn-map"><div class="ct">MAPA DO MUNICÍPIO · REGIÕES FICTÍCIAS</div>
+      <svg id="pn-msvg" width="930" height="780" viewBox="0 0 930 780">
+        <polygon class="rg" id="pn-rA" points="20,30 340,10 380,270 40,300" fill="#3fbf95"/>
+        <polygon class="rg" id="pn-rB" points="340,10 700,40 680,290 380,270" fill="#57c9a0"/>
+        <polygon class="rg" id="pn-rC" points="700,40 910,30 915,370 680,290" fill="#d9a441"/>
+        <polygon class="rg" id="pn-rD" points="40,300 380,270 410,570 30,590" fill="#5ccfa8"/>
+        <polygon class="rg" id="pn-rE" points="380,270 680,290 700,610 410,570" fill="#e2b04f"/>
+        <polygon class="rg" id="pn-rF" points="680,290 915,370 900,770 700,610" fill="#47c49b"/>
+        <polygon class="rg" id="pn-rG" points="30,590 410,570 440,770 40,770" fill="#3fbf95"/>
+        <polygon class="rg" id="pn-rH" points="410,570 700,610 900,770 440,770" fill="#6ad3ae"/>
+        <text class="rl" x="190" y="165">A</text><text class="rl" x="520" y="160">B</text><text class="rl" x="800" y="190">C</text><text class="rl" x="210" y="440">D</text>
+        <text class="rl" x="540" y="450">E</text><text class="rl" x="800" y="550">F</text><text class="rl" x="230" y="690">G</text><text class="rl" x="620" y="710">H</text>
+        <g id="pn-pts"><circle class="pt" cx="110" cy="90" r="7"/><circle class="pt" cx="260" cy="210" r="7"/><circle class="pt" cx="450" cy="120" r="7"/><circle class="pt" cx="600" cy="220" r="7"/><circle class="pt" cx="760" cy="110" r="7"/><circle class="pt" cx="860" cy="260" r="7"/><circle class="pt" cx="760" cy="300" r="7"/><circle class="pt" cx="140" cy="400" r="7"/><circle class="pt" cx="300" cy="520" r="7"/><circle class="pt" cx="480" cy="360" r="7"/><circle class="pt" cx="620" cy="520" r="7"/><circle class="pt" cx="790" cy="440" r="7"/><circle class="pt" cx="830" cy="660" r="7"/><circle class="pt" cx="150" cy="700" r="7"/><circle class="pt" cx="560" cy="650" r="7"/></g>
+        <g id="pn-ecos"><rect class="eco" x="320" y="140" width="22" height="22"/><rect class="eco" x="520" y="430" width="22" height="22"/><rect class="eco" x="300" y="660" width="22" height="22"/></g>
+      </svg>
+      <div id="pn-leg"><span><i style="background:#3fbf95"></i>demanda normal</span><span><i style="background:#d9a441"></i>demanda elevada</span><span><i style="background:#fff;border-radius:50%"></i>contêiner</span><span><i style="border:3px solid #fff"></i>ponto de descarte</span></div>
+      <div id="pn-inv"><b>Planejamento:</b> avaliar um novo ponto de descarte na Região C (cenário)</div>
+    </div>
+    <div class="card kpi" id="pn-k1"><div class="ct">COLETAS HOJE</div><div class="kv">128</div><div class="kn">ilustrativo</div></div>
+    <div class="card kpi" id="pn-k2"><div class="ct">TONELADAS/SEMANA</div><div class="kv">1.240</div><div class="kn">ilustrativo</div></div>
+    <div class="card kpi" id="pn-k3"><div class="ct">RECUPERADOS</div><div class="kv">14%</div><div class="kn">ilustrativo</div></div>
+    <div class="card" id="pn-line"><div class="ct">DEMANDA DE COLETA · 12 SEMANAS</div>
+      <svg id="pn-lsvg" width="694" height="230" viewBox="0 0 694 230">
+        <path d="M0 200 H694" stroke="rgba(255,255,255,0.15)"/>
+        <path id="pn-lavg" d="M0 150 L63 148 L126 152 L189 147 L252 149 L315 146 L378 150 L441 148 L504 147 L567 149 L630 148 L694 150" stroke="rgba(127,211,255,0.7)" stroke-width="4" fill="none" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+        <path id="pn-lc" d="M0 140 L63 136 L126 138 L189 132 L252 134 L315 130 L378 132 L441 126 L504 122 L567 92 L630 62 L694 44" stroke="#ffb547" stroke-width="5" fill="none" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+        <circle id="pn-lcd" cx="694" cy="44" r="10" fill="#ffb547" opacity="0"/>
+        <text x="0" y="226" font-size="18" fill="rgba(238,243,245,0.6)">média das regiões</text><text x="420" y="226" font-size="18" fill="#ffb547">Região C</text>
+      </svg>
+    </div>
+    <div class="card" id="pn-bars"><div class="ct">MATERIAIS RECUPERADOS · PARTICIPAÇÃO</div>
+      <div class="br" style="top:62px"><span>Papel</span><div id="pn-b1" style="width:380px"></div></div>
+      <div class="br" style="top:96px"><span>Plástico</span><div id="pn-b2" style="width:280px;background:#7fd3ff"></div></div>
+      <div class="br" style="top:130px"><span>Vidro</span><div id="pn-b3" style="width:150px;background:#9be7c4"></div></div>
+      <div class="br" style="top:164px"><span>Metal</span><div id="pn-b4" style="width:95px;background:#c9d3db"></div></div>
+    </div>
+    <div class="card" id="pn-alert"><div class="a1">ALERTA · REGIÃO C</div><div class="a2">Demanda acima do padrão nas últimas três semanas</div>
+      <div class="a3" id="pn-dec"><span>Ajuste: +1 coleta semanal na Região C</span><span id="pn-ok">APROVADO ✓</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 65.6 s
+    tl.fromTo("#pn-top", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.4 }, 0.1);
+    // "informações integradas" 67.4: os painéis se encaixam
+    [["#pn-map", 0.3], ["#pn-k1", 1.6], ["#pn-k2", 1.75], ["#pn-k3", 1.9], ["#pn-line", 2.2], ["#pn-bars", 2.4]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, y: 24, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, t));
+    tl.fromTo(".rg", { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.06 }, 0.6);
+    tl.fromTo(".pt", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.03, ease: "back.out(2)" }, 1.3);
+    tl.fromTo(".eco", { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.1 }, 1.8);
+    tl.to("#pn-lavg", { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut" }, 2.6);
+    tl.to("#pn-lc", { strokeDashoffset: 0, duration: 2.2, ease: "power2.inOut" }, 3.4);   // "padrões" 70.8
+    ["#pn-b1", "#pn-b2", "#pn-b3", "#pn-b4"].forEach((b, i) => tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 2.8 + i * 0.1));
+    // "acompanhar problemas" 72.2: a Região C acende
+    tl.to("#pn-lcd", { opacity: 1, duration: 0.2 }, 5.6);
+    tl.to("#pn-rC", { fill: "#ff8a4c", duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, 6.6);
+    tl.fromTo("#pn-alert", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 6.6);
+    // "tomar decisões" 73.2
+    tl.fromTo("#pn-dec", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 7.6);
+    tl.fromTo("#pn-ok", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 8.7);
+    tl.to("#pn-rC", { fill: "#d9a441", duration: 0.5 }, 9.8);
+    // "planejar investimentos" 76.8
+    tl.fromTo("#pn-inv", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 11.1);
+    tl.fromTo("#pn-ecos rect:first-child", { opacity: 1 }, { opacity: 0.2, duration: 0.3, yoyo: true, repeat: 5 }, 11.3);
+    // "cada região" 80.76: as regiões acendem uma a uma
+    tl.to(".rg", { keyframes: [{ opacity: 0.55, duration: 0.15 }, { opacity: 1, duration: 0.25 }], stagger: 0.12 }, 14.9);
+    tl.to("#root", { opacity: 1, duration: 0.01 }, 18.95);
+    window.__timelines["painel"] = tl;
+  </script>
+</template>

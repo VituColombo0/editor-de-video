@@ -1,0 +1,90 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: radial-gradient(ellipse at 50% 60%, #0c2433 0%, #05090d 72%); font-family: "Inter", sans-serif; color: #eef3f5; }
+    #ci-cam { position: absolute; inset: 0; perspective: 1700px; perspective-origin: 50% 30%; }
+    #ci-plane { position: absolute; left: 160px; top: 20px; width: 1600px; height: 1000px; transform-style: preserve-3d; }
+    #ci-gridp { position: absolute; inset: 0; background-image: linear-gradient(rgba(127,211,255,0.08) 2px, transparent 2px), linear-gradient(90deg, rgba(127,211,255,0.08) 2px, transparent 2px); background-size: 80px 80px; border-radius: 24px; }
+    #ci-svg { position: absolute; left: 0; top: 0; }
+    .nd { position: absolute; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; background: radial-gradient(circle, rgba(127,211,255,0.35) 0%, rgba(127,211,255,0.08) 70%); border: 3px solid #7fd3ff; }
+    .nd.dsp { border-color: #ffb547; background: radial-gradient(circle, rgba(255,181,71,0.35) 0%, rgba(255,181,71,0.06) 70%); }
+    .lb { position: absolute; transform: translate(-50%, -100%) rotateX(-58deg); transform-origin: 50% 100%; font-size: 40px; font-weight: 800; letter-spacing: 0.02em; white-space: nowrap; padding-bottom: 80px; text-shadow: 0 4px 18px rgba(0,0,0,0.8); }
+    .lb.small { font-size: 38px; color: #ffb547; }
+    .lb.rec { font-size: 34px; color: #43e3b0; }
+    #ci-txt { position: absolute; left: 150px; top: 90px; }
+    #ci-txt .k { font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: 0.2em; color: #7fd3ff; }
+    #ci-txt .t { font-size: 54px; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px; }
+    #ci-txt .t em { font-style: normal; color: #43e3b0; }
+    .note { position: absolute; left: 150px; bottom: 70px; font-size: 26px; color: rgba(238,243,245,0.75); }
+    .badge { position: absolute; right: 150px; top: 100px; font-size: 30px; font-weight: 700; padding: 12px 22px; border-radius: 999px; border: 2px solid; opacity: 0; }
+    #ci-b1 { color: #7fd3ff; border-color: #7fd3ff; } #ci-b2 { color: #ffb547; border-color: #ffb547; top: 170px; }
+    #ci-end { position: absolute; left: 0; width: 1920px; top: 470px; text-align: center; font-size: 60px; font-weight: 800; letter-spacing: -0.02em; opacity: 0; text-shadow: 0 4px 24px rgba(0,0,0,0.8); }
+    #ci-end em { font-style: normal; color: #43e3b0; }
+  </style>
+  <div id="root" data-composition-id="circular" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="ci-cam">
+      <div id="ci-plane">
+        <div id="ci-gridp"></div>
+        <svg id="ci-svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" stroke-linecap="round">
+          <path id="ci-e1" d="M180 560 L560 560" stroke="#7fd3ff" stroke-width="12" stroke-dasharray="2 34"/>
+          <path id="ci-e2" d="M560 560 L960 560" stroke="#7fd3ff" stroke-width="12" stroke-dasharray="2 34"/>
+          <path id="ci-e3" d="M960 560 L1360 560" stroke="#7fd3ff" stroke-width="12" stroke-dasharray="2 34"/>
+          <path id="ci-e4" d="M1360 560 L1360 880" stroke="#ffb547" stroke-width="12" stroke-dasharray="2 34"/>
+          <path id="ci-rc" d="M1360 560 C1360 160, 560 160, 560 560" stroke="#43e3b0" stroke-width="14" stroke-dasharray="2 34" pathLength="1000"/>
+          <path id="ci-rcd" d="M1360 560 C1360 160, 560 160, 560 560" stroke="#43e3b0" stroke-width="3" opacity="0.5" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+          <ellipse id="ci-ring" cx="800" cy="500" rx="520" ry="330" stroke="#43e3b0" stroke-width="10" stroke-dasharray="3 40" opacity="0"/>
+        </svg>
+        <div class="nd" id="ci-n1" style="left:180px;top:560px"></div>
+        <div class="nd" id="ci-n2" style="left:560px;top:560px"></div>
+        <div class="nd" id="ci-n3" style="left:960px;top:560px"></div>
+        <div class="nd" id="ci-n4" style="left:1360px;top:560px"></div>
+        <div class="nd dsp" id="ci-n5" style="left:1360px;top:880px"></div>
+        <div class="lb" id="ci-l1" style="left:180px;top:560px">EXTRAÇÃO</div>
+        <div class="lb" id="ci-l2" style="left:560px;top:560px">PRODUÇÃO</div>
+        <div class="lb" id="ci-l3" style="left:960px;top:560px">CONSUMO</div>
+        <div class="lb" id="ci-l4" style="left:1360px;top:560px">DESCARTE</div>
+        <div class="lb small" id="ci-l5" style="left:1360px;top:880px">REJEITOS · DISPOSIÇÃO FINAL</div>
+        <div class="lb rec" id="ci-l6" style="left:960px;top:260px">RECUPERAÇÃO DE MATERIAIS</div>
+      </div>
+    </div>
+    <div id="ci-txt"><div class="k">DA LINHA AO CICLO</div><div class="t">Parte dos materiais <em>volta</em> à produção</div></div>
+    <div class="badge" id="ci-b1">menos recursos virgens</div>
+    <div class="badge" id="ci-b2">menos envio para disposição final</div>
+    <div class="note" id="ci-note">Nem todo resíduo é reciclável: parte segue como rejeito para disposição final.</div>
+    <div id="ci-end">Do descarte a uma <em>nova lógica de produção</em></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 47.4 s
+    tl.fromTo("#ci-plane", { rotationX: 58, rotationZ: -6, y: 60, scale: 0.84 }, { rotationX: 58, rotationZ: 0, y: 0, scale: 0.9, duration: 8.0, ease: "power1.inOut" }, 0);
+    tl.fromTo("#ci-plane", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0);
+    // fluxo linear: extração → produção → consumo → descarte
+    ["#ci-e1", "#ci-e2", "#ci-e3", "#ci-e4"].forEach((e) => tl.fromTo(e, { strokeDashoffset: 0 }, { strokeDashoffset: -360, duration: 12.6, ease: "none" }, 0));
+    [["#ci-n1", "#ci-l1"], ["#ci-n2", "#ci-l2"], ["#ci-n3", "#ci-l3"], ["#ci-n4", "#ci-l4"]].forEach(([n, l], i) => {
+      tl.fromTo(n, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 0.15 + i * 0.18);
+      tl.fromTo(l, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.25 + i * 0.18);
+    });
+    tl.fromTo(["#ci-n5", "#ci-l5"], { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.9);
+    // recuperação ("recuperar" 48.42)
+    tl.to("#ci-rcd", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 0.95);
+    tl.fromTo("#ci-rc", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.4);
+    tl.fromTo("#ci-rc", { strokeDashoffset: 0 }, { strokeDashoffset: -1400, duration: 11.0, ease: "none" }, 1.4);
+    tl.fromTo("#ci-l6", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.6);
+    tl.fromTo("#ci-txt", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35 }, 1.2);
+    // "recursos virgens" 50.9: entrada de extração afina
+    tl.to("#ci-e1", { strokeWidth: 5, duration: 0.8, ease: "power2.inOut" }, 3.7);
+    tl.to("#ci-n1", { scale: 0.75, opacity: 0.6, duration: 0.8, ease: "power2.inOut" }, 3.7);
+    tl.fromTo("#ci-b1", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 3.75);
+    // "disposição final" 53.6: envio ao aterro afina
+    tl.to("#ci-e4", { strokeWidth: 5, duration: 0.8, ease: "power2.inOut" }, 6.2);
+    tl.fromTo("#ci-b2", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 6.25);
+    tl.fromTo("#ci-note", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 4.6);
+    // fechamento: o ciclo vira um anel em movimento para o próximo segmento
+    tl.to(["#ci-txt", "#ci-b1", "#ci-b2", "#ci-note", ".lb", ".nd", "#ci-e1", "#ci-e2", "#ci-e3", "#ci-e4", "#ci-rc", "#ci-rcd"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 8.4);
+    tl.to("#ci-ring", { opacity: 1, duration: 0.6, ease: "power2.out" }, 8.6);
+    tl.fromTo("#ci-ring", { strokeDashoffset: 0 }, { strokeDashoffset: -430, duration: 4.0, ease: "none" }, 8.6);
+    tl.to("#ci-plane", { rotationZ: 30, scale: 0.86, duration: 4.6, ease: "power1.inOut" }, 8.0);
+    tl.fromTo("#ci-end", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4 }, 9.6);
+    tl.to("#ci-end", { opacity: 0, filter: "blur(8px)", duration: 0.3 }, 12.0);
+    window.__timelines["circular"] = tl;
+  </script>
+</template>

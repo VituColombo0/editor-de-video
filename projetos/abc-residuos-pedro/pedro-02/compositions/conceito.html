@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #05090d; font-family: "Inter", sans-serif; color: #eef3f5; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .shot { position: absolute; inset: 0; overflow: hidden; }
+    #cc-s2, #cc-s3, #cc-grid { opacity: 0; }
+    #cc-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 600px; background: linear-gradient(180deg, rgba(4,8,12,0) 0%, rgba(4,8,12,0.85) 100%); }
+    #cc-def { position: absolute; left: 150px; bottom: 140px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; width: 1620px; }
+    .pill { padding: 14px 26px; border-radius: 999px; font-size: 34px; font-weight: 700; border: 2px solid rgba(255,255,255,0.5); background: rgba(5,10,14,0.6); opacity: 0; }
+    .pill.g { border-color: #43e3b0; color: #43e3b0; }
+    .op { font-size: 40px; color: rgba(238,243,245,0.9); opacity: 0; }
+    .txt { font-size: 36px; font-weight: 500; opacity: 0; }
+    .txt b { color: #7fd3ff; font-weight: 700; }
+    .cred { position: absolute; right: 96px; bottom: 44px; font-size: 17px; color: rgba(255,255,255,0.82); padding: 6px 12px; background: rgba(0,0,0,0.55); border-radius: 4px; opacity: 0; }
+    #cc-dark { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(4,10,16,0.55) 0%, rgba(4,10,16,0.88) 100%); }
+    #cc-title { position: absolute; left: 0; width: 1920px; top: 400px; text-align: center; }
+    #cc-title .k { font-family: "JetBrains Mono", monospace; font-size: 30px; letter-spacing: 0.3em; color: #43e3b0; }
+    #cc-title h1 { font-size: 118px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.0; margin-top: 18px; }
+    #cc-title h1 span { display: inline-block; }
+    #cc-grid { position: absolute; inset: 0; background: #05090d; }
+    .cell { position: absolute; width: 952px; height: 532px; overflow: hidden; }
+    .cell video { position: absolute; left: 0; top: 0; width: 952px; height: 532px; object-fit: cover; }
+    #cc-g1 { left: 4px; top: 4px; } #cc-g2 { left: 964px; top: 4px; } #cc-g3 { left: 4px; top: 544px; } #cc-g4 { left: 964px; top: 544px; }
+    .lab { position: absolute; left: 40px; bottom: 36px; padding: 18px 24px; background: rgba(5,9,14,0.82); border-left: 4px solid #43e3b0; }
+    .lab .n { font-size: 40px; font-weight: 800; letter-spacing: -0.01em; }
+    .lab .p { font-size: 26px; color: rgba(238,243,245,0.82); margin-top: 6px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="conceito" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="cc-s1" class="shot"><video id="cc-v1" class="clip full" src="assets/footage/sg-voo.mp4" data-start="0" data-duration="4.5" data-track-index="0" muted playsinline></video></div>
+    <div id="cc-s2" class="shot"><video id="cc-v2" class="clip full" src="assets/footage/br-triagem2.mp4" data-start="4.4" data-duration="2.8" data-media-start="0.2" data-track-index="1" muted playsinline></video></div>
+    <div id="cc-shade"></div>
+    <div id="cc-def">
+      <div class="pill" id="cc-p1">Resíduo</div>
+      <div class="op" id="cc-o1">+</div>
+      <div class="pill" id="cc-p2">recuperado</div>
+      <div class="op" id="cc-o2">+</div>
+      <div class="pill" id="cc-p3">processado</div>
+      <div class="op" id="cc-o3">→</div>
+      <div class="txt" id="cc-t1">substitui parte da <b>matéria-prima nova</b></div>
+    </div>
+    <div class="cred" id="cc-c1" data-layout-ignore>Vídeo: Sigma S.A., Polônia (CC BY 3.0)</div>
+    <div class="cred" id="cc-c2" data-layout-ignore>Vídeo: TV BrasilGov (CC BY 3.0)</div>
+    <div id="cc-s3" class="shot">
+      <video id="cc-v3" class="clip full" src="assets/footage/sg-salao.mp4" data-start="6.9" data-duration="2.5" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+      <div id="cc-dark"></div>
+      <div id="cc-title"><div class="k">QUANDO O RESÍDUO VOLTA A SER RECURSO</div><h1><span>MATÉRIAS-PRIMAS</span><br/><span>SECUNDÁRIAS</span></h1></div>
+    </div>
+    <div id="cc-grid">
+      <div class="cell" id="cc-g1"><video id="cc-gv1" class="clip" src="assets/footage/ir-pet.mp4" data-start="9.2" data-duration="9.2" data-media-start="0.2" data-playback-rate="0.7" data-track-index="3" muted playsinline></video>
+        <div class="lab"><div class="n">Plásticos</div><div class="p">PET: polímero que amolece com o calor e pode ser remoldado</div></div></div>
+      <div class="cell" id="cc-g2"><video id="cc-gv2" class="clip" src="assets/footage/al-pilha.mp4" data-start="9.2" data-duration="9.2" data-playback-rate="0.28" data-track-index="4" muted playsinline></video>
+        <div class="lab"><div class="n">Metais</div><div class="p">alumínio e aço podem ser refundidos</div></div></div>
+      <div class="cell" id="cc-g3"><video id="cc-gv3" class="clip" src="assets/footage/ir-garrafas.mp4" data-start="9.2" data-duration="9.2" data-playback-rate="0.53" data-track-index="5" muted playsinline></video>
+        <div class="lab"><div class="n">Vidro</div><div class="p">os cacos podem ser refundidos em novas embalagens</div></div></div>
+      <div class="cell" id="cc-g4"><video id="cc-gv4" class="clip" src="assets/footage/ir-papel.mp4" data-start="9.2" data-duration="9.2" data-playback-rate="0.53" data-track-index="6" muted playsinline></video>
+        <div class="lab"><div class="n">Papel</div><div class="p">fibras de celulose voltam a formar polpa</div></div></div>
+      <div id="cc-gc" style="position:absolute;left:50%;top:536px;transform:translate(-50%,-50%);font-size:16px;color:rgba(255,255,255,0.85);padding:4px 12px;background:rgba(0,0,0,0.7);border-radius:4px;white-space:nowrap" data-layout-ignore>Vídeos: Ireland4me (CC BY-SA 3.0) · Armabessaire / Linkeo (CC BY 3.0)</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 11.6 s
+    tl.fromTo("#cc-s1", { scale: 1.5, filter: "blur(12px)" }, { scale: 1.0, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, 0);
+    tl.set("#cc-c1", { opacity: 1 }, 0.3); tl.set("#cc-c1", { opacity: 0 }, 4.4);
+    tl.set("#cc-s2", { opacity: 1 }, 4.4); tl.fromTo("#cc-s2", { scale: 1.0 }, { scale: 1.08, duration: 2.8, ease: "none" }, 4.4);
+    tl.set("#cc-c2", { opacity: 1 }, 4.45); tl.set("#cc-c2", { opacity: 0 }, 6.9);
+    const P = (s, t) => tl.fromTo(s, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, t);
+    const F = (s, t) => tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.2 }, t);
+    P("#cc-p1", 1.0); F("#cc-o1", 1.45); P("#cc-p2", 1.55); F("#cc-o2", 2.1); P("#cc-p3", 2.3); F("#cc-o3", 3.0);
+    tl.fromTo("#cc-t1", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 3.1);
+    tl.to("#cc-def", { opacity: 0, filter: "blur(10px)", duration: 0.2 }, 6.8);
+    // título "matérias-primas secundárias" no momento em que é dito (18.7)
+    tl.set("#cc-s3", { opacity: 1 }, 6.9);
+    tl.fromTo("#cc-v3", { scale: 1.0 }, { scale: 1.06, duration: 2.5, ease: "none" }, 6.9);
+    tl.fromTo("#cc-title .k", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3 }, 6.95);
+    tl.fromTo("#cc-title h1 span", { opacity: 0, filter: "blur(14px)", scale: 1.08 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.35, stagger: 0.18, ease: "expo.out" }, 7.1);
+    // grade de materiais, cada um quando é nomeado
+    tl.set("#cc-grid", { opacity: 1 }, 9.2);
+    [["#cc-g1", 9.2], ["#cc-g2", 10.3], ["#cc-g3", 11.2], ["#cc-g4", 11.5]].forEach(([s, t]) => {
+      tl.fromTo(s, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, t);
+    });
+    gsap.utils.toArray("#cc-grid .lab .p").forEach((p, i) => tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 12.6 + i * 0.5));
+    window.__timelines["conceito"] = tl;
+  </script>
+</template>

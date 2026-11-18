@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #05090d; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <!-- PEDRO_03 · Smart cities e gestão inteligente de resíduos · 120 s -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="120" data-width="1920" data-height="1080">
+      <div id="cidade" data-composition-id="cidade" data-composition-src="compositions/cidade.html" data-start="0" data-duration="15.8" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:1"></div>
+      <div id="sensor" data-composition-id="sensor" data-composition-src="compositions/sensor.html" data-start="15.6" data-duration="14.2" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:2"></div>
+      <div id="rotas" data-composition-id="rotas" data-composition-src="compositions/rotas.html" data-start="29.6" data-duration="18.2" data-track-index="2" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:3"></div>
+      <div id="triagem" data-composition-id="triagem" data-composition-src="compositions/triagem.html" data-start="47.6" data-duration="18.2" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:4"></div>
+      <div id="painel" data-composition-id="painel" data-composition-src="compositions/painel.html" data-start="65.6" data-duration="19.2" data-track-index="4" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:5"></div>
+      <div id="abc" data-composition-id="abc" data-composition-src="compositions/abc.html" data-start="84.6" data-duration="16.8" data-track-index="5" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:6"></div>
+      <div id="fecho" data-composition-id="fecho" data-composition-src="compositions/fecho.html" data-start="101.2" data-duration="18.8" data-track-index="6" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:7"></div>
+
+      <audio id="vo" class="clip" src="assets/audio/narracao.wav" data-start="0" data-duration="120" data-track-index="20" data-volume="1"></audio>
+      <audio id="bgm" class="clip" src="assets/audio/trilha.wav" data-start="0" data-duration="120" data-track-index="21" data-volume="0.14" data-fade-in="1.0" data-fade-out="3.0"></audio>
+
+      <audio id="fx1" class="clip" src="assets/audio/whoosh-short.mp3" data-start="3.55" data-track-index="30" data-volume="0.14"></audio>
+      <audio id="fx2" class="clip" src="assets/audio/pop.mp3" data-start="5.45" data-track-index="31" data-volume="0.11"></audio>
+      <audio id="fx3" class="clip" src="assets/audio/pop.mp3" data-start="6.2" data-track-index="32" data-volume="0.11"></audio>
+      <audio id="fx4" class="clip" src="assets/audio/pop.mp3" data-start="6.62" data-track-index="33" data-volume="0.11"></audio>
+      <audio id="fx5" class="clip" src="assets/audio/whoosh.mp3" data-start="15.5" data-track-index="34" data-volume="0.14"></audio>
+      <audio id="fx6" class="clip" src="assets/audio/click.mp3" data-start="19.72" data-track-index="35" data-volume="0.1"></audio>
+      <audio id="fx7" class="clip" src="assets/audio/click.mp3" data-start="21.32" data-track-index="36" data-volume="0.1"></audio>
+      <audio id="fx8" class="clip" src="assets/audio/click.mp3" data-start="22.92" data-track-index="37" data-volume="0.1"></audio>
+      <audio id="fx9" class="clip" src="assets/audio/pop.mp3" data-start="26.4" data-track-index="38" data-volume="0.12"></audio>
+      <audio id="fx10" class="clip" src="assets/audio/whoosh.mp3" data-start="29.5" data-track-index="39" data-volume="0.14"></audio>
+      <audio id="fx11" class="clip" src="assets/audio/pop.mp3" data-start="30.45" data-track-index="40" data-volume="0.09"></audio>
+      <audio id="fx12" class="clip" src="assets/audio/whoosh-short.mp3" data-start="36.6" data-track-index="41" data-volume="0.12"></audio>
+      <audio id="fx13" class="clip" src="assets/audio/pop.mp3" data-start="38.6" data-track-index="42" data-volume="0.1"></audio>
+      <audio id="fx14" class="clip" src="assets/audio/whoosh.mp3" data-start="47.5" data-track-index="43" data-volume="0.14"></audio>
+      <audio id="fx15" class="clip" src="assets/audio/whoosh-short.mp3" data-start="52.85" data-track-index="44" data-volume="0.13"></audio>
+      <audio id="fx16" class="clip" src="assets/audio/pop.mp3" data-start="54.55" data-track-index="45" data-volume="0.09"></audio>
+      <audio id="fx17" class="clip" src="assets/audio/pop.mp3" data-start="55.6" data-track-index="46" data-volume="0.09"></audio>
+      <audio id="fx18" class="clip" src="assets/audio/pop.mp3" data-start="56.65" data-track-index="47" data-volume="0.09"></audio>
+      <audio id="fx19" class="clip" src="assets/audio/pop.mp3" data-start="57.7" data-track-index="48" data-volume="0.09"></audio>
+      <audio id="fx20" class="clip" src="assets/audio/pop.mp3" data-start="58.75" data-track-index="49" data-volume="0.09"></audio>
+      <audio id="fx21" class="clip" src="assets/audio/whoosh.mp3" data-start="65.5" data-track-index="50" data-volume="0.14"></audio>
+      <audio id="fx22" class="clip" src="assets/audio/pop.mp3" data-start="72.2" data-track-index="51" data-volume="0.12"></audio>
+      <audio id="fx23" class="clip" src="assets/audio/click.mp3" data-start="74.32" data-track-index="52" data-volume="0.14"></audio>
+      <audio id="fx24" class="clip" src="assets/audio/whoosh.mp3" data-start="84.5" data-track-index="53" data-volume="0.14"></audio>
+      <audio id="fx25" class="clip" src="assets/audio/pop.mp3" data-start="85.6" data-track-index="54" data-volume="0.09"></audio>
+      <audio id="fx26" class="clip" src="assets/audio/whoosh-short.mp3" data-start="88.2" data-track-index="55" data-volume="0.12"></audio>
+      <audio id="fx27" class="clip" src="assets/audio/whoosh.mp3" data-start="101.15" data-track-index="56" data-volume="0.13"></audio>
+      <audio id="fx28" class="clip" src="assets/audio/whoosh-short.mp3" data-start="102.6" data-track-index="57" data-volume="0.13"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: radial-gradient(ellipse at 30% 50%, #0d2433 0%, #05090d 70%); font-family: "Inter", sans-serif; color: #eef3f5; }
+    #sn-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(127,211,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(127,211,255,0.05) 1px, transparent 1px); background-size: 60px 60px; }
+    #sn-k { position: absolute; left: 150px; top: 96px; font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: 0.2em; color: #7fd3ff; }
+    #sn-h { position: absolute; left: 150px; top: 136px; font-size: 54px; font-weight: 800; letter-spacing: -0.02em; }
+    #sn-bin { position: absolute; left: 200px; top: 250px; width: 620px; height: 700px; }
+    .lbl { position: absolute; font-size: 26px; color: rgba(238,243,245,0.9); opacity: 0; }
+    .lbl b { color: #7fd3ff; font-weight: 700; }
+    #sn-ui { position: absolute; left: 1010px; top: 230px; width: 760px; padding: 34px 38px; border-radius: 24px; background: rgba(12,30,44,0.82); border: 1px solid rgba(127,211,255,0.3); box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
+    .uh { display: flex; justify-content: space-between; align-items: center; font-family: "JetBrains Mono", monospace; font-size: 22px; letter-spacing: 0.12em; color: rgba(238,243,245,0.65); }
+    .live { display: inline-flex; align-items: center; gap: 10px; color: #43e3b0; }
+    .live i { width: 12px; height: 12px; border-radius: 50%; background: #43e3b0; display: inline-block; }
+    .ut { font-size: 40px; font-weight: 800; margin-top: 14px; }
+    .row { margin-top: 26px; opacity: 0; }
+    .rk { font-size: 24px; color: rgba(238,243,245,0.65); }
+    .rv { font-size: 34px; font-weight: 700; margin-top: 4px; }
+    #sn-pct { font-size: 72px; font-weight: 900; letter-spacing: -0.03em; }
+    #sn-bar { height: 16px; border-radius: 8px; background: rgba(255,255,255,0.1); overflow: hidden; margin-top: 10px; }
+    #sn-barf { width: 100%; height: 16px; border-radius: 8px; background: linear-gradient(90deg, #43e3b0, #ffb547 70%, #ff7a59); transform-origin: 0 50%; }
+    #sn-hist { display: flex; align-items: flex-end; gap: 14px; height: 120px; margin-top: 12px; }
+    #sn-hist div { flex: 1; background: rgba(127,211,255,0.55); border-radius: 6px 6px 0 0; transform-origin: 50% 100%; }
+    #sn-st { display: inline-block; padding: 10px 20px; border-radius: 999px; background: rgba(255,181,71,0.15); border: 2px solid #ffb547; color: #ffb547; font-size: 30px; font-weight: 800; }
+    #sn-pkt { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: #7fd3ff; box-shadow: 0 0 22px #7fd3ff; left: 512px; top: 300px; opacity: 0; }
+    #sn-sim { position: absolute; right: 150px; bottom: 60px; font-family: "JetBrains Mono", monospace; font-size: 22px; letter-spacing: 0.14em; color: rgba(255,255,255,0.85); padding: 8px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; }
+  </style>
+  <div id="root" data-composition-id="sensor" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="sn-grid"></div>
+    <div id="sn-k">MONITORAMENTO</div>
+    <div id="sn-h">Sensores de nível nos contêineres</div>
+    <svg id="sn-bin" viewBox="0 0 620 700" fill="none">
+      <defs><clipPath id="sn-clip"><path d="M110 170 H510 L480 660 H140 Z"/></clipPath></defs>
+      <path d="M110 170 H510 L480 660 H140 Z" fill="rgba(127,211,255,0.06)" stroke="#7fd3ff" stroke-width="3"/>
+      <g clip-path="url(#sn-clip)">
+        <rect id="sn-fill" x="100" y="420" width="420" height="260" fill="rgba(67,227,176,0.35)"/>
+        <rect id="sn-surf" x="100" y="420" width="420" height="6" fill="#43e3b0"/>
+      </g>
+      <path id="sn-lid" d="M90 150 H530 V172 H90 Z" fill="rgba(127,211,255,0.25)" stroke="#7fd3ff" stroke-width="3"/>
+      <rect x="282" y="120" width="56" height="34" rx="6" fill="#0b1e2c" stroke="#ffffff" stroke-width="2.5"/>
+      <circle cx="310" cy="137" r="7" fill="#7fd3ff"/>
+      <path id="sn-w1" d="M260 205 Q310 225 360 205" stroke="#7fd3ff" stroke-width="3" opacity="0"/>
+      <path id="sn-w2" d="M240 240 Q310 268 380 240" stroke="#7fd3ff" stroke-width="3" opacity="0"/>
+      <path id="sn-w3" d="M220 275 Q310 311 400 275" stroke="#7fd3ff" stroke-width="3" opacity="0"/>
+      <path id="sn-dist" d="M310 160 V420" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 8" opacity="0"/>
+    </svg>
+    <div class="lbl" id="sn-l1" style="left:560px;top:345px"><b>Sensor de nível</b><br/>mede a distância até os resíduos</div>
+    <div class="lbl" id="sn-l2" style="left:560px;top:690px"><b>Nível de preenchimento</b><br/>calculado continuamente</div>
+    <div id="sn-pkt"></div>
+    <div id="sn-ui">
+      <div class="uh"><span>CONTÊINER C-014 · SETOR NORTE</span><span class="live"><i id="sn-dot"></i>AO VIVO</span></div>
+      <div class="ut">Plataforma de monitoramento</div>
+      <div class="row" id="sn-r1"><div class="rk">Nível de preenchimento</div><div id="sn-pct">0%</div><div id="sn-bar"><div id="sn-barf"></div></div></div>
+      <div class="row" id="sn-r2"><div class="rk">Localização</div><div class="rv">Setor Norte · ponto 14</div></div>
+      <div class="row" id="sn-r3"><div class="rk">Histórico de uso · 7 dias</div><div id="sn-hist"><div style="height:34%"></div><div style="height:42%"></div><div style="height:55%"></div><div style="height:48%"></div><div style="height:63%"></div><div style="height:70%"></div><div style="height:78%"></div></div></div>
+      <div class="row" id="sn-r4"><div class="rk">Necessidade de coleta</div><div style="margin-top:8px"><span id="sn-st">COLETA RECOMENDADA</span></div></div>
+    </div>
+    <div id="sn-sim" data-layout-ignore>SIMULAÇÃO · VALORES ILUSTRATIVOS</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 15.6 s
+    tl.fromTo("#root", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+    tl.fromTo(["#sn-k", "#sn-h"], { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, stagger: 0.1 }, 0.15);
+    tl.fromTo("#sn-bin", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.3);
+    // pulsos do sensor (repetição finita)
+    ["#sn-w1", "#sn-w2", "#sn-w3"].forEach((w, i) => tl.fromTo(w, { opacity: 0 }, { opacity: 0.9, duration: 0.25, yoyo: true, repeat: 19, ease: "sine.inOut" }, 0.6 + i * 0.18));
+    tl.fromTo("#sn-l1", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, 0.5);
+    // nível sobe ("nível de preenchimento" 17.66)
+    tl.to("#sn-dist", { opacity: 0.8, duration: 0.3 }, 1.9);
+    tl.fromTo(["#sn-fill", "#sn-surf"], { y: 140 }, { y: -110, duration: 5.0, ease: "power1.inOut" }, 1.9);
+    tl.fromTo("#sn-dist", { attr: { d: "M310 160 V560" } }, { attr: { d: "M310 160 V310" }, duration: 5.0, ease: "power1.inOut" }, 1.9);
+    tl.fromTo("#sn-l2", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, 2.4);
+    // painel e envio de dados ("enviar informações" 19.74)
+    tl.fromTo("#sn-ui", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: "expo.out" }, 3.0);
+    tl.fromTo("#sn-dot", { opacity: 1 }, { opacity: 0.2, duration: 0.5, yoyo: true, repeat: 21, ease: "sine.inOut" }, 3.3);
+    for (let k = 0; k < 4; k++) {
+      tl.set("#sn-pkt", { opacity: 1, x: 0, y: 0 }, 4.1 + k * 1.6);
+      tl.to("#sn-pkt", { keyframes: [{ x: 0, y: -90, duration: 0.25 }, { x: 500, y: 40, duration: 0.55, ease: "power2.inOut" }], ease: "none" }, 4.1 + k * 1.6);
+      tl.set("#sn-pkt", { opacity: 0 }, 4.92 + k * 1.6);
+    }
+    tl.fromTo("#sn-r1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 4.6);
+    const pct = { v: 0 };
+    tl.fromTo(pct, { v: 22 }, { v: 78, duration: 4.0, ease: "power1.inOut", onUpdate: () => { document.querySelector("#sn-pct").textContent = Math.round(pct.v) + "%"; } }, 4.6);
+    tl.fromTo("#sn-barf", { scaleX: 0.22 }, { scaleX: 0.78, duration: 4.0, ease: "power1.inOut" }, 4.6);
+    tl.fromTo("#sn-r2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 5.4);
+    tl.fromTo("#sn-r3", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 6.3);
+    tl.fromTo("#sn-hist div", { scaleY: 0 }, { scaleY: 1, duration: 0.5, stagger: 0.07, ease: "expo.out" }, 6.4);
+    // "identificar onde a coleta é mais necessária" 25.04–26.7
+    tl.fromTo("#sn-r4", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 9.4);
+    tl.fromTo("#sn-st", { scale: 0.8 }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, 10.8);
+    tl.to("#sn-st", { keyframes: [{ scale: 1.06, duration: 0.15 }, { scale: 1, duration: 0.3 }] }, 11.1);
+    tl.to("#root", { opacity: 1, duration: 0.01 }, 13.95);
+    window.__timelines["sensor"] = tl;
+  </script>
+</template>

@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: radial-gradient(ellipse at 45% 60%, #0d2433 0%, #05090d 72%); font-family: "Inter", sans-serif; color: #eef3f5; }
+    #rt-cam { position: absolute; inset: 0; perspective: 1900px; perspective-origin: 45% 20%; }
+    #rt-plane { position: absolute; left: -30px; top: 170px; width: 1500px; height: 920px; transform-style: preserve-3d; }
+    #rt-base { position: absolute; inset: 0; border-radius: 26px; background: rgba(10,26,38,0.85); border: 1px solid rgba(127,211,255,0.25); }
+    #rt-svg { position: absolute; left: 0; top: 0; }
+    #rt-streets line { stroke: rgba(127,211,255,0.16); stroke-width: 14; stroke-linecap: round; }
+    .cn { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: var(--c); box-shadow: 0 0 24px var(--c); border: 3px solid rgba(255,255,255,0.85); }
+    .cn span { position: absolute; left: 50%; bottom: 52px; transform: translateX(-50%) rotateX(-50deg); transform-origin: 50% 100%; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.9); white-space: nowrap; }
+    #rt-depot { position: absolute; left: __DX__px; top: __DY__px; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 12px; background: #0b1e2c; border: 3px solid #7fd3ff; }
+    #rt-truck { position: absolute; left: __DX__px; top: __DY__px; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 10px; background: #ffffff; box-shadow: 0 0 26px rgba(255,255,255,0.9); }
+    #rt-pf { stroke: #ffb547; stroke-width: 7; fill: none; stroke-linejoin: round; }
+    #rt-pg { stroke: #43e3b0; stroke-width: 9; fill: none; stroke-linejoin: round; }
+    #rt-k { position: absolute; left: 150px; top: 70px; font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: 0.2em; color: #7fd3ff; }
+    #rt-h { position: absolute; left: 150px; top: 108px; font-size: 50px; font-weight: 800; letter-spacing: -0.02em; }
+    .mode { position: absolute; left: 1340px; top: 80px; padding: 14px 24px; border-radius: 999px; font-size: 30px; font-weight: 800; border: 2px solid; opacity: 0; }
+    #rt-m1 { color: #ffb547; border-color: #ffb547; background: rgba(255,181,71,0.1); }
+    #rt-m2 { color: #43e3b0; border-color: #43e3b0; background: rgba(67,227,176,0.1); }
+    #rt-cnt { position: absolute; left: 1340px; top: 160px; font-size: 34px; color: rgba(238,243,245,0.85); opacity: 0; }
+    #rt-cnt b { font-size: 60px; font-weight: 900; color: #fff; }
+    #rt-in { position: absolute; left: 1340px; top: 290px; width: 480px; }
+    #rt-in .t { font-family: "JetBrains Mono", monospace; font-size: 22px; letter-spacing: 0.16em; color: rgba(238,243,245,0.7); margin-bottom: 12px; opacity: 0; }
+    .inp { display: flex; align-items: center; gap: 14px; padding: 14px 18px; margin-bottom: 12px; border-radius: 12px; background: rgba(12,30,44,0.9); border: 1px solid rgba(127,211,255,0.3); font-size: 28px; opacity: 0; }
+    .inp i { width: 14px; height: 14px; border-radius: 50%; background: #7fd3ff; display: inline-block; }
+    #rt-cmp { position: absolute; left: 1340px; top: 600px; width: 480px; opacity: 0; }
+    .cmp { display: flex; justify-content: space-between; padding: 12px 14px; font-size: 24px; white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .cmp b { font-weight: 800; }
+    #rt-sim { position: absolute; left: 1340px; top: 740px; width: 480px; font-size: 22px; color: rgba(238,243,245,0.7); line-height: 1.35; }
+    #rt-tag { position: absolute; right: 110px; bottom: 50px; font-family: "JetBrains Mono", monospace; font-size: 22px; letter-spacing: 0.14em; color: rgba(255,255,255,0.85); padding: 8px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; }
+  </style>
+  <div id="root" data-composition-id="rotas" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="rt-cam">
+      <div id="rt-plane">
+        <div id="rt-base"></div>
+        <svg id="rt-svg" width="1500" height="920" viewBox="0 0 1500 920">
+          <g id="rt-streets">__STREETS__</g>
+          <path id="rt-pf" d="__PF__" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+          <path id="rt-pg" d="__PG__" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+        </svg>
+        <div id="rt-depot"></div>
+        __NODES__
+        <div id="rt-truck"></div>
+      </div>
+    </div>
+    <div id="rt-k">PLANEJAMENTO DE ROTAS</div>
+    <div id="rt-h">Mapa ilustrativo de um setor de coleta</div>
+    <div class="mode" id="rt-m1">ROTA FIXA</div>
+    <div class="mode" id="rt-m2">ROTA APOIADA POR DADOS</div>
+    <div id="rt-cnt">paradas: <b id="rt-num">__NF__</b></div>
+    <div id="rt-in">
+      <div class="t" id="rt-int">O SISTEMA CONSIDERA</div>
+      <div class="inp" id="rt-i1"><i></i>Nível de cada contêiner</div>
+      <div class="inp" id="rt-i2"><i></i>Capacidade do caminhão</div>
+      <div class="inp" id="rt-i3"><i></i>Trânsito e condições da operação</div>
+    </div>
+    <div id="rt-cmp">
+      <div class="cmp"><span>Planejamento fixo</span><b style="color:#ffb547">__NF__ paradas</b></div>
+      <div class="cmp"><span>Planejamento com dados</span><b style="color:#43e3b0">__NG__ paradas</b></div>
+    </div>
+    <div id="rt-sim">Cenário ilustrativo: não representa medição real de economia.</div>
+    <div id="rt-tag" data-layout-ignore>SIMULAÇÃO ILUSTRATIVA</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 29.6 s
+    tl.fromTo("#rt-plane", { rotationX: 62, rotationZ: -8, scale: 0.8, y: 80, opacity: 0 }, { rotationX: 50, rotationZ: -3, scale: 0.84, y: 0, opacity: 1, duration: 1.2, ease: "expo.out" }, 0);
+    tl.to("#rt-plane", { rotationZ: 1, duration: 16.6, ease: "none" }, 1.2);
+    tl.fromTo(["#rt-k", "#rt-h"], { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, stagger: 0.1 }, 0.3);
+    tl.fromTo(".cn", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, stagger: 0.06, ease: "back.out(1.8)" }, 0.8);
+    // rota fixa ("planejamento das rotas" 31.9 · "trajetos fixos" 35.4)
+    tl.fromTo("#rt-m1", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.35 }, 2.3);
+    tl.fromTo("#rt-cnt", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 2.5);
+    tl.to("#rt-pf", { strokeDashoffset: 10, duration: 4.2, ease: "none" }, 2.6);
+    tl.to("#rt-truck", { keyframes: [__KF__] }, 2.6);
+    // dados entram ("sistemas inteligentes" 36.8)
+    tl.to("#rt-m1", { opacity: 0, duration: 0.2 }, 7.0);
+    tl.fromTo("#rt-m2", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.35 }, 7.1);
+    tl.to("#rt-pf", { opacity: 0.18, duration: 0.5 }, 7.1);
+    tl.set("#rt-truck", { x: 0, y: 0 }, 7.1);
+    tl.to(".cn.lo", { opacity: 0.25, scale: 0.7, duration: 0.5, ease: "power2.inOut" }, 7.4);
+    tl.fromTo("#rt-int", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 7.5);
+    [["#rt-i1", 7.7], ["#rt-i2", 8.4], ["#rt-i3", 13.3]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, t));
+    // nova rota ("priorizar regiões" 38.7 · "reduzir deslocamentos" 39.84)
+    tl.to("#rt-pg", { strokeDashoffset: 10, duration: 3.6, ease: "none" }, 8.9);
+    tl.to("#rt-truck", { keyframes: [__KG__] }, 8.9);
+    tl.set("#rt-num", { textContent: "__NG__" }, 9.0);
+    tl.fromTo("#rt-num", { scale: 1.3 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, 9.0);
+    tl.fromTo("#rt-cmp", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 12.8);
+    tl.fromTo("#rt-sim", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 13.6);
+    window.__timelines["rotas"] = tl;
+  </script>
+</template>

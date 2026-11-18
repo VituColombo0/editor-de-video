@@ -1,0 +1,81 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #05090d; font-family: "Inter", sans-serif; color: #eef3f5; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .shot { position: absolute; inset: 0; overflow: hidden; }
+    #cd-s2 { clip-path: inset(0 0 100% 0); }
+    #cd-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,24,40,0.55), rgba(4,12,22,0.7)); opacity: 0; }
+    #cd-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(127,211,255,0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(127,211,255,0.13) 1px, transparent 1px); background-size: 96px 96px; opacity: 0; }
+    #cd-scan { position: absolute; left: 0; width: 1920px; height: 4px; top: 0; background: #7fd3ff; box-shadow: 0 0 30px 6px rgba(127,211,255,0.7); opacity: 0; }
+    #cd-net { position: absolute; left: 0; top: 0; }
+    #cd-net line { stroke: rgba(127,211,255,0.55); stroke-width: 1.6; }
+    #cd-net circle { fill: #7fd3ff; }
+    .tagc { position: absolute; padding: 12px 18px; background: rgba(5,12,20,0.85); border: 1px solid rgba(127,211,255,0.6); border-radius: 10px; opacity: 0; }
+    .tagc .k { font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; color: #7fd3ff; letter-spacing: 0.08em; }
+    .tagc .s { font-size: 24px; color: rgba(238,243,245,0.8); margin-top: 2px; }
+    #cd-title { position: absolute; left: 0; width: 1920px; top: 410px; text-align: center; }
+    #cd-title h1 { font-size: 112px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; text-shadow: 0 6px 30px rgba(0,0,0,0.7); }
+    #cd-title h1 span { display: inline-block; }
+    #cd-title .en { font-family: "JetBrains Mono", monospace; font-size: 40px; letter-spacing: 0.4em; color: #7fd3ff; margin-top: 22px; }
+    #cd-dk { position: absolute; inset: 0; background: rgba(3,8,14,0.55); opacity: 0; }
+    .cred { position: absolute; right: 96px; bottom: 44px; font-size: 17px; color: rgba(255,255,255,0.82); padding: 6px 12px; background: rgba(0,0,0,0.55); border-radius: 4px; opacity: 0; }
+    .loc { position: absolute; left: 150px; top: 96px; font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: 0.18em; color: #fff; padding: 8px 14px; background: rgba(0,0,0,0.5); border-left: 3px solid #7fd3ff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="cidade" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="cd-s1" class="shot"><img id="cd-i1" class="full" src="assets/img/sa-paco.jpg" alt="Vista aérea do centro de Santo André" /></div>
+    <div id="cd-s2" class="shot">
+      <div id="cd-cam" class="shot">
+        <img id="cd-i2" class="full" src="assets/img/sat-sa-centro.jpg" alt="Imagem de satélite do centro de Santo André" />
+        <div id="cd-tint"></div>
+        <div id="cd-grid"></div>
+        <svg id="cd-net" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+      </div>
+    </div>
+    <div id="cd-scan"></div>
+    <div class="tagc" id="cd-t1" style="left:330px;top:300px"><div class="k">ONDE</div><div class="s">localização</div></div>
+    <div class="tagc" id="cd-t2" style="left:1270px;top:250px"><div class="k">QUANDO</div><div class="s">dia e horário</div></div>
+    <div class="tagc" id="cd-t3" style="left:1180px;top:700px"><div class="k">QUANTO</div><div class="s">volume gerado</div></div>
+    <div id="cd-dk"></div>
+    <div id="cd-title"><h1><span>CIDADES</span> <span>INTELIGENTES</span></h1><div class="en">SMART CITIES</div></div>
+    <div class="loc" id="cd-loc" data-layout-ignore>SANTO ANDRÉ (SP)</div>
+    <div class="cred" id="cd-c1" data-layout-ignore>Foto: Ramon S. Lopes (CC BY-SA 4.0)</div>
+    <div class="cred" id="cd-c2" data-layout-ignore>Satélite: Esri, Maxar, Earthstar Geographics · camada de dados ilustrativa</div>
+  </div>
+  <script>
+    // rede de pontos semeada (determinística)
+    (function () {
+      let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      const svg = document.querySelector("#cd-net"), NS = "http://www.w3.org/2000/svg", P = [];
+      for (let i = 0; i < 46; i++) P.push([120 + rnd() * 1680, 90 + rnd() * 900]);
+      P.forEach((p, i) => {
+        const d = P.map((q, j) => [j, Math.hypot(q[0] - p[0], q[1] - p[1])]).filter(x => x[0] > i).sort((a, b) => a[1] - b[1]).slice(0, 2);
+        d.forEach(([j]) => { const l = document.createElementNS(NS, "line"); l.setAttribute("x1", p[0]); l.setAttribute("y1", p[1]); l.setAttribute("x2", P[j][0]); l.setAttribute("y2", P[j][1]); l.setAttribute("class", "cd-ln"); l.setAttribute("pathLength", "100"); l.setAttribute("stroke-dasharray", "100 120"); l.setAttribute("stroke-dashoffset", "110"); svg.appendChild(l); });
+      });
+      P.forEach((p) => { const c = document.createElementNS(NS, "circle"); c.setAttribute("cx", p[0]); c.setAttribute("cy", p[1]); c.setAttribute("r", 6); c.setAttribute("class", "cd-pt"); c.setAttribute("opacity", 0); svg.appendChild(c); });
+    })();
+    const tl = gsap.timeline({ paused: true });
+    // cena 0 = root 0
+    tl.fromTo("#cd-i1", { scale: 1.0 }, { scale: 1.1, duration: 5.2, ease: "none" }, 0);
+    tl.set("#cd-loc", { opacity: 1 }, 0.4); tl.set("#cd-c1", { opacity: 1 }, 0.4); tl.set(["#cd-loc", "#cd-c1"], { opacity: 0 }, 4.4);
+    // varredura: a foto vira a camada digital da cidade
+    tl.set("#cd-scan", { opacity: 1 }, 3.6);
+    tl.fromTo("#cd-scan", { y: 0 }, { y: 1080, duration: 1.0, ease: "power2.inOut" }, 3.6);
+    tl.to("#cd-s2", { clipPath: "inset(0 0 0% 0)", duration: 1.0, ease: "power2.inOut" }, 3.6);
+    tl.set("#cd-scan", { opacity: 0 }, 4.65);
+    tl.set("#cd-c2", { opacity: 1 }, 4.6);
+    tl.fromTo("#cd-cam", { scale: 1.12, rotation: -3 }, { scale: 1.0, rotation: 0, duration: 11.0, ease: "power1.out" }, 3.6);
+    tl.to("#cd-tint", { opacity: 1, duration: 1.2 }, 4.4);
+    tl.to("#cd-grid", { opacity: 1, duration: 1.2 }, 4.6);
+    tl.to(".cd-pt", { opacity: 1, duration: 0.3, stagger: 0.03 }, 4.8);
+    tl.to(".cd-ln", { strokeDashoffset: 0, duration: 0.8, stagger: 0.02, ease: "power2.out" }, 5.2);
+    // "onde, quando e quanto"
+    [["#cd-t1", 5.4], ["#cd-t2", 6.15], ["#cd-t3", 6.6]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, t));
+    tl.to(["#cd-t1", "#cd-t2", "#cd-t3"], { opacity: 0, duration: 0.25 }, 9.3);
+    // "cidades inteligentes" 10.06 · "smart cities" 11.8
+    tl.to("#cd-dk", { opacity: 1, duration: 0.5 }, 9.5);
+    tl.fromTo("#cd-title h1 span", { opacity: 0, filter: "blur(14px)", y: 16 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.35, stagger: 0.32, ease: "expo.out" }, 9.95);
+    tl.fromTo("#cd-title .en", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4 }, 11.75);
+    tl.to("#cd-title", { opacity: 0, scale: 1.06, filter: "blur(12px)", duration: 0.35, ease: "power3.in" }, 15.1);
+    window.__timelines["cidade"] = tl;
+  </script>
+</template>

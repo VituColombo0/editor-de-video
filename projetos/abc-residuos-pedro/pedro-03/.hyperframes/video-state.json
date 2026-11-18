@@ -1,0 +1,1064 @@
+{
+  "version": 1,
+  "historyId": "9b83c837-79fa-4e3c-a47f-9b2f01d2347c",
+  "currentRevision": "2a49633c-4862-4ad8-8ec3-71e012c2e5d2",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/26/268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a"
+    },
+    "CLAUDE.md": {
+      "hash": "268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/26/268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a"
+    },
+    "assets/audio/click.mp3": {
+      "hash": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/07/075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d"
+    },
+    "assets/audio/impact-bass-1.mp3": {
+      "hash": "634d5eda5eb7b501aca98393a64f3815eccf24157cd1d95df55aaec1b5000bd7",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/63/634d5eda5eb7b501aca98393a64f3815eccf24157cd1d95df55aaec1b5000bd7"
+    },
+    "assets/audio/key-press.mp3": {
+      "hash": "bcc892df0898bf466162f14233c3e92a8c1ea351f6affd8a3a7e56c9a760bb72",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/bc/bcc892df0898bf466162f14233c3e92a8c1ea351f6affd8a3a7e56c9a760bb72"
+    },
+    "assets/audio/pop.mp3": {
+      "hash": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/19/19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352"
+    },
+    "assets/audio/riser.mp3": {
+      "hash": "d2f29d49f27dee7d3b25af22ffe5bebc39390cc5d5fb3b3e1c433499c77f3d1d",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/d2/d2f29d49f27dee7d3b25af22ffe5bebc39390cc5d5fb3b3e1c433499c77f3d1d"
+    },
+    "assets/audio/whoosh-cinematic.mp3": {
+      "hash": "0a0f3505856fdfa84ac6b86b3c55ccd0ef1eb4ff0907d7b6934002218a73404e",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/0a/0a0f3505856fdfa84ac6b86b3c55ccd0ef1eb4ff0907d7b6934002218a73404e"
+    },
+    "assets/audio/whoosh-short.mp3": {
+      "hash": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/c2/c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+    },
+    "assets/audio/whoosh.mp3": {
+      "hash": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/c2/c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+    },
+    "assets/img/abc-regiao.json": {
+      "hash": "b48ebe5130a979c713817ac429f2f32b10c751bf07857c6180a945b2a604a3b9",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/b4/b48ebe5130a979c713817ac429f2f32b10c751bf07857c6180a945b2a604a3b9"
+    },
+    "assets/img/lara.json": {
+      "hash": "a060220a00c86ca1cde711fa10eb6c755e5befa80553fdf8db46ce95d464bc42",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/a0/a060220a00c86ca1cde711fa10eb6c755e5befa80553fdf8db46ce95d464bc42"
+    },
+    "assets/img/sa-aterro.json": {
+      "hash": "2412c6496340e4698933372a8b5dd41d7d585df013222775ad365c342edf4ce3",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/24/2412c6496340e4698933372a8b5dd41d7d585df013222775ad365c342edf4ce3"
+    },
+    "assets/img/sa-centro.json": {
+      "hash": "09b28ba8bd3512c1607e74d51ee5cc86f05048719249e10a4b904bb116e4b5bf",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/09/09b28ba8bd3512c1607e74d51ee5cc86f05048719249e10a4b904bb116e4b5bf"
+    },
+    "assets/img/sat-sa-centro.json": {
+      "hash": "09b28ba8bd3512c1607e74d51ee5cc86f05048719249e10a4b904bb116e4b5bf",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/09/09b28ba8bd3512c1607e74d51ee5cc86f05048719249e10a4b904bb116e4b5bf"
+    },
+    "assets/img/sbc-2.jpg": {
+      "hash": "dd1f32d080faa4d8fb9c715ad447ca2d964cf6cc538d499494c027bf193105b4",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/dd/dd1f32d080faa4d8fb9c715ad447ca2d964cf6cc538d499494c027bf193105b4"
+    },
+    "compositions/abc.html": {
+      "hash": "42a3d7c4663e8a63a41c520460bdea7c09c6b9cc9817e2bb29332c5b9e699ec7",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/42/42a3d7c4663e8a63a41c520460bdea7c09c6b9cc9817e2bb29332c5b9e699ec7"
+    },
+    "compositions/cidade.html": {
+      "hash": "1dd99a8b95848687aab58012544cfe0b058cd70d19cc760cfab7c94842145beb",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/1d/1dd99a8b95848687aab58012544cfe0b058cd70d19cc760cfab7c94842145beb"
+    },
+    "compositions/fecho.html": {
+      "hash": "3b89d129741f0c75949c10c805bb86be2162c51c4ef250d5e691251ff3e0f703",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/3b/3b89d129741f0c75949c10c805bb86be2162c51c4ef250d5e691251ff3e0f703"
+    },
+    "compositions/painel.html": {
+      "hash": "fffdfc5f1fd3ae9d5b912017cf0c9b1f9e54b57401087d0268cb36d6cc4123df",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/ff/fffdfc5f1fd3ae9d5b912017cf0c9b1f9e54b57401087d0268cb36d6cc4123df"
+    },
+    "compositions/rotas.html": {
+      "hash": "431bedfaecb0dc40b7856af6fb3be8aae605841d44e217123b8ba1150d20d442",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/43/431bedfaecb0dc40b7856af6fb3be8aae605841d44e217123b8ba1150d20d442"
+    },
+    "compositions/sensor.html": {
+      "hash": "c8e80ee039188b32366a7464f5dbde2cf82edf5daddebd2c093eda6f46bc6346",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/c8/c8e80ee039188b32366a7464f5dbde2cf82edf5daddebd2c093eda6f46bc6346"
+    },
+    "compositions/triagem.html": {
+      "hash": "aed282b7391c312dc6028d71fd2416a1071e0bea1841508960805f969cc1c072",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/ae/aed282b7391c312dc6028d71fd2416a1071e0bea1841508960805f969cc1c072"
+    },
+    "hyperframes.json": {
+      "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+    },
+    "index.html": {
+      "hash": "3d76f54fee2978f7146f79788b6a3eb7208f13cd94565a386cd848d6f7d8752e",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/3d/3d76f54fee2978f7146f79788b6a3eb7208f13cd94565a386cd848d6f7d8752e"
+    },
+    "meta.json": {
+      "hash": "ec5f5f3c34a15482b757a3862c867cb1cad7adc9df6c79a7d5ea3a7ddcaea791",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/ec/ec5f5f3c34a15482b757a3862c867cb1cad7adc9df6c79a7d5ea3a7ddcaea791"
+    },
+    "package.json": {
+      "hash": "4479554de8499667673172f70483c4d894e5c72b4cb746dab173ae114df3d6d4",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/44/4479554de8499667673172f70483c4d894e5c72b4cb746dab173ae114df3d6d4"
+    },
+    "assets/audio/narracao.wav": {
+      "hash": "ebaf7d863fae368aec3b83ac38bd5c67868302051c96c02512968682d5a0873d",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/eb/ebaf7d863fae368aec3b83ac38bd5c67868302051c96c02512968682d5a0873d"
+    },
+    "assets/audio/trilha.wav": {
+      "hash": "0d48c9bfc59c000a922bd8ef6149f1310ddfe0e8dcf940c8d2fa4718e9e7febe",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/0d/0d48c9bfc59c000a922bd8ef6149f1310ddfe0e8dcf940c8d2fa4718e9e7febe"
+    },
+    "assets/footage/al-forno.mp4": {
+      "hash": "3ee535d9ee2b337d6077f2ba0e4493b5f4882ac2f2b2c3720b707234915dc287",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/3e/3ee535d9ee2b337d6077f2ba0e4493b5f4882ac2f2b2c3720b707234915dc287"
+    },
+    "assets/footage/al-fundido.mp4": {
+      "hash": "fbadf4f8c6a10aea002f3addf1a553062824dd0413e8e1cafa57516d6964b8f2",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/fb/fbadf4f8c6a10aea002f3addf1a553062824dd0413e8e1cafa57516d6964b8f2"
+    },
+    "assets/footage/al-lingote.mp4": {
+      "hash": "8397ceb044603e9e50f491a10ff01dfa5b746ce9680f83002be2174eaaa92e18",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/83/8397ceb044603e9e50f491a10ff01dfa5b746ce9680f83002be2174eaaa92e18"
+    },
+    "assets/footage/al-pilha.mp4": {
+      "hash": "460017f3d751e22a450b9ea307581e94f7f68acd7420b5d29138b4e9a9cc3ab9",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/46/460017f3d751e22a450b9ea307581e94f7f68acd7420b5d29138b4e9a9cc3ab9"
+    },
+    "assets/footage/br-descarga.mp4": {
+      "hash": "f8e0f2a56a33d56d0cddd7a6fb323595131d7d261d8ee9459b033895e57ca2e4",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/f8/f8e0f2a56a33d56d0cddd7a6fb323595131d7d261d8ee9459b033895e57ca2e4"
+    },
+    "assets/footage/br-esteira.mp4": {
+      "hash": "491725fc41c958ce85373abc96f7f44fed25bbecb0d93bce43d95ac843ed22a3",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/49/491725fc41c958ce85373abc96f7f44fed25bbecb0d93bce43d95ac843ed22a3"
+    },
+    "assets/footage/br-triagem1.mp4": {
+      "hash": "ecb7441b1df4dd06e8ea1d15d733f21421f25ef1e628596936a195a007810377",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/ec/ecb7441b1df4dd06e8ea1d15d733f21421f25ef1e628596936a195a007810377"
+    },
+    "assets/footage/br-triagem2.mp4": {
+      "hash": "440b513816acea9b5dd4c44c06055c247973293d6d5842d9602c3465e6f24cf5",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/44/440b513816acea9b5dd4c44c06055c247973293d6d5842d9602c3465e6f24cf5"
+    },
+    "assets/footage/br-triagem3.mp4": {
+      "hash": "6ad1bec8cbef8ce16b5431260f4fa7595217c0c5b3497346533a4ddce03b7ebc",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/6a/6ad1bec8cbef8ce16b5431260f4fa7595217c0c5b3497346533a4ddce03b7ebc"
+    },
+    "assets/footage/eg-sopro.mp4": {
+      "hash": "1c8932b4efb0409ddff219981b6a593e3695c066ddf3322a9433fc0114022dac",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/1c/1c8932b4efb0409ddff219981b6a593e3695c066ddf3322a9433fc0114022dac"
+    },
+    "assets/footage/ir-fardo.mp4": {
+      "hash": "2fe6716ff56575734711421a8749df0a138dabdac871351ce089ce6351f0009e",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/2f/2fe6716ff56575734711421a8749df0a138dabdac871351ce089ce6351f0009e"
+    },
+    "assets/footage/ir-garrafas.mp4": {
+      "hash": "789b6509b2091f9a23323b4e72e878aa03048539bf74060180d8603f7693b021",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/78/789b6509b2091f9a23323b4e72e878aa03048539bf74060180d8603f7693b021"
+    },
+    "assets/footage/ir-latas.mp4": {
+      "hash": "fb77adc3f43f2b74bfebe15113a7403b299c658f3ef6ab12b1bc6e0fb98b29fd",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/fb/fb77adc3f43f2b74bfebe15113a7403b299c658f3ef6ab12b1bc6e0fb98b29fd"
+    },
+    "assets/footage/ir-papel.mp4": {
+      "hash": "c684c991f232cc1818e41841d1481ceff42b717476cb664363e21d1663c205b8",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/c6/c684c991f232cc1818e41841d1481ceff42b717476cb664363e21d1663c205b8"
+    },
+    "assets/footage/ir-pet.mp4": {
+      "hash": "c62d2f40bb4b24ba2330887164d612582b4f6615aabcd2bef436330253e3487a",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/c6/c62d2f40bb4b24ba2330887164d612582b4f6615aabcd2bef436330253e3487a"
+    },
+    "assets/footage/ir-triagem.mp4": {
+      "hash": "3c84273004bf75585abcef73727b102adff5660e2fb3ad944ee39abf6423ad0a",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/3c/3c84273004bf75585abcef73727b102adff5660e2fb3ad944ee39abf6423ad0a"
+    },
+    "assets/footage/sg-linha.mp4": {
+      "hash": "b369614469f0dd4b093f9e8a448dcd4b9772ddd7f111e26b4de91af5096c2de1",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/b3/b369614469f0dd4b093f9e8a448dcd4b9772ddd7f111e26b4de91af5096c2de1"
+    },
+    "assets/footage/sg-optico.mp4": {
+      "hash": "19a80c786184d5a769b612848e6ae9777902a06a8e3efc0e4b16c5138e2e192e",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/19/19a80c786184d5a769b612848e6ae9777902a06a8e3efc0e4b16c5138e2e192e"
+    },
+    "assets/footage/sg-salao.mp4": {
+      "hash": "1da1b7e97e73ced31255242ccc7b0df66afc3df557acdc79918ecb237d078397",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/1d/1da1b7e97e73ced31255242ccc7b0df66afc3df557acdc79918ecb237d078397"
+    },
+    "assets/footage/sg-voo.mp4": {
+      "hash": "35e7a2e1a2db69273c35b5617e196c3ef9c9e4932c5c03cb593f9d43a98f8b5d",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/35/35e7a2e1a2db69273c35b5617e196c3ef9c9e4932c5c03cb593f9d43a98f8b5d"
+    },
+    "assets/footage/v1-coleta.mp4": {
+      "hash": "50bd2b98dac0b662a5ad08f64da0dbd43259a6db1e9c00395d94497c19a2e5f9",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/50/50bd2b98dac0b662a5ad08f64da0dbd43259a6db1e9c00395d94497c19a2e5f9"
+    },
+    "assets/footage/v1-cozinha.mp4": {
+      "hash": "84a975b5c0f66ef5861ead7c64e679cc26b6d1d8073885a1928cca5e59cf4f1f",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/84/84a975b5c0f66ef5861ead7c64e679cc26b6d1d8073885a1928cca5e59cf4f1f"
+    },
+    "assets/footage/v1-rua.mp4": {
+      "hash": "5dcdbe655125e2bd69abe39606b57ef4f255b264d481aa46eed3fdbe392d6f70",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/5d/5dcdbe655125e2bd69abe39606b57ef4f255b264d481aa46eed3fdbe392d6f70"
+    },
+    "assets/img/abc-regiao.jpg": {
+      "hash": "e33b01ef73a08d252dafa072e8a8f7727265543195f26d75510985d900bf9c6b",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/e3/e33b01ef73a08d252dafa072e8a8f7727265543195f26d75510985d900bf9c6b"
+    },
+    "assets/img/aterro-1.jpg": {
+      "hash": "f6c31a5f10252c0a732ebe550592c19a61ff0a54a1d3a576c2b14805ae1e2b93",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/f6/f6c31a5f10252c0a732ebe550592c19a61ff0a54a1d3a576c2b14805ae1e2b93"
+    },
+    "assets/img/coopamare.jpg": {
+      "hash": "e5345716b6c6bd79b7b73313c653f52023fc9a8fb5a326af8f206faca1eda50c",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/e5/e5345716b6c6bd79b7b73313c653f52023fc9a8fb5a326af8f206faca1eda50c"
+    },
+    "assets/img/lara.jpg": {
+      "hash": "fa2f7b7de4f4caac7c59ebce75ba3f4dae12a4935f72cc7e2a3976f053bae445",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/fa/fa2f7b7de4f4caac7c59ebce75ba3f4dae12a4935f72cc7e2a3976f053bae445"
+    },
+    "assets/img/maua-1.jpg": {
+      "hash": "5f319f3e440353967314b0e1490e1ed727f269e0d26faeb7a1ba2f90a5d53443",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/5f/5f319f3e440353967314b0e1490e1ed727f269e0d26faeb7a1ba2f90a5d53443"
+    },
+    "assets/img/maua-2.jpg": {
+      "hash": "5593064635a54334c8f3234cfc330aea90784b99243b5852275a4b81aff8cad0",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/55/5593064635a54334c8f3234cfc330aea90784b99243b5852275a4b81aff8cad0"
+    },
+    "assets/img/pet-fardo.jpg": {
+      "hash": "7c28338e6b9125301d1c63ef52feac3a9761df3237bddd107f57d31aa6f23192",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/7c/7c28338e6b9125301d1c63ef52feac3a9761df3237bddd107f57d31aa6f23192"
+    },
+    "assets/img/pet-fardo2.jpg": {
+      "hash": "32b82c5c440c48ab629b3caffc037431220c08710a989dfd537fb0e42be54466",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/32/32b82c5c440c48ab629b3caffc037431220c08710a989dfd537fb0e42be54466"
+    },
+    "assets/img/sa-aterro.jpg": {
+      "hash": "f4f192cab7cfd703852b3f2d2716cbbde43158beb39bb498df2266071c333a7e",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/f4/f4f192cab7cfd703852b3f2d2716cbbde43158beb39bb498df2266071c333a7e"
+    },
+    "assets/img/sa-centro.jpg": {
+      "hash": "93bc8c72f0c640f7ca8e5917e2caaaa04f97c2bc5eb7c727a169548fbe5c1d77",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/93/93bc8c72f0c640f7ca8e5917e2caaaa04f97c2bc5eb7c727a169548fbe5c1d77"
+    },
+    "assets/img/sa-paco.jpg": {
+      "hash": "7d926721784ba8c51f6057c03bb4c23f776b035d6432851d2047af6bd673f5f3",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/7d/7d926721784ba8c51f6057c03bb4c23f776b035d6432851d2047af6bd673f5f3"
+    },
+    "assets/img/sat-sa-centro.jpg": {
+      "hash": "a712fd298faca12e153f1b26893e9c11e3cc84f93d6363b5bbff46e23e675ac6",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/a7/a712fd298faca12e153f1b26893e9c11e3cc84f93d6363b5bbff46e23e675ac6"
+    },
+    "assets/footage/br-misturado.mp4": {
+      "hash": "6003a581ffe53cc707c9ba8f63615829a0371d78c285b565ac113a4c47932019",
+      "content": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/60/6003a581ffe53cc707c9ba8f63615829a0371d78c285b565ac113a4c47932019"
+    }
+  },
+  "revisions": {
+    "60ebdea6-9156-43ff-b3c1-ad80dcdc8b07": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794983385002,
+      "endedAt": 1794983385026,
+      "files": {
+        "assets/footage/br-misturado.mp4": {
+          "before": null,
+          "after": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/60/6003a581ffe53cc707c9ba8f63615829a0371d78c285b565ac113a4c47932019"
+        },
+        "assets/img/lixo-rua1.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/7b/7b5790814234ec9f347d15d5f4c30faeed5cc1f55d63f714663f968629d95911",
+          "after": null
+        },
+        "assets/img/lixo-rua2.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/76/76559df43e6a924bbd85d118da4c5bcc4e0d6afb33b04da9b4e1cf8a017b3b7c",
+          "after": null
+        },
+        "assets/img/poa-coleta.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/9c/9cb1e06f82c6a5b951cc6135bbb31cbba14b7eec78a43fe22e2094559c04a8e3",
+          "after": null
+        },
+        "assets/img/sa-aerea.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/9c/9cf04c4f698227e0f713d9402918fa40d53a76f3790095ad3767fd3996ba1a41",
+          "after": null
+        },
+        "assets/img/sbc-1.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/ee/ee7cf62f14c5d77633ffcf926930f13af37b112408a715004ad2750cfc0baa2e",
+          "after": null
+        },
+        "assets/img/seletiva1.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/fe/fec82c4633b47d750b00d8d6b168c3c05503bcaa5b6b629272ded1c0deccec15",
+          "after": null
+        },
+        "assets/img/sp-caminhao.jpg": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/d2/d20784743058df76f03ec6f790516d163e96c6e467d68e0393ca7c4f07737fee",
+          "after": null
+        },
+        "compositions/fecho.html": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/0a/0ae1666eb09633b481df3dee3be8937905f610e391fa6c3555cc1b5f5223951a",
+          "after": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/95/95a337e7e04286b56af50773f1a4db48234bebf32b72e45af44fa347d137bf97"
+        },
+        "compositions/rotas.html": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/e6/e6818f3a82d4fd4228d3f4c6a854311894304c555b8dae9eb1b8e1c9443e5776",
+          "after": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/24/24eb7a3074c0fc25316a41d966a3ec423bd882e4d65a3f0dd901f222df647582"
+        }
+      }
+    },
+    "2a49633c-4862-4ad8-8ec3-71e012c2e5d2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794990082925,
+      "endedAt": 1794990082977,
+      "files": {
+        "compositions/fecho.html": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/95/95a337e7e04286b56af50773f1a4db48234bebf32b72e45af44fa347d137bf97",
+          "after": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/3b/3b89d129741f0c75949c10c805bb86be2162c51c4ef250d5e691251ff3e0f703"
+        },
+        "compositions/rotas.html": {
+          "before": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/24/24eb7a3074c0fc25316a41d966a3ec423bd882e4d65a3f0dd901f222df647582",
+          "after": "/home/vitu/.cache/hyperframes/history/9b83c837-79fa-4e3c-a47f-9b2f01d2347c/blobs/43/431bedfaecb0dc40b7856af6fb3be8aae605841d44e217123b8ba1150d20d442"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "06f308bb-e714-4aa7-9669-31d15c99a515"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "06f308bb-e714-4aa7-9669-31d15c99a515",
+        "scope": "project",
+        "report": "/home/vitu/Claude/EditorDeVideo/projetos/abc-residuos-pedro/pedro-03/.hyperframes/artifacts/checks/06f308bb-e714-4aa7-9669-31d15c99a515.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1794983229862,
+        "contentHash": "7583347621e46dbafcd8172cba03775036ac834d87608ae10fca495885eb137e",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "60ebdea6-9156-43ff-b3c1-ad80dcdc8b07",
+      "id": "d181bf69-7b7d-4d91-a1ce-039eafc2f3fa-2"
+    },
+    "revisions": {
+      "60ebdea6-9156-43ff-b3c1-ad80dcdc8b07": [
+        {
+          "scope": "full",
+          "id": "d181bf69-7b7d-4d91-a1ce-039eafc2f3fa-0",
+          "image": "/tmp/claude-1000/s4/frame-00-at-45.5s.png",
+          "time": 45.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794983412660,
+          "contentHash": "13e3bf526e5a9c4d093eca795465b8dbd11c223437b43fac34fffb818ecef3d0",
+          "revision": "60ebdea6-9156-43ff-b3c1-ad80dcdc8b07",
+          "inputFingerprint": "566aed5da2b747e4fe46dc113b3b230e09e58dbc40449402de4702094ffee4ad",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d181bf69-7b7d-4d91-a1ce-039eafc2f3fa-1",
+          "image": "/tmp/claude-1000/s4/frame-01-at-103.4s.png",
+          "time": 103.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794983412661,
+          "contentHash": "94517bd7b6c7f542932a8ac571ee913fc3c7278fe0c36a2cce63af826a90e354",
+          "revision": "60ebdea6-9156-43ff-b3c1-ad80dcdc8b07",
+          "inputFingerprint": "566aed5da2b747e4fe46dc113b3b230e09e58dbc40449402de4702094ffee4ad",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d181bf69-7b7d-4d91-a1ce-039eafc2f3fa-2",
+          "image": "/tmp/claude-1000/s4/frame-02-at-108.6s.png",
+          "time": 108.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794983412661,
+          "contentHash": "2b19c257da4328d12470e5ab096034fbdd3d140e930b8d9168443b0ac5d924a5",
+          "revision": "60ebdea6-9156-43ff-b3c1-ad80dcdc8b07",
+          "inputFingerprint": "566aed5da2b747e4fe46dc113b3b230e09e58dbc40449402de4702094ffee4ad",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-0",
+        "image": "/tmp/claude-1000/s3/frame-00-at-2s.png",
+        "time": 2,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "e7b8bf6b371cedf0a69e82d67905af85bab873c4d9dcfcef2de955d68baad954",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-1",
+        "image": "/tmp/claude-1000/s3/frame-01-at-4.2s.png",
+        "time": 4.2,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "1f6f677c116229122db3a2184eb4d47bff13b8d3fd79533887730ba81c92b55b",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-2",
+        "image": "/tmp/claude-1000/s3/frame-02-at-7s.png",
+        "time": 7,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "eff0d546309dbd9b79dfc8c157ac0dc801250e5574049c1b4e7e2ee0de0996f8",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-3",
+        "image": "/tmp/claude-1000/s3/frame-03-at-11s.png",
+        "time": 11,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "ba0200f1c70f2cb6504a1cfddb63ed5d823df32ae1aec965898760d7c51dc56d",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-4",
+        "image": "/tmp/claude-1000/s3/frame-04-at-19s.png",
+        "time": 19,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "839af32c353f198a13e13e79eefbc6a150c342a6d9f178e07d7de56d52264976",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-5",
+        "image": "/tmp/claude-1000/s3/frame-05-at-26s.png",
+        "time": 26,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "4170a5497597d71939f877ad7884e50fc539a2bfec0618218abdc3b21cce1768",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-6",
+        "image": "/tmp/claude-1000/s3/frame-06-at-33s.png",
+        "time": 33,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "62cf6166efd2497b56a25dabb66373d4f3abd836510d78f117714b18a583ae4d",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-7",
+        "image": "/tmp/claude-1000/s3/frame-07-at-42s.png",
+        "time": 42,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "8a6edfa2834eb9e64bd1dd4f34eb4fc8e8ab65e5835310d03b66f1aaaf29cbae",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-8",
+        "image": "/tmp/claude-1000/s3/frame-08-at-45.5s.png",
+        "time": 45.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "5b2d89becfb4fa675bfe1f703a3aa0693aa7caa8610591ba4f1da650d8cc80f6",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-9",
+        "image": "/tmp/claude-1000/s3/frame-09-at-51s.png",
+        "time": 51,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "3398000e4bf4d01d193f11146aa4f0e328591b1664c4c10070d4564c8cadbc98",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-10",
+        "image": "/tmp/claude-1000/s3/frame-10-at-56s.png",
+        "time": 56,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "39750c5c2a21bd89d6271af2a89fd9d45b87f9b3eb1a00c33ed276ee0fa96de4",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-11",
+        "image": "/tmp/claude-1000/s3/frame-11-at-60s.png",
+        "time": 60,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "ae4db00554c96e6db05e78f1f3a564c64b6b7cc48e98c2106ad836af9f321295",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-12",
+        "image": "/tmp/claude-1000/s3/frame-12-at-63s.png",
+        "time": 63,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298546,
+        "contentHash": "0cd93b2340dde8fa34ee01d364fa2dc51ac8225a8b6002087b35fa61c73cdf74",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-13",
+        "image": "/tmp/claude-1000/s3/frame-13-at-68s.png",
+        "time": 68,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "8689cdaebdf69b21684c2a073b29973b1b5c5e69bddc7f2fd247beb957d63c4d",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-14",
+        "image": "/tmp/claude-1000/s3/frame-14-at-74s.png",
+        "time": 74,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "a41a7ffa3e9689d4895936727aeebf3ebac3b5710b763102dc898d04d883b001",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-15",
+        "image": "/tmp/claude-1000/s3/frame-15-at-80s.png",
+        "time": 80,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "52465aa9f8cc9e783e3ac1e838cbfd022fdf337941265e42024de4c71cefc8a9",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-16",
+        "image": "/tmp/claude-1000/s3/frame-16-at-86s.png",
+        "time": 86,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "de9424b1cccc78b3cc45529f79ce80e1d1c8ec28e1fa60a380fd75cbdf43b1f4",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-17",
+        "image": "/tmp/claude-1000/s3/frame-17-at-90s.png",
+        "time": 90,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "999e5698330f7a4f690818b8a90e962205de36c96fb91dc8fb81f1fbfa232656",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-18",
+        "image": "/tmp/claude-1000/s3/frame-18-at-95s.png",
+        "time": 95,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "d8ef5ba5988390082dc01c54802a4f519033b391542ca251df6a2d04f9dffdff",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-19",
+        "image": "/tmp/claude-1000/s3/frame-19-at-99s.png",
+        "time": 99,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "d1d3456230e8d8df2193cf757ab28a0fe752f5ecf01e4152d6e5284e8f6a15af",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-20",
+        "image": "/tmp/claude-1000/s3/frame-20-at-103s.png",
+        "time": 103,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "4fef68805923ac6ad3e87b2d48029316bb4bccfffb8af271fc0b90fe852a5c4b",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-21",
+        "image": "/tmp/claude-1000/s3/frame-21-at-107s.png",
+        "time": 107,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "1d46b359b9f4e3a20f16a54b61b5093496a912ee0b1cbe08d66cf8a589e5bd23",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-22",
+        "image": "/tmp/claude-1000/s3/frame-22-at-113s.png",
+        "time": 113,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "728471c5ca6a36fa2b9f380c6ac9d8b16ac9f743f126c39397c3ff9250464246",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "a9d107b8-aadf-412c-8edf-aff4ceb470b3-23",
+        "image": "/tmp/claude-1000/s3/frame-23-at-117s.png",
+        "time": 117,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "2 image(s) failed to load at 103s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 107s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 113s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b...",
+            "2 image(s) failed to load at 117s, so the frame may be missing them: data:image/jpeg;base64,PCFET0NUWVBFIGh0b..., data:image/jpeg;base64,PCFET0NUWVBFIGh0b..."
+          ],
+          "partial": true
+        },
+        "createdAt": 1794983298547,
+        "contentHash": "b032d5ba5399f3dfa6ea18a63f8d852c125fb38a7f7360943b73e73f5454410c",
+        "revision": null,
+        "inputFingerprint": "6a0c4ca246820a098539b9cf249856666316d4eabcebf9f58f8bb23fb18695c9",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "63acb619-4f01-4935-bb2e-ffadd6316097",
+      "completedAt": 1794995974038,
+      "output": "/home/vitu/Claude/EditorDeVideo/Videos Prontos/abc-residuos-pedro/PEDRO_03_SMART_CITIES_RESIDUOS.mp4",
+      "status": "completed",
+      "revision": "2a49633c-4862-4ad8-8ec3-71e012c2e5d2"
+    },
+    "retainedRevisions": [
+      "2a49633c-4862-4ad8-8ec3-71e012c2e5d2"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

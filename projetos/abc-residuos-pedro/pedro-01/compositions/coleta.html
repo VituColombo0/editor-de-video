@@ -1,0 +1,104 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #061019; font-family: "Inter", sans-serif; color: #eef3f5; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .wrap { position: absolute; inset: 0; overflow: hidden; }
+    .chip { position: absolute; left: 96px; top: 64px; font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: 0.14em; color: rgba(255,255,255,0.86); padding: 8px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; background: rgba(5,10,14,0.45); }
+    #co-dg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, #0b2231 0%, #061019 70%); }
+    #co-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(120,200,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(120,200,255,0.06) 1px, transparent 1px); background-size: 60px 60px; }
+    .kick { font-family: "JetBrains Mono", monospace; font-size: 22px; letter-spacing: 0.22em; color: #7fd3ff; }
+    #co-k { position: absolute; left: 150px; top: 120px; }
+    #co-h { position: absolute; left: 150px; top: 160px; font-size: 54px; font-weight: 700; letter-spacing: -0.02em; }
+    .node { position: absolute; top: 470px; width: 340px; height: 210px; border-radius: 18px; background: rgba(14,36,50,0.85); border: 1px solid rgba(127,211,255,0.28); padding: 26px 28px; }
+    .node .ic { width: 54px; height: 54px; margin-bottom: 16px; }
+    .node .t { font-size: 34px; font-weight: 700; letter-spacing: -0.01em; }
+    .node .s { font-size: 25px; color: rgba(238,243,245,0.72); margin-top: 6px; line-height: 1.3; }
+    #co-n1 { left: 150px; } #co-n2 { left: 570px; } #co-n3 { left: 990px; } #co-n4 { left: 1410px; }
+    #co-n1 { border-color: rgba(67,227,176,0.4); }
+    #co-pref { position: absolute; left: 570px; top: 330px; width: 1180px; }
+    #co-pref .bar { height: 2px; background: #43e3b0; transform-origin: 0 50%; }
+    #co-pref .lbl { display: flex; align-items: baseline; gap: 18px; margin-bottom: 14px; }
+    #co-pref .lbl b { font-size: 34px; color: #43e3b0; font-weight: 700; letter-spacing: 0.02em; }
+    #co-pref .lbl span { font-size: 26px; color: rgba(238,243,245,0.8); }
+    .tick { position: absolute; top: -8px; width: 2px; height: 18px; background: #43e3b0; }
+    #co-links { position: absolute; left: 0; top: 0; }
+    #co-ex { position: absolute; left: 570px; top: 760px; width: 1180px; }
+    #co-ex .q { font-size: 28px; color: rgba(238,243,245,0.75); margin-bottom: 18px; }
+    .opt { display: inline-flex; align-items: center; gap: 16px; margin-right: 40px; padding: 16px 26px; border-radius: 999px; border: 1px solid rgba(127,211,255,0.4); background: rgba(14,36,50,0.8); font-size: 28px; }
+    .opt b { color: #7fd3ff; font-weight: 700; }
+    .dot { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #7fd3ff; box-shadow: 0 0 14px #7fd3ff; top: 569px; }
+  </style>
+  <div id="root" data-composition-id="coleta" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="co-w1" class="wrap">
+      <video id="co-v1" class="clip full" src="assets/footage/v1-coleta.mp4" data-start="0" data-duration="3.9" data-media-start="0.2" data-track-index="0" muted playsinline></video>
+      <div id="co-chip" class="chip" data-layout-ignore>SIMULAÇÃO · CENA GERADA POR IA</div>
+    </div>
+    <div id="co-dg">
+      <div id="co-grid"></div>
+      <div id="co-k" class="kick">LIMPEZA URBANA</div>
+      <div id="co-h">Quem faz o quê</div>
+      <div id="co-pref">
+        <div class="lbl"><b>PREFEITURA</b><span>organiza e fiscaliza os serviços</span></div>
+        <div class="bar" id="co-bar"></div>
+      </div>
+      <svg id="co-links" width="1920" height="1080" viewBox="0 0 1920 1080">
+        <path id="co-l1" d="M490 575 L570 575" stroke="#7fd3ff" stroke-width="2" fill="none" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+        <path id="co-l2" d="M910 575 L990 575" stroke="#7fd3ff" stroke-width="2" fill="none" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+        <path id="co-l3" d="M1330 575 L1410 575" stroke="#7fd3ff" stroke-width="2" fill="none" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+      </svg>
+      <div id="co-n1" class="node">
+        <svg class="ic" viewBox="0 0 54 54" fill="none" stroke="#43e3b0" stroke-width="2.4"><path d="M8 26 L27 10 L46 26"/><path d="M13 22 V46 H41 V22"/><rect x="22" y="31" width="10" height="15"/></svg>
+        <div class="t">Cidadão</div><div class="s">descarta e, quando há coleta seletiva, separa</div>
+      </div>
+      <div id="co-n2" class="node">
+        <svg class="ic" viewBox="0 0 54 54" fill="none" stroke="#7fd3ff" stroke-width="2.4"><rect x="4" y="16" width="30" height="22" rx="2"/><path d="M34 22 H44 L50 30 V38 H34"/><circle cx="14" cy="42" r="5"/><circle cx="42" cy="42" r="5"/></svg>
+        <div class="t">Coleta</div><div class="s">recolhe os resíduos nas ruas</div>
+      </div>
+      <div id="co-n3" class="node">
+        <svg class="ic" viewBox="0 0 54 54" fill="none" stroke="#7fd3ff" stroke-width="2.4"><path d="M6 40 C18 40 18 14 30 14 H48"/><path d="M40 6 L48 14 L40 22"/><circle cx="6" cy="40" r="3"/></svg>
+        <div class="t">Transporte</div><div class="s">leva até as unidades de destino</div>
+      </div>
+      <div id="co-n4" class="node">
+        <svg class="ic" viewBox="0 0 54 54" fill="none" stroke="#7fd3ff" stroke-width="2.4"><path d="M4 46 H50"/><path d="M8 46 V24 L20 30 V24 L32 30 V14 H42 V46"/><path d="M36 14 V6"/></svg>
+        <div class="t">Destinação</div><div class="s">tratamento, triagem e disposição final</div>
+      </div>
+      <div id="co-d1" class="dot" style="left:484px"></div>
+      <div id="co-d2" class="dot" style="left:904px"></div>
+      <div id="co-d3" class="dot" style="left:1324px"></div>
+      <div id="co-ex">
+        <div class="q">Dependendo do município, a execução pode ser:</div>
+        <div class="opt" id="co-o1"><b>DIRETA</b> equipes públicas</div>
+        <div class="opt" id="co-o2"><b>CONTRATADA</b> empresas prestadoras de serviço</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 10.6 s
+    tl.fromTo("#co-w1", { scale: 1.08 }, { scale: 1.0, duration: 3.9, ease: "power1.out" }, 0);
+    tl.fromTo("#co-chip", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.1);
+    // íris a partir do caminhão: o diagrama abre do centro
+    tl.fromTo("#co-dg", { clipPath: "circle(0% at 50% 52%)" }, { clipPath: "circle(75% at 50% 52%)", duration: 0.7, ease: "power3.inOut" }, 3.3);
+    tl.fromTo(["#co-k", "#co-h"], { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, stagger: 0.1 }, 3.7);
+    const N = (s, t) => tl.fromTo(s, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "expo.out" }, t);
+    N("#co-n1", 3.75);
+    tl.fromTo("#co-pref .lbl", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 3.9);
+    tl.fromTo("#co-bar", { scaleX: 0 }, { scaleX: 1, duration: 1.8, ease: "power2.inOut" }, 4.1);
+    tl.to("#co-l1", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 4.05);
+    N("#co-n2", 4.18);              // "coleta" 14.78
+    tl.to("#co-l2", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 4.85);
+    N("#co-n3", 5.0);               // "transporte" 15.6
+    tl.to("#co-l3", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 5.6);
+    N("#co-n4", 5.74);              // "destinação" 16.34
+    // fluxo contínuo de pontos ao longo da cadeia
+    ["#co-d1", "#co-d2", "#co-d3"].forEach((d, i) => {
+      tl.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 0.2 }, 6.2 + i * 0.15);
+      tl.fromTo(d, { x: 0 }, { x: 84, duration: 1.1, ease: "none", repeat: 6 }, 6.2 + i * 0.15);
+    });
+    tl.fromTo("#co-ex .q", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3 }, 7.6);   // "município" 18.26
+    tl.fromTo("#co-o1", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 10.35); // "equipes públicas" 21.0
+    tl.fromTo("#co-o2", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 11.5);  // "empresas" 22.14
+    tl.to("#co-dg", { opacity: 1, duration: 0.01 }, 13.9);
+    window.__timelines["coleta"] = tl;
+  </script>
+</template>

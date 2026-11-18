@@ -1,0 +1,56 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #05090d; font-family: "Inter", sans-serif; color: #eef3f5; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .shot { position: absolute; inset: 0; overflow: hidden; }
+    #lm-s4, #lm-s5, #lm-s6 { opacity: 0; }
+    .cred { position: absolute; right: 96px; bottom: 44px; font-size: 17px; color: rgba(255,255,255,0.82); padding: 6px 12px; background: rgba(0,0,0,0.55); border-radius: 4px; opacity: 0; }
+    .loc { position: absolute; left: 150px; top: 96px; font-family: "JetBrains Mono", monospace; font-size: 21px; letter-spacing: 0.18em; color: #fff; padding: 8px 14px; background: rgba(0,0,0,0.5); border-left: 3px solid #ffb547; opacity: 0; }
+    #lm-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(180deg, rgba(4,8,12,0) 0%, rgba(4,8,12,0.82) 100%); }
+    #lm-words { position: absolute; left: 150px; bottom: 150px; }
+    .lw { font-size: 64px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.08; opacity: 0; }
+    .lw:nth-child(odd) { color: #fff; } .lw:nth-child(even) { color: #ffb547; }
+  </style>
+  <div id="root" data-composition-id="limite" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="lm-s1" class="shot"><video id="lm-v1" class="clip full" src="assets/footage/br-descarga.mp4" data-start="0" data-duration="2.7" data-media-start="1.8" data-track-index="0" muted playsinline></video></div>
+    <div id="lm-s2" class="shot"><video id="lm-v2" class="clip full" src="assets/footage/br-triagem3.mp4" data-start="2.6" data-duration="2.5" data-media-start="0.2" data-track-index="1" muted playsinline></video></div>
+    <div id="lm-s3" class="shot"><video id="lm-v3" class="clip full" src="assets/footage/br-esteira.mp4" data-start="5.0" data-duration="2.5" data-media-start="0.5" data-track-index="2" muted playsinline></video></div>
+    <div id="lm-s4" class="shot"><img id="lm-i4" class="full" src="assets/img/aterro-1.jpg" alt="Máquinas operando em aterro sanitário" /></div>
+    <div id="lm-s5" class="shot"><img id="lm-i5" class="full" src="assets/img/sa-aterro.jpg" alt="Vista aérea do aterro sanitário de Santo André" /></div>
+    <div id="lm-s6" class="shot"><img id="lm-i6" class="full" src="assets/img/sa-paco.jpg" alt="Vista aérea do centro de Santo André" /></div>
+    <div id="lm-shade"></div>
+    <div id="lm-words"><div class="lw" id="lm-w1">Espaço</div><div class="lw" id="lm-w2">Investimento</div><div class="lw" id="lm-w3">Trabalhadores</div><div class="lw" id="lm-w4">Planejamento</div></div>
+    <div class="cred" id="lm-c1" data-layout-ignore>Imagens: TV BrasilGov (CC BY 3.0) · unidade de tratamento de resíduos</div>
+    <div class="loc" id="lm-l4" data-layout-ignore>ATERRO SANITÁRIO · BRASÍLIA (DF)</div>
+    <div class="cred" id="lm-c4" data-layout-ignore>Foto: Gabriel Jabur / Agência Brasília (CC BY 2.0)</div>
+    <div class="loc" id="lm-l5" data-layout-ignore>ATERRO MUNICIPAL · SANTO ANDRÉ (SP)</div>
+    <div class="cred" id="lm-c5" data-layout-ignore>Satélite: Esri, Maxar, Earthstar Geographics</div>
+    <div class="loc" id="lm-l6" data-layout-ignore>SANTO ANDRÉ (SP)</div>
+    <div class="cred" id="lm-c6" data-layout-ignore>Foto: Ramon S. Lopes (CC BY-SA 4.0)</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local 0 = 44.4 s
+    const ON = (s, t) => tl.set(s, { opacity: 1 }, t), OFF = (s, t) => tl.set(s, { opacity: 0 }, t);
+    tl.fromTo("#lm-s1", { scale: 1.12 }, { scale: 1.0, duration: 2.7, ease: "power1.out" }, 0);
+    tl.fromTo("#lm-s2", { scale: 1.0 }, { scale: 1.08, duration: 2.5, ease: "none" }, 2.6);
+    tl.fromTo("#lm-s3", { scale: 1.08, x: 30 }, { scale: 1.0, x: 0, duration: 2.5, ease: "none" }, 5.0);
+    ON("#lm-c1", 0.1); OFF("#lm-c1", 7.45);
+    // palavras do esforço do sistema, no tempo da fala
+    [["#lm-w1", 1.4], ["#lm-w2", 2.3], ["#lm-w3", 3.3], ["#lm-w4", 4.1]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, x: -16, filter: "blur(6px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, t));
+    tl.to("#lm-words", { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power2.in" }, 5.7);
+    // aterro (foto) com mergulho de câmera
+    ON("#lm-s4", 7.4); tl.fromTo("#lm-i4", { scale: 1.0 }, { scale: 1.1, duration: 2.9, ease: "none" }, 7.4);
+    ON("#lm-l4", 7.55); ON("#lm-c4", 7.55); OFF("#lm-l4", 10.2); OFF("#lm-c4", 10.2);
+    // vista aérea do aterro de Santo André
+    tl.fromTo("#lm-s5", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 10.0);
+    tl.fromTo("#lm-i5", { scale: 1.12, rotation: -2 }, { scale: 1.0, rotation: 0, duration: 3.2, ease: "power1.out" }, 10.0);
+    ON("#lm-l5", 10.4); ON("#lm-c5", 10.4); OFF("#lm-l5", 12.9); OFF("#lm-c5", 12.9);
+    // imagem urbana para a passagem ao próximo segmento
+    tl.fromTo("#lm-s6", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.inOut" }, 12.8);
+    tl.fromTo("#lm-i6", { scale: 1.0 }, { scale: 1.06, duration: 2.8, ease: "none" }, 12.8);
+    tl.to("#lm-shade", { opacity: 0.35, duration: 0.8 }, 12.8);
+    ON("#lm-l6", 13.3); ON("#lm-c6", 13.3);
+    window.__timelines["limite"] = tl;
+  </script>
+</template>

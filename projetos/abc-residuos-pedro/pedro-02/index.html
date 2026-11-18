@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #05090d; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <!-- PEDRO_02 · Matérias-primas secundárias · 60 s -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="60" data-width="1920" data-height="1080">
+      <div id="materiais" data-composition-id="materiais" data-composition-src="compositions/materiais.html" data-start="0" data-duration="12.0" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:1"></div>
+      <div id="conceito" data-composition-id="conceito" data-composition-src="compositions/conceito.html" data-start="11.6" data-duration="18.3" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:2"></div>
+      <div id="processo" data-composition-id="processo" data-composition-src="compositions/processo.html" data-start="29.8" data-duration="17.8" data-track-index="2" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:3"></div>
+      <div id="circular" data-composition-id="circular" data-composition-src="compositions/circular.html" data-start="47.4" data-duration="12.6" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:4"></div>
+
+      <audio id="vo" class="clip" src="assets/audio/narracao.wav" data-start="0" data-duration="60" data-track-index="20" data-volume="1"></audio>
+      <audio id="bgm" class="clip" src="assets/audio/trilha.wav" data-start="0" data-duration="60" data-track-index="21" data-volume="0.14" data-fade-in="1.0" data-fade-out="2.5"></audio>
+
+      <audio id="fx1" class="clip" src="assets/audio/whoosh-cinematic.mp3" data-start="11.4" data-duration="1.4" data-fade-out="0.4" data-track-index="30" data-volume="0.16"></audio>
+      <audio id="fx2" class="clip" src="assets/audio/pop.mp3" data-start="20.85" data-track-index="31" data-volume="0.11"></audio>
+      <audio id="fx3" class="clip" src="assets/audio/pop.mp3" data-start="21.95" data-track-index="32" data-volume="0.11"></audio>
+      <audio id="fx4" class="clip" src="assets/audio/pop.mp3" data-start="22.85" data-track-index="33" data-volume="0.1"></audio>
+      <audio id="fx5" class="clip" src="assets/audio/pop.mp3" data-start="23.15" data-track-index="34" data-volume="0.1"></audio>
+      <audio id="fx6" class="clip" src="assets/audio/whoosh-short.mp3" data-start="29.75" data-track-index="35" data-volume="0.14"></audio>
+      <audio id="fx7" class="clip" src="assets/audio/click.mp3" data-start="30.3" data-track-index="36" data-volume="0.12"></audio>
+      <audio id="fx8" class="clip" src="assets/audio/click.mp3" data-start="33.4" data-track-index="37" data-volume="0.12"></audio>
+      <audio id="fx9" class="clip" src="assets/audio/whoosh-short.mp3" data-start="35.15" data-track-index="38" data-volume="0.13"></audio>
+      <audio id="fx10" class="clip" src="assets/audio/pop.mp3" data-start="37.4" data-track-index="39" data-volume="0.12"></audio>
+      <audio id="fx11" class="clip" src="assets/audio/whoosh.mp3" data-start="38.75" data-track-index="40" data-volume="0.14"></audio>
+      <audio id="fx12" class="clip" src="assets/audio/whoosh-short.mp3" data-start="42.55" data-track-index="41" data-volume="0.14"></audio>
+      <audio id="fx13" class="clip" src="assets/audio/whoosh.mp3" data-start="47.3" data-track-index="42" data-volume="0.14"></audio>
+      <audio id="fx14" class="clip" src="assets/audio/pop.mp3" data-start="48.5" data-track-index="43" data-volume="0.11"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

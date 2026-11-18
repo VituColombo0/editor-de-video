@@ -1,0 +1,46 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #05090d; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .wrap { position: absolute; inset: 0; overflow: hidden; }
+    .chip { position: absolute; left: 96px; top: 64px; font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: 0.14em; color: rgba(255,255,255,0.86); padding: 8px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; background: rgba(5,10,14,0.45); }
+    #ca-q { position: absolute; left: 150px; bottom: 170px; color: #f4f7f8; font-family: "Inter", sans-serif; }
+    #ca-q1 { font-size: 38px; font-weight: 400; color: rgba(244,247,248,0.82); margin-bottom: 10px; }
+    #ca-q2 { font-size: 78px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+    .w { display: inline-block; }
+    #ca-q2 .ac { color: #43e3b0; }
+    #ca-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 520px; background: linear-gradient(180deg, rgba(4,8,12,0) 0%, rgba(4,8,12,0.78) 100%); }
+  </style>
+  <div id="root" data-composition-id="casa" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="ca-w1" class="wrap">
+      <video id="ca-v1" class="clip full" src="assets/footage/v1-cozinha.mp4" data-start="0" data-duration="5.6" data-track-index="0" muted playsinline></video>
+    </div>
+    <div id="ca-w2" class="wrap">
+      <video id="ca-v2" class="clip full" src="assets/footage/v1-rua.mp4" data-start="5.3" data-duration="5.5" data-media-start="0.2" data-track-index="1" muted playsinline></video>
+    </div>
+    <div id="ca-shade"></div>
+    <div id="ca-chip" class="chip" data-layout-ignore>SIMULAÇÃO · CENA GERADA POR IA</div>
+    <div id="ca-q">
+      <div id="ca-q1"><span class="w">Depois</span> <span class="w">que</span> <span class="w">descartamos</span> <span class="w">alguma</span> <span class="w">coisa,</span></div>
+      <div id="ca-q2"><span class="w">para</span> <span class="w">onde</span> <span class="w">ela</span> <span class="w ac">realmente</span> <span class="w ac">vai?</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // cozinha: empurrão lento
+    tl.fromTo("#ca-w1", { scale: 1.0 }, { scale: 1.07, duration: 5.6, ease: "none" }, 0);
+    // chicote para a rua (a tampa fecha e o resíduo "segue viagem")
+    tl.to("#ca-w1", { x: -260, filter: "blur(18px)", duration: 0.32, ease: "power3.in" }, 5.3);
+    tl.fromTo("#ca-w2", { x: 300, filter: "blur(22px)", scale: 1.04 }, { x: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 5.48);
+    tl.to("#ca-w2", { scale: 1.1, duration: 5.0, ease: "none" }, 5.93);
+    tl.fromTo("#ca-shade", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 6.6);
+    // pergunta central
+    const w1 = gsap.utils.toArray("#ca-q1 .w"), w2 = gsap.utils.toArray("#ca-q2 .w");
+    w1.forEach((el, i) => tl.fromTo(el, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, 7.0 + i * 0.09));
+    w2.forEach((el, i) => tl.fromTo(el, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, 7.7 + i * 0.12));
+    tl.to("#ca-q", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 10.3);
+    // selo de simulação vale para as duas cenas geradas
+    tl.fromTo("#ca-chip", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.3);
+    window.__timelines["casa"] = tl;
+  </script>
+</template>

@@ -1,0 +1,58 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #05090d; font-family: "Inter", sans-serif; color: #eef3f5; }
+    .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    .shot { position: absolute; inset: 0; overflow: hidden; }
+    #mt-s2, #mt-s3, #mt-s4, #mt-s5 { opacity: 0; }
+    .tagm { position: absolute; left: 150px; top: 96px; font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: 0.2em; color: #fff; padding: 8px 14px; background: rgba(0,0,0,0.45); border-left: 3px solid #43e3b0; opacity: 0; }
+    .cred { position: absolute; right: 96px; bottom: 44px; font-size: 17px; color: rgba(255,255,255,0.82); padding: 6px 12px; background: rgba(0,0,0,0.55); border-radius: 4px; }
+    #mt-dark { position: absolute; inset: 0; background: rgba(4,8,12,0.62); opacity: 0; }
+    #mt-q { position: absolute; left: 0; width: 1920px; top: 380px; text-align: center; }
+    #mt-q .a { font-size: 44px; font-weight: 400; color: rgba(238,243,245,0.85); }
+    #mt-q .b { font-size: 92px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; margin-top: 14px; }
+    #mt-q .b em { font-style: normal; color: #43e3b0; }
+    .w { display: inline-block; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="materiais" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="mt-s1" class="shot"><img id="mt-i1" class="full" src="assets/img/pet-fardo.jpg" alt="Fardo de garrafas PET prensadas" /></div>
+    <div id="mt-s2" class="shot"><video id="mt-v2" class="clip full" src="assets/footage/ir-latas.mp4" data-start="2.7" data-duration="2.6" data-track-index="1" muted playsinline></video></div>
+    <div id="mt-s3" class="shot"><video id="mt-v3" class="clip full" src="assets/footage/ir-garrafas.mp4" data-start="5.2" data-duration="2.3" data-media-start="0.6" data-track-index="2" muted playsinline></video></div>
+    <div id="mt-s4" class="shot"><video id="mt-v4" class="clip full" src="assets/footage/ir-papel.mp4" data-start="7.4" data-duration="2.1" data-media-start="0.3" data-track-index="3" muted playsinline></video></div>
+    <div id="mt-s5" class="shot"><video id="mt-v5" class="clip full" src="assets/footage/ir-pet.mp4" data-start="9.4" data-duration="3.0" data-media-start="0.5" data-playback-rate="0.7" data-track-index="4" muted playsinline></video></div>
+    <div class="tagm" id="mt-t1" data-layout-ignore>PLÁSTICO · PET</div>
+    <div class="tagm" id="mt-t2" data-layout-ignore>METAL · ALUMÍNIO</div>
+    <div class="tagm" id="mt-t3" data-layout-ignore>VIDRO</div>
+    <div class="tagm" id="mt-t4" data-layout-ignore>PAPEL E PAPELÃO</div>
+    <div id="mt-dark"></div>
+    <div id="mt-q">
+      <div class="a"><span class="w">E</span> <span class="w">se</span> <span class="w">aquilo</span> <span class="w">que</span> <span class="w">chamamos</span> <span class="w">de</span> <span class="w">lixo</span></div>
+      <div class="b"><span class="w">ainda</span> <span class="w">tivesse</span> <span class="w"><em>valor?</em></span></div>
+    </div>
+    <div class="cred" id="mt-c1" data-layout-ignore>Foto: Grendelkhan (CC BY-SA 4.0)</div>
+    <div class="cred" id="mt-c2" data-layout-ignore>Vídeo: Ireland4me, “Recycling Video” (CC BY-SA 3.0)</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // local = root (cena começa em 0)
+    tl.fromTo("#mt-i1", { scale: 1.18, x: -40 }, { scale: 1.04, x: 0, duration: 2.9, ease: "power1.out" }, 0);
+    tl.set("#mt-c1", { opacity: 1 }, 0); tl.set("#mt-c1", { opacity: 0 }, 2.7);
+    tl.set("#mt-c2", { opacity: 0 }, 0); tl.set("#mt-c2", { opacity: 1 }, 2.7);
+    const CUT = (s, t, from, to, d) => { tl.set(s, { opacity: 1 }, t); tl.fromTo(s, from, { ...to, duration: d, ease: "none" }, t); };
+    CUT("#mt-s2", 2.7, { scale: 1.1 }, { scale: 1.0 }, 2.6);
+    CUT("#mt-s3", 5.2, { scale: 1.0, x: 30 }, { scale: 1.08, x: -20 }, 2.3);
+    CUT("#mt-s4", 7.4, { scale: 1.12 }, { scale: 1.02 }, 2.1);
+    CUT("#mt-s5", 9.4, { scale: 1.0 }, { scale: 1.12 }, 2.4);
+    [["#mt-t1", 0.4, 2.7], ["#mt-t2", 2.8, 5.2], ["#mt-t3", 5.3, 7.4], ["#mt-t4", 7.5, 9.4]].forEach(([s, a, b]) => {
+      tl.fromTo(s, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, a);
+      tl.to(s, { opacity: 0, duration: 0.12 }, b - 0.12);
+    });
+    // a pergunta central ocupa a pausa da narração
+    tl.to("#mt-dark", { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 8.7);
+    gsap.utils.toArray("#mt-q .a .w").forEach((w, i) => tl.fromTo(w, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, 8.85 + i * 0.08));
+    gsap.utils.toArray("#mt-q .b .w").forEach((w, i) => tl.fromTo(w, { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.24, ease: "expo.out" }, 9.6 + i * 0.16));
+    // mergulho: a pergunta e a pilha de garrafas puxam para dentro da linha de reciclagem
+    tl.to("#mt-q", { scale: 1.6, opacity: 0, filter: "blur(14px)", duration: 0.45, ease: "power3.in" }, 11.45);
+    tl.to("#mt-s5", { scale: 1.6, filter: "blur(12px)", duration: 0.45, ease: "power3.in" }, 11.45);
+    window.__timelines["materiais"] = tl;
+  </script>
+</template>
